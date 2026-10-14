@@ -1,0 +1,2317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src https://script.google.com https://script.googleusercontent.com; img-src data:; media-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Dekia · Trabaja con nosotros</title>
+<meta name="description" content="Dekia Corporation busca Director/a Comercial. Envíe su candidatura. Solo uno de ustedes será seleccionado.">
+<!--
+  Nota interna Dekia: si está leyendo el código fuente, ya sabemos qué tipo de candidato es.
+  Las respuestas no están aquí. Están cifradas. Lo que sí está aquí es lo mismo que en la página:
+  la llave del sistema llega siempre por la trampilla.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f3f2ee;
+    --paper:#ffffff;
+    --ink:#141414;
+    --muted:#6b6b6b;
+    --line:#dcdad3;
+    --accent:#f6790c;
+    --term-bg:#0c0c0c;
+    --term-ink:#d9d9d9;
+    --term-green:#8fd694;
+    --term-dim:#6f6f6f;
+    --radius:4px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  ::selection{background:var(--accent);color:#fff}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+  @media(min-width:720px){.wrap{padding:0 32px}}
+
+  /* ---------- Barra superior ---------- */
+  .topbar{background:var(--ink);color:#bdbdbd;font-size:12px;letter-spacing:.04em}
+  .topbar .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}
+  .topbar b{color:#fff;font-weight:600}
+  .rec{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:6px;animation:blink 1.4s infinite}
+  @keyframes blink{50%{opacity:.15}}
+
+  header.nav{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.22em;font-size:18px;text-decoration:none;user-select:none}
+  .logo-mark{width:28px;height:28px;border:2.5px solid var(--ink);position:relative}
+  .logo-mark::after{content:"";position:absolute;inset:6px;background:var(--accent)}
+  .nav ul{display:flex;gap:26px;list-style:none;font-size:14px}
+  .nav ul a{text-decoration:none;color:var(--muted)}
+  .nav ul a:hover{color:var(--ink)}
+  .btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;border:0;border-radius:var(--radius);padding:12px 20px;font:600 14px Inter,sans-serif;cursor:pointer;letter-spacing:.02em;transition:background .2s}
+  .btn:hover{background:var(--accent)}
+  .btn:disabled{opacity:.5;cursor:wait}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:#fff}
+  @media(max-width:820px){.nav ul{display:none}}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:72px 0 64px;border-bottom:1px solid var(--line)}
+  .hero .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:center}
+  @media(max-width:900px){.hero .wrap{grid-template-columns:1fr}}
+  .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:18px}
+  h1{font-size:clamp(34px,6vw,62px);line-height:1.04;letter-spacing:-.03em;font-weight:800;margin-bottom:22px}
+  h1 em{font-style:normal;color:var(--accent)}
+  .lead{font-size:18px;color:#3c3c3c;max-width:560px;margin-bottom:30px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .job-card{background:var(--paper);border:1px solid var(--line);padding:28px;border-radius:var(--radius);box-shadow:0 20px 40px -30px rgba(0,0,0,.35)}
+  .job-card .ref{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted);margin-bottom:8px}
+  .job-card h3{font-size:22px;margin-bottom:16px}
+  .job-card dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:14px;margin-bottom:22px}
+  .job-card dt{color:var(--muted)}
+  .job-card dd{font-weight:500}
+  .stat{display:flex;align-items:baseline;gap:10px;border-top:1px solid var(--line);padding-top:18px}
+  .stat .num{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1;min-width:30px;font-variant-numeric:tabular-nums}
+  .stat .num.glitch{color:var(--accent)}
+  .stat .lbl{font-size:13px;color:var(--muted)}
+
+  /* ---------- Secciones ---------- */
+  section{padding:80px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+  h2{font-size:clamp(26px,4vw,38px);letter-spacing:-.02em;line-height:1.1;font-weight:800;max-width:640px}
+  .sec-num{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted)}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  @media(max-width:820px){.grid-2{grid-template-columns:1fr}}
+  .list{list-style:none}
+  .list li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;gap:14px;font-size:15px}
+  .list li::before{content:"—";color:var(--accent);font-weight:700}
+  .ghost-text{color:var(--bg);font-size:13px;margin-top:18px}
+  .ghost-text::selection{background:var(--ink);color:#fff}
+
+  /* Proceso */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  @media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.steps{grid-template-columns:1fr}}
+  .step{background:var(--paper);padding:28px 24px;min-height:220px}
+  .step .n{font-family:"JetBrains Mono",monospace;color:var(--accent);font-size:13px;margin-bottom:28px}
+  .step h4{font-size:18px;margin-bottom:10px}
+  .step p{font-size:14px;color:var(--muted)}
+  .staff-note{margin-top:18px;font-size:11px;color:#c9c7c0;font-family:"JetBrains Mono",monospace;letter-spacing:.02em}
+
+  /* Valores */
+  .values{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  @media(max-width:900px){.values{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.values{grid-template-columns:1fr}}
+  .value{border-top:3px solid var(--ink);padding-top:18px}
+  .value h4{font-size:22px;margin-bottom:8px;letter-spacing:-.01em}
+  .value p{font-size:14px;color:var(--muted)}
+
+  /* Testimonios */
+  .quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media(max-width:720px){.quotes{grid-template-columns:1fr}}
+  .quote{background:var(--paper);border:1px solid var(--line);padding:26px;border-radius:var(--radius)}
+  .quote p{font-size:17px;margin-bottom:18px;letter-spacing:-.01em}
+  .quote .who{display:flex;align-items:center;gap:12px;font-size:13px}
+  .avatar{width:38px;height:38px;border-radius:50%;background:#d6d4cd;display:grid;place-items:center;font-weight:700;font-size:13px;color:#555}
+  .who small{display:block;color:var(--muted)}
+  .footnote{font-size:12px;color:var(--muted);margin-top:18px}
+
+  /* Sobre nosotros */
+  .about p{font-size:17px;margin-bottom:16px;color:#333;max-width:620px}
+  .about blockquote{border-left:3px solid var(--accent);padding:6px 0 6px 20px;font-size:20px;font-weight:600;letter-spacing:-.01em;margin:26px 0}
+  .compare{background:var(--paper);border:1px solid var(--line);font-size:14px;width:100%;border-collapse:collapse}
+  .compare th,.compare td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line)}
+  .compare th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .compare td:last-child{color:var(--accent);font-weight:600}
+
+  /* FAQ */
+  details{border-bottom:1px solid var(--line);padding:20px 0}
+  summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:20px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-weight:400;font-size:22px;line-height:1;color:var(--accent)}
+  details[open] summary::after{content:"−"}
+  details p{margin-top:12px;color:#444;max-width:720px}
+
+  /* Formulario */
+  form{background:var(--paper);border:1px solid var(--line);padding:32px;border-radius:var(--radius);display:grid;gap:18px}
+  @media(max-width:520px){form{padding:22px 18px}}
+  label{font-size:13px;font-weight:600;display:block;margin-bottom:6px}
+  input[type=text],input[type=email],select,textarea{width:100%;font:15px Inter,sans-serif;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius);background:#fafaf8;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--ink);outline-offset:-1px;background:#fff}
+  textarea{min-height:110px;resize:vertical}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:600px){.row{grid-template-columns:1fr}}
+  .check{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#444;font-weight:400}
+  .check input{margin-top:3px;accent-color:var(--accent)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .side-info p{color:#444;margin-bottom:16px}
+  .side-info .small{font-size:13px;color:var(--muted)}
+
+  /* Footer */
+  footer{background:var(--ink);color:#9a9a9a;padding:56px 0 30px;font-size:13px}
+  footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-bottom:40px}
+  @media(max-width:720px){footer .cols{grid-template-columns:1fr}}
+  footer h5{color:#fff;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+  footer ul{list-style:none;display:grid;gap:8px}
+  footer .legal{border-top:1px solid #2b2b2b;padding-top:22px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  .data-notice{border:1px solid #2b2b2b;border-left:3px solid var(--accent);padding:14px 18px;margin-bottom:24px;font-size:12.5px;line-height:1.6;color:#a8a8a8}
+  .data-notice b{color:#fff}
+  .foot-link{color:#fff;text-decoration:underline;text-underline-offset:3px}
+  .foot-link:hover{color:var(--accent)}
+  .data-notice .foot-link{display:inline-block;margin-left:4px}
+  .hatch{width:26px;height:18px;border:1px solid #444;background:repeating-linear-gradient(0deg,#1d1d1d 0 2px,#2a2a2a 2px 4px);cursor:pointer;display:inline-block;vertical-align:middle;transition:border-color .2s}
+  .hatch:hover{border-color:#777}
+  .hatch.shake{animation:shake .25s}
+  @keyframes shake{25%{transform:translateX(-2px)}75%{transform:translateX(2px)}}
+
+  /* ---------- Sobre ---------- */
+  .envelope{position:fixed;right:20px;bottom:-140px;z-index:40;width:120px;height:78px;background:#e9dfc9;border:1px solid #bba98a;cursor:pointer;box-shadow:0 14px 30px -12px rgba(0,0,0,.45);transition:bottom .8s cubic-bezier(.2,1.3,.4,1);display:grid;place-items:center}
+  .envelope::before{content:"";position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(to bottom right,transparent 49.5%,#bba98a 50%,transparent 51%),linear-gradient(to bottom left,transparent 49.5%,#bba98a 50%,transparent 51%)}
+  .envelope span{position:relative;margin-top:26px;font:600 10px "JetBrains Mono",monospace;letter-spacing:.14em;color:#6d5b3b}
+  .envelope.show{bottom:24px}
+  .envelope .seal{position:absolute;top:30px;left:50%;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:var(--accent)}
+
+  /* ---------- Modal ---------- */
+  .modal-bg{position:fixed;inset:0;background:rgba(10,10,10,.72);z-index:60;display:none;align-items:center;justify-content:center;padding:16px}
+  .modal-bg.open{display:flex}
+  .modal{background:#fbf8f1;max-width:520px;width:100%;padding:36px 32px;border-radius:2px;box-shadow:0 30px 70px rgba(0,0,0,.5);position:relative;font-family:"JetBrains Mono",monospace;animation:pop .35s ease;max-height:90vh;overflow-y:auto}
+  @keyframes pop{from{transform:translateY(20px) rotate(-1deg);opacity:0}}
+  .modal h3{font-family:Inter,sans-serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+  .modal p{font-size:14px;line-height:1.7;margin-bottom:14px;color:#222}
+  .modal .ps{font-size:12px;color:#777;border-top:1px dashed #ccc;padding-top:14px;margin-top:18px}
+  .modal .x{position:absolute;top:10px;right:14px;background:none;border:0;font-size:22px;cursor:pointer;color:#777}
+
+  /* ---------- Terminal ---------- */
+  .term-bg{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:80;display:none;align-items:center;justify-content:center;padding:16px}
+  .term-bg.open{display:flex}
+  .term{width:100%;max-width:760px;height:min(560px,86vh);background:var(--term-bg);border:1px solid #2a2a2a;border-radius:6px;display:flex;flex-direction:column;box-shadow:0 30px 80px rgba(0,0,0,.6);font:14px/1.6 "JetBrains Mono",monospace;color:var(--term-ink);overflow:hidden;animation:pop .3s ease}
+  .term-bar{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:#161616;border-bottom:1px solid #262626;font-size:12px;color:var(--term-dim)}
+  .term-bar button{background:none;border:0;color:var(--term-dim);font:inherit;cursor:pointer;font-size:16px}
+  .term-bar button:hover{color:#fff}
+  .term-body{flex:1;overflow-y:auto;padding:16px 18px;overflow-wrap:anywhere}
+  .term-body::-webkit-scrollbar{width:8px}
+  .term-body::-webkit-scrollbar-thumb{background:#333}
+  .ln{white-space:pre-wrap;min-height:1.6em}
+  .ln.cmd{color:#fff}
+  .ln.dim{color:var(--term-dim)}
+  .ln.ok{color:var(--term-green)}
+  .ln.err{color:#ff6b6b}
+  .ln.hi{color:#fff;font-weight:600}
+  .ln .red{color:#ff5a5a}
+  .ln .dim{color:var(--term-dim)}
+  .ln .prompt{color:var(--accent)}
+  .frag{display:inline-block;border:1px solid var(--term-green);color:var(--term-green);padding:0 7px;margin:0 2px;font-weight:600}
+  .term-input{display:flex;align-items:center;gap:8px;padding:10px 18px 14px;border-top:1px solid #1f1f1f}
+  .term-input span{color:var(--accent);white-space:nowrap}
+  .term-input input{flex:1;background:transparent;border:0;outline:0;color:#fff;font:inherit;caret-color:var(--accent);min-width:0}
+  .term-input input:disabled{opacity:.4}
+  @media(max-width:520px){.term{font-size:12.5px}}
+
+  /* ---------- Telón ---------- */
+  .stage{position:fixed;inset:0;z-index:100;display:none;background:#0a0a0a;overflow:hidden}
+  .stage.open{display:block}
+  .curtain{position:absolute;top:0;bottom:0;width:50.5%;background:repeating-linear-gradient(90deg,#6e0a10 0 22px,#8f1017 22px 36px,#5a070c 36px 48px);box-shadow:inset 0 -60px 80px rgba(0,0,0,.5);transition:transform 2.4s cubic-bezier(.6,0,.2,1);z-index:3}
+  .curtain.l{left:0}
+  .curtain.r{right:0}
+  .stage.lift .curtain.l{transform:translateX(-100%)}
+  .stage.lift .curtain.r{transform:translateX(100%)}
+  .stage-content{position:absolute;inset:0;display:flex;align-items:safe center;justify-content:center;padding:32px 16px;background:radial-gradient(ellipse at 50% 30%,#2a2418 0%,#0a0a0a 65%);overflow-y:auto}
+  .ticket{max-width:580px;width:100%;color:#eee;text-align:center;margin:auto}
+  .ticket .pre{font:600 12px "JetBrains Mono",monospace;letter-spacing:.3em;color:#caa968;margin-bottom:14px}
+  .ticket h2{font-size:clamp(34px,7vw,64px);color:#fff;max-width:none;margin-bottom:10px;letter-spacing:-.02em}
+  .ticket h3{font-size:22px;color:#fff;margin:6px 0 14px}
+  .ticket .by{color:#aaa;font-size:15px;margin-bottom:28px;line-height:1.6}
+  .ticket dl{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;text-align:left;border:1px solid #3a3325;padding:22px 24px;margin-bottom:22px;font-size:15px}
+  .ticket dt{color:#caa968;font:600 12px "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
+  .ticket .secret{background:#caa968;color:#111;padding:18px;font-family:"JetBrains Mono",monospace;font-size:14px;margin-bottom:24px;line-height:1.7}
+  .ticket .secret b{font-size:16px}
+  .ticket .secret.late{background:#2a2a2a;color:#ddd}
+  .ticket .btn{background:#fff;color:#111}
+  .ticket .btn:hover{background:#caa968}
+  .stage.ghost .curtain{background:repeating-linear-gradient(90deg,#2b2b2b 0 22px,#3a3a3a 22px 36px,#1f1f1f 36px 48px)}
+  .stage.ghost .stage-content{background:radial-gradient(ellipse at 50% 30%,#1d1d22 0%,#060606 65%)}
+  .stage.ghost .pre{color:#8a8a95}
+  .ticket .ghost-btn{background:var(--accent);color:#fff}
+  .ticket .ghost-btn:hover{background:#d01b25;color:#fff}
+  body.alarm{animation:alarm .4s 4}
+  @keyframes alarm{50%{box-shadow:inset 0 0 0 9999px rgba(176,20,28,.25)}}
+  .ln .hi{color:#fff;font-weight:600}
+  .stage.help .curtain{background:repeating-linear-gradient(90deg,#4a3b12 0 22px,#5e4a17 22px 36px,#3a2e0c 36px 48px)}
+  .flicker{animation:flicker 3.2s infinite}
+  @keyframes flicker{0%,18%,22%,62%,64%,100%{opacity:1}20%,63%{opacity:.15}}
+
+  /* ---------- Toast ---------- */
+  .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,160px);background:var(--ink);color:#fff;padding:12px 18px;font:13px "JetBrains Mono",monospace;border-left:3px solid var(--accent);z-index:120;transition:transform .35s ease;max-width:calc(100% - 32px)}
+  .toast.show{transform:translate(-50%,0)}
+
+  .bosco-banner{display:none;background:var(--accent);color:#fff;text-align:center;font-size:13px;padding:8px 16px}
+
+  /* ---------- Avisos en forma de sobre ---------- */
+  .modal.sobre{background:#efe4cb;border:1px solid #c9b48a;box-shadow:0 30px 70px rgba(0,0,0,.6),inset 0 0 0 6px #e7d9b8}
+  .modal.sobre::before{content:"";display:block;width:28px;height:28px;border-radius:50%;background:var(--accent);margin:0 auto 16px;box-shadow:0 0 0 4px rgba(176,20,28,.2)}
+  .modal.sobre h3{text-align:center}
+
+  /* ---------- Modo terror (expediente warren) ---------- */
+  body.horror{--bg:#0b0606;--paper:#150c0c;--ink:#dcd0d0;--muted:#8d6c6c;--line:#3b1b1b;--accent:#d1121c}
+  body.horror::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:55;background:radial-gradient(ellipse at center,transparent 35%,rgba(0,0,0,.88) 100%);animation:horrorPulse 4s infinite}
+  @keyframes horrorPulse{50%{opacity:.65}}
+  body.horror .topbar,body.horror footer{background:#000}
+  body.horror p,body.horror li,body.horror td,body.horror .lead,body.horror .side-info p,body.horror details p{color:#bba9a9}
+  body.horror input,body.horror select,body.horror textarea{background:#1c1111;color:#e6dada;border-color:#3b1b1b}
+  body.horror h1,body.horror h2{text-shadow:0 0 10px rgba(209,18,28,.55);animation:horrorGlitch 5s infinite}
+  @keyframes horrorGlitch{0%,95%,100%{transform:none}96%{transform:translate(3px,-2px) skewX(3deg)}97%{transform:translate(-3px,2px)}98%{transform:translate(1px,0) skewX(-2deg)}}
+  body.horror .btn{background:#3a0d10;color:#f3e3e3}
+  body.horror .btn.ghost{background:transparent;color:var(--ink);border-color:#6b2a2a}
+  body.horror .btn:hover{background:var(--accent);color:#fff}
+  body.horror .term{border-color:#5a0b0f;box-shadow:0 0 70px rgba(209,18,28,.35)}
+  body.horror .logo-mark::after{animation:blink .9s infinite}
+  /* Los Warren */
+  body.frio::before{content:"";position:fixed;inset:0;z-index:126;pointer-events:none;background:radial-gradient(ellipse at center,transparent 40%,rgba(200,230,255,.6) 100%);box-shadow:inset 0 0 120px rgba(220,240,255,.8);animation:escarcha 6s ease forwards}
+  @keyframes escarcha{0%{opacity:0}15%,80%{opacity:1}100%{opacity:0}}
+  body.frio main,body.frio header,body.frio .topbar,body.frio .term{filter:saturate(.35) hue-rotate(185deg);transition:filter 1.2s}
+  body.doble :is(h1,h2,h3,h4,p,li,summary,.btn,dt,dd,.ln){animation:doble .16s infinite alternate}
+  @keyframes doble{from{text-shadow:7px 2px 0 rgba(209,18,28,.45),-7px -2px 0 rgba(0,140,255,.4)}to{text-shadow:-6px 1px 0 rgba(209,18,28,.45),6px -1px 0 rgba(0,140,255,.4)}}
+  body.vision .term{border-color:#6b2fa0;box-shadow:0 0 90px rgba(150,80,255,.5);transition:box-shadow .6s,border-color .6s}
+  .ouija{position:fixed;inset:0;z-index:135;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:16px;background:radial-gradient(ellipse at center,rgba(45,25,12,.94),rgba(0,0,0,.98));pointer-events:none;animation:ouijaIn .6s ease}
+  .ouija .tablero{font:600 14px "JetBrains Mono",monospace;letter-spacing:.5em;color:#a88a5a;text-align:center}
+  .ouija .letras{min-height:1.2em;font:700 clamp(40px,9vw,96px) Georgia,"Times New Roman",serif;letter-spacing:.16em;color:#ecdcb4;text-shadow:0 0 20px rgba(255,200,120,.5);text-align:center}
+  .ouija .letras span{display:inline-block;animation:letraOuija .5s ease}
+  @keyframes letraOuija{from{opacity:0;transform:scale(1.8);filter:blur(6px)}}
+  @keyframes ouijaIn{from{opacity:0}}
+  .ouija.fuera{animation:ouijaOut .9s ease forwards}
+  @keyframes ouijaOut{to{opacity:0}}
+  .jumpscare{position:fixed;inset:0;z-index:300;background:#000;display:none;align-items:center;justify-content:center;overflow:hidden}
+  .jumpscare.on{display:flex;animation:jsFlash .1s 8 alternate}
+  .jumpscare svg{width:min(95vw,95vh);height:auto;animation:jsZoom .7s cubic-bezier(.2,2.2,.4,1) forwards,jsShake .07s infinite}
+  @keyframes jsZoom{from{transform:scale(.15)}to{transform:scale(1.2)}}
+  @keyframes jsShake{50%{translate:8px -6px}}
+  @keyframes jsFlash{to{background:#4a0000}}
+
+  /* ---------- Café derramado ---------- */
+  .coffee{position:fixed;inset:0;pointer-events:none;z-index:85;overflow:hidden}
+  .stain{position:absolute;animation:spill .5s ease-out both}
+  .stain.blob{border-radius:43% 57% 61% 39% / 47% 38% 62% 53%;background:radial-gradient(circle at 45% 40%,rgba(92,52,20,.55),rgba(110,64,26,.45) 55%,rgba(70,38,12,.65) 100%);filter:blur(.4px)}
+  .stain.ring{border-radius:50%;border:7px solid rgba(96,55,22,.45);box-shadow:inset 0 0 12px rgba(96,55,22,.35)}
+  .stain.drip{border-radius:0 0 50% 50%;background:linear-gradient(rgba(92,52,20,.6),rgba(92,52,20,.35));animation:drip 2.5s ease-in both}
+  @keyframes spill{from{transform:scale(0)}}
+  @keyframes drip{from{height:0}}
+  .cup{position:fixed;top:-80px;left:50%;font-size:70px;z-index:90;animation:cupFall .8s cubic-bezier(.5,0,1,.6) forwards;pointer-events:none}
+  @keyframes cupFall{to{top:55vh;transform:rotate(200deg)}}
+
+  /* ---------- Advertencias de herramientas de desarrollador ---------- */
+  .dev-warn{position:fixed;left:0;right:0;z-index:250;background:repeating-linear-gradient(45deg,#b0141c 0 22px,#7d0e14 22px 44px);color:#fff;font:700 13px "JetBrains Mono",monospace;text-align:center;padding:12px 16px;letter-spacing:.08em;box-shadow:0 10px 30px rgba(0,0,0,.4);animation:devIn .25s ease;pointer-events:none}
+  @keyframes devIn{from{transform:scaleY(0)}}
+
+  /* ---------- Efectos graciosos ---------- */
+  .fx-piece{position:fixed;top:-30px;z-index:110;pointer-events:none;animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(112vh) rotate(540deg)}}
+  .fx-up{position:fixed;bottom:-40px;z-index:120;pointer-events:none;font-size:34px;animation:floatUp 5s ease-in forwards}
+  @keyframes floatUp{to{transform:translateY(-115vh) translateX(40px)}}
+  .hadouken{position:fixed;top:42%;left:-260px;z-index:115;display:flex;align-items:center;gap:14px;pointer-events:none;animation:hado 1.5s linear forwards}
+  .hadouken .ball{width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,#fff 0 18%,#9be7ff 30%,#2aa9ff 55%,rgba(42,169,255,0) 72%);box-shadow:0 0 60px #2aa9ff}
+  .hadouken b{font:800 46px Inter,sans-serif;color:#fff;-webkit-text-stroke:2px #1572c9;text-shadow:0 0 18px #2aa9ff;font-style:italic}
+  @keyframes hado{to{left:115vw}}
+  body.roll{animation:roll 1.3s ease-in-out}
+  @keyframes roll{to{transform:rotate(360deg)}}
+  body.quake{animation:quake .07s 10}
+  @keyframes quake{25%{transform:translate(-6px,3px)}75%{transform:translate(6px,-3px)}}
+  .matrix{position:fixed;inset:0;z-index:105;pointer-events:none;opacity:.9}
+  .slowmo{position:fixed;top:84px;left:50%;transform:translateX(-50%);z-index:130;background:var(--accent);color:#fff;font:700 15px "JetBrains Mono",monospace;letter-spacing:.14em;padding:10px 18px;box-shadow:0 10px 30px rgba(0,0,0,.45);animation:blink 1.6s infinite;pointer-events:none;white-space:nowrap}
+  .caracol{position:fixed;bottom:14px;left:-70px;z-index:130;font-size:46px;pointer-events:none;animation:arrastrar 17s linear forwards}
+  .caracol{transform:scaleX(-1)}
+  @keyframes arrastrar{to{left:105vw}}
+  /* Valores: la inicial se ilumina al "escucharlos" en el sistema */
+  .value h4 .ini{display:inline-block;color:var(--accent);text-shadow:0 0 16px rgba(176,20,28,.55);animation:iniPop .7s ease}
+  @keyframes iniPop{from{transform:scale(2.4)}}
+  /* "5": el juego de las sillas */
+  .sillas{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:130;display:flex;align-items:flex-end;gap:12px;font-size:40px;padding:10px 22px;background:rgba(20,20,20,.8);border-radius:40px;pointer-events:none}
+  .sillas .persona{animation:corretear .9s ease-in-out infinite alternate}
+  @keyframes corretear{from{transform:translateX(0)}to{transform:translateX(-250px)}}
+  .sillas.parado .persona{animation:none;filter:grayscale(1)}
+  .sillas.parado::after{content:"DE PIE";align-self:center;font:700 12px "JetBrains Mono",monospace;letter-spacing:.14em;color:#ff6b6b}
+  /* Panel de color de acento (4 clics en el número de sillas) */
+  .paleta{position:fixed;right:20px;bottom:20px;z-index:140;width:310px;max-width:calc(100% - 32px);background:var(--paper);color:var(--ink);border:1px solid var(--line);border-top:4px solid var(--accent);padding:18px 18px 16px;box-shadow:0 24px 60px -20px rgba(0,0,0,.45);transform:translateY(20px);opacity:0;pointer-events:none;transition:transform .25s ease,opacity .25s ease}
+  .paleta.open{transform:none;opacity:1;pointer-events:auto}
+  @media(max-width:520px){.paleta{right:16px;bottom:16px}}
+  .paleta .pt{font:700 11px "JetBrains Mono",monospace;letter-spacing:.16em;color:var(--accent);margin-bottom:8px;padding-right:20px}
+  .paleta p{font-size:13px;color:var(--muted);margin-bottom:14px}
+  .paleta .swatches{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+  .paleta .swatch{width:30px;height:30px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--line);cursor:pointer;transition:transform .15s}
+  .paleta .swatch:hover{transform:scale(1.15)}
+  .paleta .otro{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;margin-bottom:12px;cursor:pointer}
+  .paleta input[type=color]{width:36px;height:30px;border:1px solid var(--line);padding:0;background:none;cursor:pointer}
+  .paleta .reset{background:none;border:0;color:var(--muted);font:12px Inter,sans-serif;text-decoration:underline;cursor:pointer;padding:0}
+  .paleta .x{position:absolute;top:8px;right:10px;background:none;border:0;font-size:20px;color:var(--muted);cursor:pointer}
+  /* Patio: un balón cruza botando */
+  .balon{position:fixed;bottom:18px;left:-70px;z-index:130;font-size:48px;pointer-events:none;animation:rodar 4.2s linear forwards,botar .45s cubic-bezier(.5,0,.5,1) infinite alternate}
+  @keyframes rodar{to{left:105vw}}
+  @keyframes botar{from{transform:translateY(0) rotate(0)}to{transform:translateY(-170px) rotate(200deg)}}
+  /* Shoryuken */
+  .shoryu{position:fixed;left:50%;bottom:-90px;transform:translateX(-50%);z-index:115;font:800 54px Inter,sans-serif;font-style:italic;color:#ffcc33;-webkit-text-stroke:2px #b0141c;text-shadow:0 0 24px #ff7b00;pointer-events:none;white-space:nowrap;animation:shoryu 1.5s cubic-bezier(.2,1.4,.4,1) forwards}
+  @keyframes shoryu{45%{bottom:52vh}100%{bottom:62vh;opacity:0}}
+  body.uppercut main{animation:uppercut .7s ease-out}
+  @keyframes uppercut{30%{transform:translateY(-70px) rotate(-1.5deg)}100%{transform:none}}
+  /* Konami al revés: los textos se ponen patas arriba */
+  body.reves :is(h1,h2,h3,h4,p,li,summary,.btn,dt,dd,th,td,.logo,.stat,.avatar){transform:rotate(180deg);transition:transform .8s ease}
+  body.reves-salida :is(h1,h2,h3,h4,p,li,summary,.btn,dt,dd,th,td,.logo,.stat,.avatar){transition:transform .8s ease}
+  .luces{position:fixed;inset:0;z-index:125;background:#000;pointer-events:none;opacity:0;animation:fluor 1.6s steps(1) forwards}
+  @keyframes fluor{0%{opacity:0}8%{opacity:.88}13%{opacity:0}27%{opacity:.92}31%{opacity:.15}38%{opacity:.85}52%{opacity:0}57%{opacity:.7}60%{opacity:0}100%{opacity:0}}
+  body.slow .term{filter:sepia(.45) saturate(.7);transition:filter 1.5s}
+  body.slow .term-body{background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 2px,transparent 2px 4px)}
+
+  /* ---------- Lema salesiano ---------- */
+  .stage.luz .curtain{background:repeating-linear-gradient(90deg,#e9dcc0 0 22px,#f5ecd9 22px 36px,#d9c9a4 36px 48px)}
+  .stage.luz .stage-content{background:radial-gradient(ellipse at 50% 30%,#fffaf0 0%,#f1e6cc 55%,#d8c391 100%)}
+  .stage.luz .ticket{color:#3a2c10}
+  .stage.luz .ticket h2{color:#2a1d05}
+  .stage.luz .ticket .pre{color:#8a6a1f}
+  .stage.luz .ticket .by{color:#5a4a2a}
+  .stage.luz .ticket .secret{background:#fff;color:#3a2c10;border:1px solid #d8c391}
+  .stage.luz .ticket .btn{background:#3a2c10;color:#fff}
+</style>
+</head>
+<body>
+
+<div class="bosco-banner" id="boscoBanner">31 de enero · Hoy el departamento de selección cierra antes. Motivos de fuerza mayor (y de patio).</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <div><span class="rec"></span>Proceso de selección <b>ABIERTO</b> · Sesión en curso: <b id="clock">00:00:00</b></div>
+    <div>Madrid · Barcelona · <b>Granada (Zaidín)</b></div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" id="logo"><span class="logo-mark"></span>DEKIA</a>
+    <ul>
+      <li><a href="#oferta">La oferta</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#valores">Valores</a></li>
+      <li><a href="#faq">Preguntas</a></li>
+    </ul>
+    <a class="btn" href="#candidatura">Enviar CV</a>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Dekia Corporation · Recursos Humanos</p>
+      <h1>Buscamos a alguien excepcional.<br><em>Solo uno de ustedes</em> lo es.</h1>
+      <p class="lead">Dekia es una multinacional líder en su sector. No le diremos cuál. Lo que sí le diremos es que nuestro proceso de selección es único, riguroso y, según algunos antiguos candidatos, "inolvidable".</p>
+      <div class="hero-actions">
+        <a class="btn" href="#candidatura">Presentar candidatura</a>
+        <a class="btn ghost" href="#proceso">Conocer el proceso</a>
+      </div>
+    </div>
+    <aside class="job-card">
+      <div class="ref">OFERTA · REF-2RPAE</div>
+      <h3>Director/a Comercial</h3>
+      <dl>
+        <dt>Ubicación</dt><dd>Sala de reuniones, planta 19</dd>
+        <dt>Jornada</dt><dd>Hasta que decidamos</dd>
+        <dt>Salario</dt><dd>Muy competitivo. Como usted.</dd>
+        <dt>Plazas</dt><dd>1</dd>
+      </dl>
+      <div class="stat">
+        <span class="num" id="candCount">4</span>
+        <span class="lbl">sillas ocupadas en la sala ahora mismo.<br>Todos creen que van a ganar.</span>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<section id="oferta">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Lo que buscamos (y lo que no le contaremos)</h2>
+      <span class="sec-num">01 / LA OFERTA</span>
+    </div>
+    <div class="grid-2">
+      <div>
+        <h4 style="margin-bottom:8px">Requisitos</h4>
+        <ul class="list">
+          <li>Experiencia demostrable en liderazgo de equipos comerciales.</li>
+          <li>Capacidad para permanecer en una sala cerrada durante un tiempo indeterminado.</li>
+          <li>Tolerancia alta a la presión, a la incertidumbre y a los mensajes inesperados.</li>
+          <li>Habilidad para desconfiar de sus compañeros sin que se note.</li>
+          <li>Disponibilidad total. Total significa total.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin-bottom:8px">Ofrecemos</h4>
+        <ul class="list">
+          <li>Incorporación inmediata a una empresa que no necesita presentación.</li>
+          <li>Un entorno de trabajo donde nadie es exactamente quien dice ser.</li>
+          <li>Formación continua en autoconocimiento (lo quiera o no).</li>
+          <li>Café. El agua se la tendrá que ganar.</li>
+        </ul>
+        <p class="ghost-text">Si ha seleccionado este texto es porque no se fía de lo que ve a simple vista. Eso nos gusta. En nuestro sistema hay un apellido que abre puertas: el del hombre que da nombre a este método.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proceso">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>El proceso de selección, paso a paso</h2>
+      <span class="sec-num">02 / EL MÉTODO</span>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n">PASO 01</div>
+        <h4>Recepción</h4>
+        <p>Usted envía su currículum. Nosotros ya sabíamos que lo iba a enviar.</p>
+      </div>
+      <div class="step">
+        <div class="n">PASO 02</div>
+        <h4>La sala</h4>
+        <p>Cuatro sillas. Una mesa. Ningún entrevistador a la vista. Póngase cómodo.</p>
+      </div>
+      <div class="step">
+        <div class="n">PASO 03</div>
+        <h4>Las pruebas</h4>
+        <p>Las instrucciones no las da nadie. Aparecen por una trampilla en la pared, siempre en papel, siempre cerradas.</p>
+      </div>
+      <div class="step">
+        <div class="n">PASO 04</div>
+        <h4>La decisión</h4>
+        <p>Al final solo queda uno. No siempre es quien usted piensa. A veces ni siquiera es usted.</p>
+      </div>
+    </div>
+    <p class="staff-note">// acceso de personal: la llave llega por la trampilla. no hace falta ningún campo de texto para usarla.</p>
+  </div>
+</section>
+
+<section id="valores">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Nuestros valores. Hablan desde el principio.</h2>
+      <span class="sec-num">03 / VALORES</span>
+    </div>
+    <div class="values">
+      <div class="value"><h4>Transparencia</h4><p>Le diremos exactamente lo que necesita saber. Ni una palabra más.</p></div>
+      <div class="value"><h4>Objetividad</h4><p>Nuestras decisiones son frías, medibles y completamente irrevocables.</p></div>
+      <div class="value"><h4>Profesionalidad</h4><p>Algunos de nuestros profesionales se sientan a su lado sin que usted lo sepa.</p></div>
+      <div class="value"><h4>Oportunidad</h4><p>Todos tienen una. No todos saben verla a tiempo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" class="about">
+  <div class="wrap grid-2">
+    <div>
+      <div class="sec-head" style="margin-bottom:24px">
+        <h2>Nuestra filosofía de formación</h2>
+        <span class="sec-num">04 / Don Bosco</span>
+      </div>
+      <p>En 1859, un educador de Turín decidió que la mejor manera de sacar lo mejor de un joven era confiar en él, acompañarle y quererle. Fundó una familia que hoy está en todo el mundo, también en un barrio de Granada.</p>
+      <p>En Dekia admiramos profundamente a ese señor.</p>
+      <blockquote>Y luego hacemos exactamente lo contrario.</blockquote>
+    </div>
+    <div>
+      <table class="compare">
+        <tr><th>Sistema preventivo</th><th>Método Grönholm</th></tr>
+        <tr><td>Razón</td><td>Sospecha</td></tr>
+        <tr><td>Religión</td><td>Resultados</td></tr>
+        <tr><td>Amor</td><td>Presión</td></tr>
+        <tr><td>Patio</td><td>Sala cerrada</td></tr>
+        <tr><td>Buenos días</td><td>Instrucciones cerradas</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Preguntas frecuentes</h2>
+      <span class="sec-num">05 / FAQ</span>
+    </div>
+    <details>
+      <summary>¿Hay código de vestimenta?</summary>
+      <p>Traje formal. Aunque durante las pruebas es posible que le pidamos ponerse algo en la cabeza: un bombín, una chistera, una boina... Le recomendamos no tener ningún problema con eso.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto dura el proceso?</summary>
+      <p>Exactamente lo que tarde en caer el telón.</p>
+    </details>
+    <details>
+      <summary>¿Dónde se realizan las entrevistas?</summary>
+      <p>En nuestra sede temporal de Granada. En recepción le dirán que la dirección no existe. El sistema, en cambio, le hablará si sabe por qué barrio preguntar.</p>
+    </details>
+    <details>
+      <summary>¿Qué significa la referencia de la oferta?</summary>
+      <p>Toda oferta lleva la firma de quien la diseñó. Esa firma también es un nombre.</p>
+    </details>
+    <details>
+      <summary>¿Es cierto que uno de los candidatos es un infiltrado?</summary>
+      <p>Dekia no confirma ni desmiente la presencia de personal propio entre los candidatos. Nuestros valores, en cambio, lo dicen desde el principio.</p>
+    </details>
+    <details>
+      <summary>¿Quién es Grönholm?</summary>
+      <p>Preferimos no hablar de ello en público.</p>
+    </details>
+    <details>
+      <summary>¿Puedo traer a mi madre?</summary>
+      <p>No. Aunque en otra casa que conocemos, la madre de su fundador sería bienvenida siempre: allí todos la llaman mamá Margarita.</p>
+    </details>
+  </div>
+</section>
+
+<section id="candidatura">
+  <div class="wrap grid-2">
+    <div class="side-info">
+      <div class="sec-head" style="margin-bottom:24px">
+        <h2>Presente su candidatura</h2>
+      </div>
+      <p>Rellene el formulario. Sea sincero. O no: también lo evaluaremos.</p>
+      <p>Solo los primeros en superar el método completo serán seleccionados. El resto llegará tarde.</p>
+      <p class="small">Rellenarlo es opcional y forma parte del juego. No usaremos sus datos para nada, salvo para reservar butaca en primera fila a los 10 primeros en descubrirlo todo. <a href="privacidad.html" target="_blank" rel="noopener">Aviso de datos</a>.</p>
+    </div>
+    <form id="cvForm" autocomplete="off" novalidate>
+      <div class="row">
+        <div><label for="fNombre">Nombre completo</label><input type="text" id="fNombre" maxlength="60" required placeholder="Fernando Porta"></div>
+        <div><label for="fEmail">Correo electrónico</label><input type="email" id="fEmail" maxlength="100" required placeholder="nombre@correo.com"></div>
+      </div>
+      <div>
+        <label for="fPuesto">Puesto al que opta</label>
+        <select id="fPuesto">
+          <option>Director/a Comercial</option>
+          <option>Director/a Comercial (y nada más)</option>
+          <option>Miembro del departamento de selección (infiltrado)</option>
+        </select>
+      </div>
+      <div>
+        <label for="fMotivo">¿Por qué deberíamos elegirle a usted y no a los otros tres?</label>
+        <textarea id="fMotivo" maxlength="500" placeholder="Sea breve. Los demás le están mirando."></textarea>
+      </div>
+      <div class="hp" aria-hidden="true"><label for="fWeb">No rellenar</label><input type="text" id="fWeb" tabindex="-1" autocomplete="off"></div>
+      <label class="check"><input type="checkbox" id="fAcepto"> Acepto que cualquier cosa que diga podrá ser utilizada en mi contra durante el proceso.</label>
+      <button class="btn" type="submit" id="fEnviar">Enviar candidatura</button>
+    </form>
+  </div>
+</section>
+
+<section id="candidatos">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Lo que dicen quienes pasaron por aquí</h2>
+      <span class="sec-num">TESTIMONIOS</span>
+    </div>
+    <div class="quotes">
+      <div class="quote">
+        <p>"Desde que crucé la puerta supe que el puesto era mío. Los demás solo estaban de decorado."</p>
+        <div class="who"><span class="avatar">FP</span><div>Fernando Porta<small>Candidato · Ventas</small></div></div>
+      </div>
+      <div class="quote">
+        <p>"Te hacen preguntas personales. Muy personales. Hay cosas que una no cuenta ni a su familia."</p>
+        <div class="who"><span class="avatar">CB</span><div>Carla Bueno<small>Candidata · Gestión de equipos</small></div></div>
+      </div>
+      <div class="quote">
+        <p>"Estaba tan nervioso que no parecía yo mismo. Bueno... digamos que no del todo."</p>
+        <div class="who"><span class="avatar">EF</span><div>Enrique Font<small>Candidato · Marketing</small></div></div>
+      </div>
+      <div class="quote">
+        <p>"Para estar en esa sala dejé fuera algo muy importante. Todavía me pregunto si mereció la pena."</p>
+        <div class="who"><span class="avatar">MD</span><div>Mercedes Degás<small>Candidata · Dirección</small></div></div>
+      </div>
+    </div>
+    <p class="footnote">* Uno de estos testimonios no pertenece a un candidato. El personal autorizado puede consultar el expediente individual de cada uno en el sistema interno.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="#top" style="color:#fff;margin-bottom:14px"><span class="logo-mark" style="border-color:#fff"></span>DEKIA</a>
+        <p style="max-width:380px">Seleccionamos personas. A veces, también las descartamos. Cuatro sillas, una sola plaza.</p>
+      </div>
+      <div>
+        <h5>Empresa</h5>
+        <ul><li>Sobre Dekia</li><li>Trabaja con nosotros</li><li>Departamento de selección</li><li><a href="privacidad.html" target="_blank" rel="noopener" class="foot-link">Aviso de datos</a></li></ul>
+      </div>
+      <div>
+        <h5>Oficinas</h5>
+        <ul><li>Madrid</li><li>Barcelona</li><li>Granada</li></ul>
+      </div>
+    </div>
+    <div class="data-notice">
+      <b>Aviso de responsabilidad de datos.</b> Esta web es parte de una obra de teatro escolar. Pedir el nombre y el correo solo sirve para que la experiencia parezca real: no los usaremos para nada, salvo para reservar butaca en primera fila a los 10 primeros que descubran todo.
+      <a href="privacidad.html" target="_blank" rel="noopener" class="foot-link">Leer el aviso completo →</a>
+    </div>
+    <div class="legal">
+      <span>© Dekia Corporation. Dekia no existe. El método, sí.<br>
+      Basada en <i>El método Grönholm</i>, de Jordi Galceran · Una producción de 2º RPAE · Salesianos Granada (Zaidín)</span>
+      <span title="Trampilla de servicio">Servicio interno <span class="hatch" id="hatch"></span></span>
+    </div>
+  </div>
+</footer>
+
+<div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Ha recibido un sobre"><span class="seal"></span><span>DEKIA</span></div>
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="x" id="modalX" aria-label="Cerrar">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<div class="term-bg" id="termBg">
+  <div class="term" role="dialog" aria-label="Sistema interno Dekia">
+    <div class="term-bar"><span>DEKIA · SISTEMA INTERNO DE SELECCIÓN · v2.RPAE</span><button id="termX" aria-label="Cerrar">×</button></div>
+    <div class="term-body" id="termBody" aria-live="polite"></div>
+    <div class="term-input"><span id="termPrompt">dekia@seleccion:~$</span><input id="termIn" maxlength="120" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="Comando"></div>
+  </div>
+</div>
+
+<div class="stage" id="stage">
+  <div class="curtain l"></div><div class="curtain r"></div>
+  <div class="stage-content"><div class="ticket" id="ticket"></div></div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<div class="jumpscare" id="jumpscare" aria-hidden="true">
+  <svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="jsSkin" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#e9e2d6"/><stop offset=".7" stop-color="#9c9184"/><stop offset="1" stop-color="#2b2420"/></radialGradient>
+      <radialGradient id="jsEye" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff2a2a"/><stop offset=".25" stop-color="#5a0000"/><stop offset="1" stop-color="#000"/></radialGradient>
+    </defs>
+    <path d="M200 20 C320 20 370 120 360 230 C352 330 300 450 200 465 C100 450 48 330 40 230 C30 120 80 20 200 20Z" fill="url(#jsSkin)"/>
+    <path d="M60 150 Q120 110 175 160" stroke="#1a1410" stroke-width="10" fill="none"/>
+    <path d="M340 150 Q280 110 225 160" stroke="#1a1410" stroke-width="10" fill="none"/>
+    <ellipse cx="135" cy="205" rx="48" ry="60" fill="url(#jsEye)"/>
+    <ellipse cx="265" cy="205" rx="48" ry="60" fill="url(#jsEye)"/>
+    <path d="M190 250 L200 300 L210 250" fill="#2b2420"/>
+    <path d="M95 335 Q200 300 305 335 Q290 445 200 455 Q110 445 95 335Z" fill="#0a0000"/>
+    <path d="M110 340 L125 375 L140 335 L158 380 L175 330 L192 382 L210 330 L228 380 L245 332 L262 376 L280 336 L292 368" stroke="#e9e2d6" stroke-width="7" fill="none" stroke-linejoin="bevel"/>
+    <path d="M120 420 L140 395 L160 428 L180 398 L200 432 L220 398 L240 428 L260 396 L280 420" stroke="#e9e2d6" stroke-width="6" fill="none"/>
+    <path d="M135 265 L128 330 M265 265 L272 330" stroke="#5a0000" stroke-width="5"/>
+  </svg>
+</div>
+
+<script>
+(() => {
+"use strict";
+
+/* =========================================================
+   CONFIGURACIÓN PÚBLICA (esto lo puede ver cualquiera)
+   Fecha, hora, premio y frase secreta van en el servidor (Code.gs).
+   ========================================================= */
+const CONFIG = {
+  // URL de la aplicación web de Google Apps Script (termina en /exec)
+  API_URL: "https://script.google.com/macros/s/AKfycbygHuL6FdxtD6o3UOrY4T5kKHuW64V5r6IbBpqdbl30f6LGac8BdPGSPgshjwjmrjFj_A/exec",
+  lugar: "Salón de actos · Salesianos Granada (Zaidín)",
+  direccion: "C. Almuñécar, 9, Zaidín, 18006 Granada",
+  equipo: [
+    "Dirección: Miguel Ángel Durán Ramírez",
+    "Guion y adaptación: Patricia Moreno Gámiz e Ignacio Cruz Vargas",
+    "Fernando Porta: Dan Gaona",
+    "Carla Bueno: Nerea Ibáñez Calderón",
+    "Enrique Font: Adam El Hadri Rahali",
+    "Mercedes Degás: Elvira Jiménez Sayago",
+    "Escenografía, luces y sonido: 2RPAE",
+    "Web y sobres misteriosos: Dan Gaona"
+  ]
+};
+
+/* Expedientes cifrados (AES-GCM + PBKDF2). Se generan con privado/generador.html */
+const SECRETS = {"eb14083d1507e71641ed08c777a02623":{"i":"gJRqPLknawl5nSO7","c":"P89idwlREA+ZXzWBWJj3Q9JTmV7a6C0fFddDa2LpV7OBQNwZCF9iIKH/U1pYKg3xVAVUYFkid6CbsJvF64k9LNgbgvbzKxyo7W9X/C+rz9agMni6RPQ6zFWHmcd7J5ZiwlonxRb4LiUUWYaVqr9PRYikMBw9WT8sKrri6auzFRbb3tj7LF5ngqz004zvJ0yGgFxa+MtckoZJoFzok8xnKvk9QqdwBwGWy/nZx07xELh6ZUh38Z/vxZRRTdEnm1a+F30kBSkbSBBjJaTbNwSuwsTuWI4hB6kKU2WqPPi3edGaUnB03svHPUrJJp+1Pi68Vp5iQ6jzSYyYLyofqlSHw0Nq+dSxms2pC/TgwCNKw++OVe4vATiy8lGjGhr7j4FMc5qWKvsmpd4SBCBF4XMhQ5bQjWC/l4Z684H+c/5R+blcnyy+Y/4TB24qUerbUFR6THb88+65IPeBldfxI+GlJbqBfKKdn46MdY2A6st7FA+LmvWPpguoUx+BJmVhI8ja6F4MupMo0ExF0LqHfwkf7iWAeUkbyixwZ+t5SHBVak9joMRMvaPT/tAFU3UNtuQABpLn/voMeI3XFdaGpiB0gwc0jrhzpBqfB7jkYSg7l1urKe/YHAj8upjDO+kK"},"9d98859b4976cbdf43a6a860ccefcc10":{"i":"azIorW5tuCnuFlU1","c":"qA2hed5iVPXzGy8mgg/xgE3AF2Ujynsk8h5opNzSUXqU5BxnhLihZnVWTSHo9ENfGhep/pct97/b6abZY38PJqwUsdIkuGWVG4gF7c57gbFSAk3qd/AAl/Xk3A3R6QC79PI+zFjRwp0uuncmPVn3l/t1RCOmQii5RQDWgz6jEs//57UhnDLdcFPazwv3NlG+nzceVBe51lPx4+8GT3uCB7BifmQbnkpNdqLR1o9E72ECjOvQA5O7/rthcxTP+jv3a8ei54YIMM4ekmCOQHUMdMEpz/dsMzHZ5njei637JpxS3XhmJCnxxCMwZl3qAu8R56vG3reKaOpZF7/hFCaJe4KTkOQFD3JTuB5L0k/Gw/hIsOlJQx4dZXznwTiGJEtjBnXV2GZox6d84HVVPsN8l7bVJvOF9Hhg6mFTlEYYvoapKtfyBX+2iTgQdehFlMQalEIMv5DaOQTnVhdABNeRHi4n+wpXLbB+w99JAWbLUpBrDLWoCAN0Ph3eGiQC02H108CAg6fSvKZ7RdAhAnlVuAOt9p9vNwfNtc5jiaRzXJEmEORrl1WxRd85SQbguj4jy9Jwn3SLqrhuZBuy78c3nj3yPba31rJb+d6OSL38nuZyAfempXU7DUeJYrQb"},"b873f43db1f5cf4caf61593f5e4c8161":{"i":"nM2yDHnSTAksBifO","c":"2e17wXub73fsw1MXnSzVDAtMpJAARFd6zG/vteEAQpZmsNo3gLLbOY0vC+/1bBNE09MnHbb8OhJMbH0uz0EUIww9jBd3CSCZ80AmM+K4KIikgf+jpVUpN1AoZtbaEHLufRcYifSeSgrT2hnV0lEbch3406TQgvtb9Xkxr/J1rqKzH0nXJ0wqAjp7ABTUDMhc7B98h/aOzlePmygxxTBJE9K0lQ8cfcUKRHpDtH/tkXnw9JYfz8Kwjey0Mn77v8gX8LidyhqhHlOx7G86cvTWULZVsew05F0JlM+0onc9uK3riaKqMZwB4v907KA87kECBy53aw9tsGEPpuBmnZylmgjc85eD2NO6pQ6r4c9ZVfYZEjTH9/vpnjOQNv5SwWp5IV55xnsN8VsUgmpn445DUYLGZEvCe2zppQIImX9lI9oNbtrr0Yeujv2AYmuMle7vq5n+hcSPTd/6grCzyNQMXBcaBiznRYhZjI4UJDBmrZgTCA2kLLPMuVAadqDzsYkb9tp3aCf8UmG5MozvjU36jZd+LiI5Oc2ojg5PuRnGjroGLb6iXs0WU1YxCb1iHukXGUkqSbhar6Qm/yWIIh6C4rOBlvQ21ebQuA4/V1fZn6eduG68N6JhmXIaEdM5v40V+iNA7KVjneT57AtkISeM+owS/xV0q34d0rUsGcKjNy1ZsM+wLo8QjVIdaiS6BOWJVVhzWbfU5+Oqu4flMdI="},"11d9a8d53019749dbbbabaf64a296d45":{"i":"o0ucQSaCrt+Hhkml","c":"E1/63jfIqXWjk/4OoKgtcMUULqNJu31xnolF4+E8zbquOz7wZmbXkKLQ+YE0aNlH0YN07ZfCkOSPwix9blirhTuugr/Ofdqlo7DL2QZKtSxaJsBOjErca7b6dxwQbF2bBCYWKzh8zPEpwkn/eZ3uHpfh6az6r1j1xF2NM5sEyFu7rqHYI9BRVvLI1fpUzYOUukFXjxo0ePZwwOJWK1d2xh9P9nnjVYKmcSyrzB5Es74AD+lMCGISBB04l/RqQiq9zFaBVVa2zh93YlX6Tr10mE/QZ8YF8WMDlk7SOPMdLv1d79C8I5CXzYuZiDKkTqmJTjhcNbTSKM3vRR42brZ/fbAuavr596zmsv327roOb+I2QRFF97HK6zE7vlash6RdnB2tVtH3ZL8zVdbh5MpTkD3EFKKkjUsKPj+Qe/4gJ7lTTH0tZoAT/ey43SCoWRBdFR+gzDYrSFV3tN2djRm59U7nBi4zpGMD1mQkggPv24pFhIgtXQVX8j9WoV9WpA6RwJa/nekR3F0xpwRT1y2Mato9+whedX0K22RZWjdSg3c2ZCPRi7JJ0s75uk/JabEbNUwdTdQfNzz45GClGTOjQD+Wmo1Y1gcM7MxJCT0N0WAwvTbzCCZnFvkJGGhQrEy0n/1fCWvGjjtmc5n73/eEYnw4Jf4cwFWRx38arEJsRUSxY21dMecL/WAIKN0MjQZLJceezesddJGqmgYUeag="},"194cd8275e946a5ab8642208e93f8426":{"i":"kZ90rLcZU/sdCoB1","c":"laZ86LVqrnOACPlgEHEQQBNS93Z+qoIek5ZCN+5DAs3kQbfTotwIVseJbfa77ELSmhpUMsp6C6mJpM7Z84Ak2R+Kyojeuuo5PkoS32oU4Kmbdaa8P2Dnw4W3I9kpnGS+sD1hkIHkzqvEQAonefDtsgySxs9THr2Y1GLfxeDBNRD7wWCNPSjuK8Ax1hJS3YXWc/8kTmHE4+kKMiC8hEWya/3yKgPqb0JQ01LS7s4fwREcpMXYsa18kkKcUIrg5TbykexotlOYV5b9zmQg4FsK7/ay8cU8DAsYbVdqJ+MErqpWlbug8g4Mu5iTwRrKz4G8JfWp9vHq3BB+jz10xsT/KluY/9STAWbJo8zurkTgRQpe9bnKpgDgyUp9QEpoyucceDreTj6OsF+NK4gr34Xvag4BceehDdqCI+RqF2bo29e/Zy5VXoGtfSf4LTH0KFyJh5kouMKiStmCW9GBY/4qt2eLDY7Engv6mprqdCAGOoyCajx3b7HQg7Z2kpHHELdpSMz9wRpgCZuFGgO/KDxtYJlpbGEc4mBJxg8wHdpzC2BEeWCNb6Ovos41ijQNRtYvH8o6n/edxI4rCKJyUD8JkkcL/FMwq5wDH95QpEYokBdlr/c5dl8IB7jLG9P7+1Pw/y/mRGdnh6S2XcDj8JVOKCmbWMmVwuQ/hJmuMANkLNoQ1iq/rmZ+nhRExe90D7uZME4JKjuOW1ooBawwrw4="},"b83523b214487d671b370434831a23d1":{"i":"FakIveN3LQ/JKREn","c":"ydMFeV7dz4leqqQXdan3YRk2qV4GlTACB9XgytQdHQE3mYaVgZu9M8vCc+dMmwm2UGmxYm0RYV5gm4Zn9ywrOFcvb0gPGIi+Fe22Di3X3uF7nMKXmHOHTz0EsZVTQGLQ3E+iWkNth1HS02JkWaHddjIAxcdhrVlAHMk/QXKB/hnAa4LoohPxYFTkkTUdyjCTZUw478y8B+wymPWG80aVB8hKU+1V7PMRXpfwWaaq4aj8Mih6iUxolmsYH16rgGPPNIzqE/V/8iZMmNroSAlyGnsvZdsuGpgQ3l2uzol8RXRyb7MGahJ2uRmrDZ0fkX6D0zTLttj04zirpluxGHU8fPzeKXSgnHhl5UYQATSimlKoby58MtXsuIcGWbod4Z89HWTp03KFexwCY0JVFK8WiIMesrIhVsD8ATzvSaVkbo6R1fsHVoTPAHg78mM0ATzlTin8WS3TgMmcU7DKCnPBlz8VTWU63U3ArS0uY4SRzCz74bvhwCHNjMDlEBBvmq3zi+1VyOQuXgQYc7IApEdhvIseAz0/S3/NRuF4dfRgpJRP31yyqzHEHZ3T14Ufaj+IX+qIDJzFjLPWaQnyKeeS9uRza8mHEaiP8wH0KrkXS+TRx80w7wnq7CXchPU8u7sSnA+QKkp/arCKyJfGiPk9xmbiRjMhz/wOWQut02EyVQ=="},"ea1d050aeeec3fffc4b0ed1193364294":{"i":"u9ErnOpcl8uOfXan","c":"S4ByMa3hGzOIUHGoNPnom3jHo57lKjLjZrbUhw/7z9kP+WPDNPEVMLKVznYgGWrTZeL/bw0rAB4fip8t2LvVZ7L31qMEq60hciXVsC6zcAyeDnCgUU3dLMpCTpIsQfG6IhFHjvY2g2vZUuI3bC6l0ii52xUgEDdjum5gyq7vgUvSQ3y7uh6DZzlk+IlsR5cGKr11x7ZgGFx3DIpGClqO4lGb75NPI9o/kgQAYgrMH8m5SUIEokIfTbT0abDoIoGeg+mKhPCoo6XmhYlsZLwRNxSHNGKPvLk9vdAj2Mlp3Y34tGZ0eCpJ05kcQfZmb0oWPTMWJcnHm4GMeGWxgMz1KvspIZc5CFX3lrdFpXKBuMZ0nr7sUU4NDhLhvxtVp5OPipD0EQaLrHw93GRbSrVBDgZ6jdEA90VkM7z1LiV7PnSVb1tDSiMxDhWmzky/mwGgNNw+qP1NLP8pR9bZCr4F0eyAYd2NFsF+MjeOL4xxcgdfYDjeFRtTh1wwWsE4wLAORfgTs+RUgi19Q2coXnhl0wiWl/t6HhpsONmnEgk6j0ZpiesP7Mv2WrD6jQlBuDXTdA8jhPF6otAJ9ERXJAwbFSyZHmHp/uzccW+RieL18a6+SgUnc90sfm9Mz15l5ZRuGK5dFVWJhpfDPBjw8YY7mrlEplt2JnshUG+n/jqwjA=="},"64497aab3e057fbc31d910e73ec156c8":{"i":"pGkHhyFBbq60bEZ7","c":"VmhLRC7x+a/blftVArLOcE4sa5nwHCAnMG/DzI+xNpjk19I3KNEE6wMIcGYDBVarMUj7lbVWVM29XMY21xsqqpWn7mXmAE0GaCLxXBPNKkpIGJf5Glt7hnck7K5tW/0Qpeu54s5nNk4pIDlUKNDrg0porAMF0cnYoFu0FVK8IIpAfNAD4MMbuMaVVByPcD+GASGVstZExBQ7UurvP3HUn5pLiPek1aGIwjox+2Jkehi1xRuNQPmjeAA3OpKCZDUDphpT0p+kEFdmZfxRqAF+9ZNXuqNz+B+Wj+DCcPrQavLZ/jQPWV4+QYvIiLfueHGJOF6DzY9zAt+KHKXowM6QKSuFEvuvrhG6DOrlJ1qDdgCGf6UVH7PVJx020cZmS9ymcwPYzm7jhBGnw6Wuq0D0loiTdjyBXYYny6/kcAYvRfKjJpqFn7calhjGSA789ciphgUabs/Y8CLF9E3xTsGGU4w2eCgoBlEAYGuSdogywkNIrmSKoaC7XxJdOHkOtW57aPn14XxgRLuxgS83LzwvOv6OMg32K3HO73IosiLjQ8jl37FxXJZCuHnCk2FGO9itw2/FCd3Wrpn9lE4vG+QwrKdUVFD2dx5xE8xHN/nwFLe5PIWK8+JJ5sf7biDz9Iu2KzuJZ9MkACYVRcUQNMLsOEB+KOiSFrbeSYwsU4pbtkl8hG/GRSCnCd6IHN99jZGRlysow1NLBuegZIUsDrMuBZsrLHvf6Z7C5R19nPiL9ZkVCkuRcJ4cQ4Ruh3128JFUYlKcbkA1TZzDUYVCMxSqivjDnBlJZV/noQkaI8aTzGJwHYdMpvqDf2gkl/r1"},"9e832b8867532d7e2a5a08d2d7a9d347":{"i":"DOd7nznuGvlN1MI5","c":"dx5IvhLQvec8BRSPnYix4xepq4CSC1jQ4apB2y/E4hLIgHRlfJhCqIlqlCC6gfy3u+dwU9qeQf7ujzZ1APGYX/+5p++cTeNmO9xdpQB1HRmPpfIICojpAuCO+Uefr4oaNsWWSCdNaUmEF17nr4Rul8cYqafnwmt0Uxqz89PK8lqxRmxCq8FbA+vnyuedb/FfbiR5pCg8fD8DPqjjBJubH16LzxNhHFOqruJhyp4Q+gX5AkdPZJhVGJyO+tXWSDUX3+bASeZtFg9EkUTOFcpPkTO33YS+g1MolNj1grq1qwFfI+zd9dMVsdw6c4D3LeGTUI+mkbTpi9mXzLFOoK/PGVHV4b4HhE9pb4ngl11NjmJ+SkBt1z546xLu6KtPfgOhRL9z55Ofc8DubysRjJLy5vN0qO6h8sf+nuIyZtz52IutC8oNK9CmVPLxDnkGS+uXQ9UQIADxMbLdq5b6yZVVTfYOFC7VYlC7UOVGucZiEC/B22lwBNYdy29nkN98fbJ9yKAjkFZwkVLYJB/7Z+BBO+O+iSdS8Js0TOC2+bxbd0osLoPg1R7p6krdyTSO4aVC06JGfUlMdTH0m6lBYIZj4idwolSZmh+9Ics/NevQqVJVBBZYYwEqrvdAEgm6khPOHk0IyEcdoYoZOzuupT4kxcaeBrIa63mynK1OnSYb9d8BFfGvXKDB1DWgbxcXKdugWOUOMiMClFIpP7LYtgzSLpBweU8ccHyzMG+ofRMq+R3RTKXOMPYREiQ0zZrsAA0powJ7D95oSC30/Gd+OPj4NrRKlSYHex3EF+F1t0D0Xnp2BndqR+irWsMEn+h7"},"5e50916b9dc479c66ffa9235b4d5438e":{"i":"VC8DsYbkIS9FHhcj","c":"5U98u3KfDM19StLykPMowgIgcuNPoXE/m+LZoyPEG7b7jjEGi6hYfekt4m5OHnGJ8UpR+PFOuffA5sqDD5z7R8LJ+pXUnZ5JH8dSYJLfgSQqEH/pd/YlGwt07EvP49Xs4xa0PdkLBlDzxr4X4y0ueM0wIQFL/qbGToQhDbcqXmyf6dbi0u+eFx0LYruazn0m/+lzJsOP0m2ii5UHNjsMlW4vJK83jodZ/xQ25rB3l0eWm58NsS/9o50MIHiCb3BfxzrkAfp95SluJ6TcBAX6W3qlTVL/h1R6bJ43lsbQ6K9cppAEFWhp5Vx5YdG5lOxgvfYtcrXTM7g8WYRw2HNSOQeG1NJ4RMGbEF/pKTTDAXTGgdNTX4A9APnlKvuijvUyF6KVt4XV2x7RUNu3c18o7ibqY9R6d/tdjsqK7LNCNKjAh6ELm4BvKKomYNPWwDUqWVD/p8UMXAb/FR1nYJQiWO8fr8e+Fgq+2th74fIIsvdlAvEZvRhJHpoOTMPM9gCTZU7f37KtL9BJ9jaTQAzb/SqSvv5oE2g/ieTMGkYk16fyCzXPdEo/fLKAN/e6tCNrJMCg+lBaBY+ByjwbcmMWRKvyinchH7bmxVfUGVcxqxP/1RyFJOgyB4OWK4x3lKgo79v/bWvLE4+w8JduEqgTkl4meo7ztOlWFIKrgmxRw5Esa0ubaW2PqRGZ+0IuDawxX/nfKwgSTUpwVx4ZsIkP5iEdYBr1xAe3isTK0kCtz5xq0esnsPG8aollQpHjeF/mOGsKCXdln6SMIUCrcGtxaGvyoupvRKlu81XrA9vIQ9/0TXxsYu+ALQPqJ2td"},"104f130e7c4a0f2f348fbe9a873c167d":{"i":"dtdFEO5iEo0HeW59","c":"2NDGeq0UkHgINRcQRtrkgYI5PwXyT8/neinRhIl9xQEhuKuIBc/zAcby6pSCd9z+/yv8zP0MMWerTpo8OGtNJIn8IX+Yz86FDhv2yKAaejpAqAhHWXJbTEzLgEnu56xjSVjKq0re2YmTkplDWfavlvck2aU/V/d0zWWrfgVXSmwiQj/Gf4dLVotVuVEKUSOmtYmOyAglveSZE5YcjiyvVdWmHegvw9IE25RddJS9quJR6yucS1ld3MXGKjKT+vRhpsch9RE7F7CGRDV/Af0OlOTZ/HRp6t2vY4FvRvKOhbYE6Hw9JBvUBbeE4iN72FRhabSBHdyIvA5Oyl8Z6SpEJiIRuVfKt7j0t/XJL5XAWJZFHnu/8e2H93oe6AaEEM8K0yQYddRTd5nPx8EGOLZ60sMIws4ETfHiceFZS4VL3MOZ2XNBAMdnhfymAathu+9k9n7n5fYVZgyIZDJ24BDpmnD1WvHbHY/rbwcnD08zkQNGfL8XMkRiHQWHHOkSF5oWRJZ1iQlC9vyTUlEiVG3vNOw9KowTfAeceSA5cSkiBrpgZaRl09Z3ENiO4waUe2CBmxmucNjdmITmY5ADsaFTEcm7MJcQUN4FJamOMGjCv+zNdid+gShJ+Q+CcIrxKIi7KHmSMzTntGAQjkbOgMzpwUBGT5o981RpdE3GIYjHh2OaJxyowH6skv7SJfJCrOlSW/fGkU3294LjOQDcZw=="},"76f3bb6a238885528ef37364338fa1f4":{"i":"hmWSua3En4RjM1GS","c":"h+Shz2hvJ3g81dzFiH2S5VGdiX6OWiCCQnA2F7wiXG1crhpgMadsJ7NSe58OUltDH5AtuZjkGawsNdOsIIrwDGlzIEUpM/2tLvBvHxM/GhCUxn2j5CGBnHZtw96gfv/1wexLIPNY1FzBQHS+ael23KMkoErrSkEdBrkXohr8Y0oKKd/erO5CW+RVOCg+h7+nVidIEYsz0g1hfsBqphmQmmoMzzKj5rKC1aT0+VZPH+69B59qzh05Lp6/ixh5SNJ4lWq5UW4CkSrCF8XBGmcouH0ePCRj8zNBYwTQgjhpoGPoSlo0bGhK3KTQTNyM+DdV5qBNqRRVqCtzEO2OvlGPOiK8hF/EQniGjvT/ThdDe6b4skp0PnSBGojapvT+jGNHBjT2Z+XwHfHycCgasPNAzn7I+O0hDCBi3JnBHd9vOE3QJ7SUBa07GTdLLKf1UTR57KYIbvccjcjqxpAiiIb0n/w7rFJZmNbLqHHT+4Ci5l2Unk+GWakbGKLTzoc+z4DZZc6/ZbfoAPQA9gLfne2ye+KRoYakkB2EcTJTehZJ+k6SCGUTtl/TcDhIaOrWFR/rbAlVQn2+XS8Ms/UrzZGFmI/1OXPFBdMm0Df79ZyzESpnmMtr3O1uWesi7eaOlD6HFGQ7yDwhIbylarGdVLXENitASGbm6yk6mdtxRP6Khfe0XLwD+ygFpzBqCKDeL2eh47A1ij5oheDaRrqTtQ=="},"2be636f05e3f4250e23343907e7050ae":{"i":"I+i0ZgbOfwDUi4aj","c":"XUwLe33lofXuVV4Q4SnWnH1gfBVgHWIe04Yy0pZbNJ6HTJtgLGNh5XSI0V43a2eiOGIkxHrOWM95VVnpwpdX46P7ZZ403yJFHtH6tYLgp31Vspjhe3tVFGpPJl2vR9Q0TmwBUqEnDxPeIFrLGS53y4ks5Ew/Fm/kZf8Prt2lCrgtJKhMPwajHM8/AMFvK/+9V/dsAOxHH0h5nf3zxcI+a4o8Iqug/ds1DbAiD6UktRzLW5hoymImPvV5f3iDwKA+aMKkHN2zdBguZj16gHmQbc83oTIzF31YGniou1/ij4sOvibIADFyjladNd9aoF5aAzKc3WjNuqOFZvCHwkq2Ttj3aNDJXxQBnBafjo+CbT+ogKmlN1oBbwJ/FUHYe+fK8U9YgQUi5vNnTb7NYkvYYDMT+x9kAn3JZeKKZiD8tBgLeG91dnm93W7Y38N5rj+Z5w/kMaZ0NQqo/OSHfW/kSazdxdldbqzLur8W0lTCDLOqVG1pWAGpRowyq6X/6E0ZxHtvXM2O78ml1k5drMeIBVfS+4WFmZWkiXtj+r3TJ5RTkdUEKA1CnYmtYMfjpXmy6DqFf7n/x7xWxPuZDBB8sgl0pEzbQHVe/qUe81CEn8nHLCE+O8D0eQl4xKwQxiV2l8YHe3/8k5+H61YU3CBPQJYe7tQGbrAiUjBiLNSCIEL2BsTTegMgUo+yFs+RdIK3f57eBgehEGR1ejtj5g=="},"a1eb857995ff9011f37f0d47c536d2ea":{"i":"tYQbfUtcwMP8n2Db","c":"AoVQZ3X3DmHYIm/P8FYkHyryRZasyXmwJcwIo2Cl1ENCIVJlKH8qX3dRjym4e0z7bVRjOl+n0j3G1ZSCiZcgQFbbf3UloUI0qUwUx6h+re3J0GIbJbeKKxkb/qUhTkSzUluS7t8NHjmrK6d86oYb8G0AhbM15J/lu+VBXGhJVthkgf5LUdYxNfjce7qcRc95MhkckXd/qEjbenyXgaO2Y7jqbFb7HC8NSaHULrxRsvUBsPlBon2YpLBN1mLCv2+3uCzU+PdXUxu2tp/1TQMOrRNBVbLuSvoklhftZHlI2EkPbBs6pvIuWsOCRNTGTfmShhU0EiOfyTx6f9dlq5QQt0UGbptkmkpEYx7J1glXW6xJ18c+TS7edidndpSNuFsgZWmr8S6IKowDwScF8+6Kf0BQdih4Km+EGEk7pu16s1Tjqt/t1h6uQ8fS8nwE0CuE+ovOJ8rKZjFJA4bFjzh/vug2l4/ybx2myEeeqY0fximsChc+5RWOiKC1K2bJOHvs1gkRKc7Wtrz71ZHkeASNIUzkG59H8L3YNkn+HB3s1EuQS5WRiYaWjojnVFew+a6e5ukTobZ7JLjdioug7RfTFLOvyllFu1+7Uaev8DJEWX67IGVUGDr6uRHBqvGGS2EUA+gXa9uUzvI/CZp+2adrDVSXyfC4btD9mJy8W8rZApgBPl1Xb5Qx6S0H6lRET+EDRCVuwVb+luSyyhsB5Kc9"},"a5ef4b44dbb2642da126c81a32fab52e":{"i":"X+CA/rPej4jZt0MX","c":"FhBWV9IvTtCOE8DDvdfQhcGFVaVuq7exrVg+JsF9ZXrX3TCjj8UQfvOQEA1u4kPyHOvKpSPJMeMfWcrDEZgk+qvvU3UDBxI6FldeTgtYtrVnb6XbimUcYZt8fhM+T+p3/YimqpStFA6S4Ap0L88r4wUo/dT8BI+EtTaTNDU2gEMuvIWmyZ67+3K2ThS7o4EMLstt2nPzz8Cb79qwcue+kg1r4+O6CoX+y1MLrYSC85cQ0R7aIJWuQdHplJby16Qr/VEGNPfrqDjYXUlFi7SoGie6q30b1TFTtq/T9q3EOLHC1ueM2cDdkN39AQDTdVmo9PHDfVslGEndzeMmSK7q+cuGPml7jrLbw/mI2YGVjTUAiUdZquYqWPNxVngmGW6uNwRMnfAfEpZwvJrzN68r0TDVm2qC2GJ/wwLJPuTx1rSeto6ESYjb7uG7+j7rYL6I2AzcR45gDvbmzSRHwHmB3fBPyCXW7KV+Bbb4W3xgN2MyDLcagiS/eDAPdvBjZeExpMTO/CBTxxp4KzY1VYj351g83/7Nq3ZwGHbP5TPLBf0MazD3Pekn0gFdyVEWz5mKO+nWd2j220+b1o6upZudsiQFDOs5IUWVXUJCfXn5c005OvaUQV20HS9ntrOWvEKRVnDJDTyvVd3RQ68VzyjgKPQ1B/ecljhOku8z6k21wdwNyK0LNDqcopF8fqo+IJCdZFOArPuiY8ZAIbKJSv2i"},"af5ec97da63a3cd79340ab6c3b9d0786":{"i":"1owH0XvKiyt/altH","c":"k1yRz0F4cJjpPDN+Pm5LtPoxG4PjzOqY2CyAcViwy39SaGxHD5sAEkbGbP5+83c5dCqCfyVSnI4pSmgu1FhwPAOedyDXPeUYZnLF573rnqvqKacR0slnSmGCY6ysZQfCId3cE7wISyel+SvFdqXLUT/Mb/AXOxqPRzyEbCZCWbtQQW1tF80c/Y4XohISbvvXrfPEiczeOg/yNJYqlqpqHG0ttbyAVROn193iNYIXncus19Teu89pHLh826qM24dTUN9pxS3+BwTn+eC694c+fx3W2xOnM59PTBqO8LHi/1w2DYGuYpzELfUzhsT2NnifxM2+ddnLWRa9sLfSL8Bl1omCLD7ZTEE+nlnQzcTjHdCuNed5ZXrHAgO/LgTOb+wy5BdiScFIBwxYTrJkSoCyvpJhvZLxZKrhwTUKsOuU9z6G4mtCEiv7UYWbeWlmo6Qquc2sbIrAOkxxfQK23L6Nt27jIojcUsVm+8TUCqjPAAwGWwcaNEPgyIuEjRgYsQoI28tZkW0+0i59x4HjOQDxiTAniLB2iweeu5bmkcVA2G6S0/eQtOpU"},"b8cb1e6c696fd8bf43869b3f1db74957":{"i":"TJEJqOBSAl02qv1D","c":"YvnkBn012uJY9sN1IXIX24dQWYZTmhy2wD2LSpl/AO5doZuh63ChMBEt59AWWt2QI5pVpTq2zXAGorsJaPutYc3hxtbc/f6yN07wR+YM7KAKLEa5DQx6BZ9TkyVbDmdL/NvZ8Ks2pMmpwdCz/oj6+fp2DAS1kOt0oQ2S8nRwBHE0DZHgtM9GakFyzf89t3Zm9TtvhYPvWFCbmU3Kdm66/aNZCTJt2ma40Rm9BDSiMV8pao0Wy6Ha2Bq/0OV7HCvIDgMoGu8vBjQ7+jKYh/qluXmEI0PpHyug0SRqdudVywBNilNoQbyL3kLHEx+gsZf2IPO5VAAaz3xsqC6RqUoWns4L2D70qcEkimwrJ6R2aap3+KZt3zDC18Exp7qYR6mcTe9TyZ3/36mVoTSHge315+lcTEwiRnBgRUhdy1OOL0MZ8sFiOlRjI5KrjN3jPBp53tZ87UDpElhYAZ9oWK11UrnzHJ8wBcbLxJ2APrgaZLXkvGyatdB2wofg1riN3wCliRa59VNdIweH2jzjn+3ui3Tw0JtcJNbgFC9sGfLbv4uONZ3aH5X3"},"75db4257c2332bcd88c7b9dd9d0b73fd":{"i":"9iJa6un+0/oUV2gT","c":"xITmGAATclaTr1aNVQKO25AJg8oFI+c3QMX3bbEKTCMW7CdFCsAqSQQZ3sXqxgaptMFjEI/zYnfp5+qJEMNJKh6DhrT7yy82d8doqC9IkzygWuHd53cNw8Mb9Lhqyj/PMz0YuL6PWTQFy+gP0EsoLNGbcEj/Iv0HgcDluqJUQi8oVIgST4T95dDtQOUzz4nkAXDo9n9xYqusiQ79vY7yHXLsCu9T8mPyxiffz0U2zuFsAcPpOMod1kk8LixUcMnA9HoVlSNk8MA6qPKGlfNbLNLWlvBzg79hhgqiCzQALgK1qiPnCpH7536Q9PKVLxosmuBpiH9gFhfChSZq2uvBF8PhOQSOE0ociqVsjwrXmAv0WwKfRrZ/s7eLKaCKHAs7myb4HpCj9TDzduH3RHpntZNBqWQrjmwBdFsQgFJt9WSe+rzEff47DS9xfkD7xMwJVH3A4HYdowiLDl2bzfKoZ//ayh54DXedePspQTy9EQUGZAvn81I7"},"8220e80090d0e340f9cb1aa916eb49d4":{"i":"xNBKby+DDDT3YkNX","c":"/RDFGwMkfks68kE56a/pVPXE33LC1plmYwRfHaUjqSsX77JqAywtt+xFhMwdQBjWUI5naECR5tbTuyLbHVcdlZ9W9GnXUpQ0Wt5PAk85n4HVErK/eVxhrn5TshbJnLZvu+Diaht/QOnWElMM5B/tB230AYd/dVdjhEJyJT3DwBgT6nlicZDSTtjDg+gisWdo69sHc+L08sQIhgQx1m9WmKMGypHGMeqlhq6T5lokMC/CoXuOvj9+phrnMXYvwKiyvKG7AuKFN3ptNNdATef7+sCoKCWUoGPGbRwhZRvKrtf0nFfwxc12fA/zbWNDsrV5pDD+9XJVDSjTdtXmg8vryGRufrolCOPzvwH/9mq0K0YMrxWqH4z2ct3Cb8okZXL3XgDlRr2zsQ5hRyvY9SQiBKHZzsV7WigNfMKpb0yfWbhj24342vyhrMJtfMSG7i6bUyZvsImufZREkuuME2E2PsTikPyDKE7g615w8RLhNeuP6Mlm5GNr"},"4a3084ac5931b41388c4264793ff7ff2":{"i":"ptOSorxj8IWjIYwi","c":"m6wTFdy4H8z9xsfElZm48jNIAgM2Vqjn6iGLvA1sjjgL4C0h89adjPcrwu7Ahl7El8UokBvfzmNwdySR/otxTkqu1KlPhwPeZKnznCOOtFwqNA9oYxNWiZckvyTgzSu0vzT0shMJXJdSpTebo/BTE2w5Zk1hAlxX7Fn591pfBW/A3CJLTAM5ThIc26YwqxuHcR4VpLapBEo2nURGwlDAMH6pnWLilDl1DOFBvdduK7tuBlrYLZywlsQxohFB4AnPujCUmCDCJanMnmczFCkK1ucItxamzk35EMopir6hotsbWfU4GG6v7MnyxIZyebq2QhKgefak38Ypwumx2kYWvYQAoIVHq47gsxh5q6oTr56yxEkZO6SbkBk0bbEM8BeEQditjQ4zA+LwDjWDoLb4BOg+kgs20CutAeMW1R2ihObMvfYFN/JMdOLoAV4DfYmtGOYtLq5J0tEC8+4S30YIxP7mfDmPJZzIwGHmO+ZvkdMT955RCaEk"},"227374c7f204d430e07b69c71317a25c":{"i":"cTAmHLj/Wevs1VsP","c":"zVDFdDdbHcBc+LufzmU/4lGMOmgMKtE9UUaoQtbzqsO/7q6Tjvkuyr0AH2MbYlP/EpGOl/z7f+LR0ChZcGgOXngOJjGU3nIFdDwKUyDpEscU8eMkL1q105DRd02b4Ew3v/djjb4jRKS3pEOakXdCBGlUg0KQLT/k7bpnF54RMM6DS1pBI/jUpLDSzUmEAyhm5eEZtPYKwFquugig5hPWp8pDZDjqnXbPJ1EWBenzCmQweYq+PP6Dw7394y/jVt4XhNWhqtzGhg6KrS2iwDYbjUvGnpEmsw9i2EFkHNs3edmxw3hGcHNY1sk="},"af6c2fb72787842570515b513c89a0d0":{"i":"nOOjA12T6RSNfh1y","c":"jONSIKRe9eOCPVP1KeDU5pCHabeyy2twcD8Dbg9pk1h65pUV4HVfqgA/NsECeuE1Ji0qEJdMXuEswVCKR9QOuN2XPMB8AGK5w/QjO9Nm7dGYRn75YnzeaH01w4xOsrRt+THeG/s1qquxZS7GlYEdrNmkJfdjKnDGUZGjkE9VhiJeAt7RLVBwW31EfmQl7tLwpATA0H8aTPZBWeTGoFVcHHy8WohoXb6shpdJmSGyzQj7mOsYedrIZowoivEkZdd+4goBh9r44R/z9s5WI0m5UximnSbugSx5gbztfaUi+lLaLPtrQd48bjEMski4OGpCQ7yPZo9AKPFe7I5ZnWA="},"9477acbc00980a26185ef8d3c8dfc3c3":{"i":"Ia1TzwqrKozX2c+4","c":"UJEE4nt8sAm9il63aixy1wM2rKsN+PQoy8xyn2ORt7NoazlI5jDeLwVNRe18UybE+EC/Sxeun9gbTSXvk4vu7Ztmz4x76ASY7SXd2VsUGVyvFV3UIAQTnw/BTDajK6go+eSNXO62qJnNXSpsD6wbVQBeotA9X5aNkNaFrFLQ+DHu7mewbsby2d/w5TnDBG0++bmAzzQTErBaVuADKyWSzNjkltkh8mjsVMU1d+jmKZxiTma1uMSmDF5G/hhxG8+1nrmlW3wXaSX0UtU12HKzunGL1VBDaHqyowhMzQs9sGr62DclhvOiaTaU2VnADBcb5y5mkaYOOlmnpL+iYxQ="},"4fbb29e21677f09f3dc34e65e95c285a":{"i":"u+0o19cw+ro4eMnt","c":"C1g8hOkqeG25YNqXsK39YHNKuK4gIrOVeto0YhhxzH/XMRXHUZxdJQ15CFXMqRmyjmmGXB6EovOJQsM59tE1coND3w5wq0sr7oL8XzB3OT9XflpKXMs7j/ywdEOrsyOPpHUAiDGq+Y2hnplxBoZdx7S9mLHL/oDZuTHmQ871nCCOLFX4h1cZVe5GDlfhWHyiQ2sp6zmSEKD6kT+x5kZMHFU2IeJ7uZz+THKpWpQVXWtxdpfJxLcuArDx4m2Jp4bqgGd2pwZeiLiSWLQuB/2pHPckpD/1Car6xP1y9avJgyupQe5bNq+N+qia03oMldvxfl2Gx53ASvA+KcwMgkE="},"5d95925594fc91ac6673543c806474f5":{"i":"5T438zeVihRpkOGA","c":"s3egjnh6JJPdXxvtgXFlzwEJPyGWgErG0YIYtZbuIXyAAyVCPmWxrc/IEOrzMLhYw/SmRC8qgj1W/d2gxF38NN2G/hTCCzb8OJTt+oy0uOT42pgLURe+sILmTvcs43pZS0xjilxtV+ipG40RNjXXo+v2d1xJsBHxsv8ec4mO6uQRWotEARtmcMustpq9fO7ZDXh0r2PFCsNC7YTclxyazq93EYdCwjRnBByaGkviTFwnQPW3ncPpdTh8PiOebsfx5cMUssiHsBkioviRYBvn2/YAZLcVkC6oGhKHNfzWX+9TudjINK8JC0+uV2jEJO9Bk8y8lCJuaxQJYkI+B1Y="},"ac400d2fc4a85eea9dca5c8199c3957f":{"i":"ghCCihrW4UuCGGap","c":"XgxjFhJntyWeWLV0r8YSYrKqEMGvvkUe3ir56J4i7afRsx5qcZhJs4eyV8DN15U60GHPrQqQ1zqZmNoELeT4JL7dV8cX10foxr+tssA1K+780qW9MdE0xnC5N91+8wLnJR3jxZkjdV47vJL28Bj5m2trx9PNnfWTg2TXYuyNpTfFoJRI/eLWNP7v5TgqJAtIxc2M5koeTvwWz5UvskXfdPVdr9DpD1tW5iyflCaskNglQToMIhe7NCJXDa9T+w+zxsnXYGlOFeosJHozHJp6Qi3P3lk8UuP/7SOvUktAgZZJOm7wC93tWp1FTWBjYbSVSnL64Eu9iLE9/roiKT4="},"3a54a932c7bac412efcac4353868b7d9":{"i":"EY2BPXJYJJOXEYHG","c":"E/TGwtaMjiaRlptIL3PwR9oAtneHgUey3Kr5dwFkUtbjj/CPGHzXlOye19nGz0atNu/Hz9rzIKzJRUyuIoJDfCPNo36CFfM6zkzRaiBWdVpkS/4vr2JoFPKXAYOr+2fM+bi6gVRbgVtWp+8etN7aI+3ku+UIn36hdO55KrRFhJ01JOftholMxWzz8ksYERYEqvNK4nv0lsU78XgKQr3SlJQTHgYvLe2k5RCyyW/41399c4qbnFTvR2CRwbPC5RPzt5FvBrNEA9UBDzrbSpkAzLEYZ9q0GNjuLDSBraorlFhgNif7l+oUZHlrpdho8G9Q09kNSzGQIimAvxBWZaA="},"6e43db4505f1bdae05b529f65785acd4":{"i":"paW5iPRWVnpGVM+Y","c":"eY5HWMHpM6ly8PnyYK9JBOk5dvO84ZoX2XVY9FkP4You5JmQRPaVIvxlhyM3f2ybROfRbilCDieewpfkSvGgfnTbONGoUMB0kSsLGyx86DI34EWaYts7IIm3xKWcSTGdiRLcLM/g8gGVRLcrpI8iPPXSaJcg9GZZIsjcY9BiuVoIzH0SZPqqyS/6l+ct6DFmnhVhaxQuLCayZwGiEq3hJwpsnFaiX3u15YPy45/s8qkUwNiaZKSpICzhFHRh9bgulOA7J+syk9YVEzypVsS4GOKru3i9adtytQxC5EThx2r1ZuT8tbz6OU+8P69c/wphtaeWPsWCGbIWQSWkY6Q="},"49b6cdb541672ef038351beba2ca5755":{"i":"e48l8IqGdB2tmLHA","c":"hrMd+1CmZT2fQSsIoHftpEI2gBM+lTdqdTTumB+ZvBZvq3RMsRFJ25UQ6asA+pDI2uIsuzqrbYHNp8AMRf6lo9lKPECbrZlWNn3eHhl/pJ3ZrtfDJeiornWJc5QakgSRSJ8gKLU0Plk0zhUM2fGP9LqGrn5lc4Dfzmm35WwP9WNJEWAEdGzv75mi9QdzvUBlzVIBMScDsPCbPgXy0utcOO+I+48x+umiMDTKhOHGykPSeVaf6bfqKif381zJ9TkyiZLv6/t65Hi05mgLhqLc/FzNEOT2ew1TXUilOOZMfZJi08PSXTy1UTaY/W9m11EsX+jr5aqNDwRW43k5DBo="},"9a244f8ac34ab87b94d868bd9564ffef":{"i":"nU/PVy1ZstfnjwMa","c":"lcoQ3fQWgtqAr5vmEvKXKH395eXRxPkwGW7Y9GqsTdENEY2wIgYiL8GWlGCJMXZwPZ+RXRx0Dv7lwo1s6zsufM0d3OlgzNk8NYAq5VUl9G1llxnHsHuNrR1OrfWu4bubCa8cWemho5dDA39ZtMKvAACsk7VJpGanJdxRMQ=="},"4982b6e0384e97052d4aa3011d583f24":{"i":"oPrAd03QtTIMEHtg","c":"AVDNfIw5QiIRG/HJODMNEHi5l0GdkVReNRKxJwMDxun7dfsKUqj2otMQVi/bTS+YyuV1a2ulu414DbtiPeC4pgCo2dVqns1XrGxMFs3tVvCpGD4qngwZbX/zb6Tx6ag+qkhT3MknKAOcO3wvLXnXK1X1/zI3/PI05snQg6a77A38D1cWZhA/v3jvuoPgjy3XpX7M45OlSlx7ozDwoS/vJaQhsUz9YnYRJAXp"},"2ccb9885b1aa2a8cb42990353a5ec447":{"i":"ntU7eyPhxdgIYKHg","c":"b1CGP/E8c/iZ5/vk6hme037DnKpKPQs0n697MEQeOdxN8FLQfiLeW2VQZfNEyK2wwez9I7r3sY1vOfRow4HE5QacdsiX7cbrUom+nvkLVpktQMK+TSSy0u22qwD39ipvCY8LhRjr/YzzC2QLl09xEa9XqdTe/pN4OQHFcAa1qJZTAP6z/2814c40Rq1AWsK9RAiJTAh0ytMzcvvfkOBCiqKLcy+PZ9LVLn0o"},"f4b6b529958f9b2a3e2980d5623a5f53":{"i":"E1UIoghuFcz2Xvk4","c":"mJ8XKj8ryV5T0Ga6fadppTWSS2H1cHzVCsHZIxxYWP5XteGIe/BA28HRdGwS3vNdqZuxc9stPWy56QNhTiwZ6a3LQ+n8FfQptcje/+0I5jD3bOXUUbatmFFLzAWseyYS+p8WPiJXE30Nb6WG4p9m1El6GytSTuWv0h3wt0w9U0fsJwRFStYiMvUbDpGVw1/oP1XJSYiOon4ScWCh71YR9BDpm2rewtWdzXRI"},"7856aa89ae22f86bd5cd9af58ca0f872":{"i":"bwfVYAzszm9Fc5fn","c":"AHcRWIrFKYBLK9JraghR3ujfT4svC3nOkd1s6T+A90w1wGZOrCVqz1ZvwGw2TWdAJpgUFRJbLsoAVVNZUpbrBctwAKtKAckzAKnW4TpFvCb/lmXANXNc1z2MlewUB+DaQAn7EgtMeRrhhWBCALUC+JxmT5pd9dpFpFlQaYsTDc3sgB8box02GSsR3CMZbyVp+eaCydTu/F2knySmuW0mVALXpInfdcn9amtl"},"13de4c4caf9baf24bd87b9dfc696702e":{"i":"6JbbIubfYduVZq3h","c":"IdOvRAams4UBISTg53T9her/xARbMAy5RRxmaOKChtUSjnz6d3vz3aAMJiLqoWS4sCoOri8cUxvmoiYADnh5v2INUjb28G22D0c1d1r+yVYCLDhq16cxyJAYvME8S4PBj7qpovHKGMbBiqcNcMtdktvrWW2UHh4ABCR2vqOjzV3vy0y9gI8krn6MKsav5IdCuamtQz9eRUpSSJQd8DkXWcSwVB4CdPveVU15"},"2dedc01a73668bd262e4032892cb4f52":{"i":"ucHCIXeYDvaFtWS4","c":"z07cM8vmrzZ7fYmEJ+/wq8sEj2tpYe62yRENsEG5VTN3EWIdx0TvvBG+UCYerM3s7mmoudUY9Yrw2rFy3ru17LOTmGiqAFcD3ptbjEcFbWt4Dq9zR61QXQ3mVJwp08PGdK2dIdSZSEz+brHUHPxUrlFJSsqrLxJRWCwV2nRaIL/wAhdCgUdqDJNmX6JHoZ+9hy5ioNdX/x22tEO6Jh56GZKhc+5Z+uzBnnns"},"2514e11bd51bf6af71185a762d2c860d":{"i":"voPsAKxfMJlodUN7","c":"NNv8TghH1J2P1o3bBeABlgTLfjPkrOLxn6y1xXrF/FYHaPeWz4Fa7DeJFI6TrIfDyu1loblUXm/nu1amYbi4RUgZKzIidWTuv+Y7ZRxqN00Flp1BN1ZOI/x4MUbeeO320N43S6NjauCfax//sgyhxEtSX2T7PkgQOdPbacuo/8IgcTBOmvvImV8TIjEna1GZ6xzKp7tZ67E5UUedLcPZyMYTZNmEVvDX1W39"},"d686ea197884987efed6653f7c81e194":{"i":"t3qYYFUaJIx8t1AI","c":"BP3s+hdt8yGJ1I4Pr7EmeurH6pJ2kHmTsON89c/9S5apuokDWwuoaBV9urNKkX+HOikcKD+Qswc4HZc9Yrk8xX/jAH4EqKzbNLpq+/yqADbU0vZazOQxxSijLl/pBWI4XP82OkSZt/vV2FJN3163J0wsSAs0UootQGQe9ADIWMjE1C0L7IyXRxiPAD1FPWonEuKXV+W9yzqa3TLyGj69Uj0h3h52rlSLVskK"},"9313122fad463314061db82bcb20f78d":{"i":"+88zvMzBo+XWczDI","c":"yNwN5yD94x7KUtBxbZTHD2SHSPkU8qUJOjFoc+4a+S5fKT+ulvDkalElrlBlbyY7wXRAg9KfXpMfmQOd1Lo0JPXnVLfvHvkmd6j15fpF6vsTi+KIWojIVGsTPKRpxkGiMVRP4oT/RogSnTvSTR8y0zAF6GgErAFOnmFg+vT/9t9zjIunAakkoWjeZ2s="},"5304a2d60676713e7debefc8d14254e0":{"i":"WYX7Ox4StyuUpAef","c":"DgFqby1cZzwhqDfmVBloe0sEFacUNV8JLZB8CCoYZcZIt6gvgvjJqxV9UtNEchmaRUZg6zC7rXkYyJZ2T2gHaUk2nyTJ4PqU/vRwn9IELwHrE3GrxYe6eJMZZxMLsl62FG8He4dav4iYmNsOg2Dls8TS2RfrcLWjPuXnXxuX76sXP/3Lo0zqk605OIiLI0DKpXMhVLZ+A4lo00rJeQEv946wwkB0bA=="},"90edf6f307f94aa2958cfe821bff5082":{"i":"MP+/zNxHmllr76WH","c":"BiwmPUH6QyLTuHDMZzQEjiwtptYEOOEwuaYvnduPf6dXt3tV4PGo3dRC+vte6c61g5NGft5NK+ONrrp4YKTcLeI2QE79nzkBqbw+vJs8QMT0ZSy5NYGfRqsCuXLJPyKgNvTVrTrkVcDwOAC4Xc7qDocAku5crjfxzLd/w9Hrb9KFSSXaxeIpKp9HY8joDB70aomNKQBzC1TiNCck2r1mMbk+koL5aA=="},"b2f45169a227224171432fee87bc687f":{"i":"duTabzvZuYQgnCEl","c":"FWTtatL5n7SCkb4gw8BG/EExvvgleVJkW0hbMhuDFNX9lAbLSP6jvrxSNrDUv7WQJshYQQrYfbyDpaMyK+8x19nDudNg3t3rJ0Lx5qHnhzGV1N3imrAEJCDJhUeSi6mQlsD/3f1Uye8aRHFa0s2dUrZ+6+sMk9/6St71f2KYxOI5uZYZyFVFbgHTdFVivzOsiBPadKhwh4MITDk3YAKJsabyyzcYQQ=="},"40d8267e393393a8f3c49ac4f1e5c4ce":{"i":"h/caeHfIO0mkEwxY","c":"IJJds0JSlbZKQj4b2NFzZ3/6YxR6AEz4qb2TmKJZIslApnmZykbZRqiOV4ylyPtnMeiHn0Sy1qupYaVC9LUiIW46g9tcu/UXa7kYlyvKpbZqoCghHhm82LV9yBl729YHeDfP/bKOdmhjIHhiJGwxJ4b0nrFXRwAp4JjW5Cst52FK8jUL20VlqVrqjYOPtRY29gGXWMgwjqZXchN/c/tBbWPhXzPcKg=="},"97c7341fa36fa996f059de386056ee9d":{"i":"lA2e7Vrmlp7dHXfH","c":"OAUfPH+QCwqmv16LEiVtkB1s3lpMD98Df1r9pur9oLcXKLjHijnOoAK8xuzF40SvjWgv9rkriM9+p9UWDvdBT9se+LksziPUyzh6fZbz0HZBqxRnR/srVbo6q7Juo2M7ykg2LM4eRTISM2qkceUYsvyF60QdBceMwHz6y8Z9mgTn3Ks9cIl7V27ppWdyxrA3P0kcbIDkEv1uotWvvpVW8Fkijv15JQ=="},"147f2ba3f8b565e3cf7c720a9932f240":{"i":"f4MMSGqagtIz/fLo","c":"oQ7lb8Jn/WRFthvsMfJNfYm3zNoZUy+1FUe1GrvnjJEK51aKYCFMhHILUy+hkNSzgf0wUrMfnkOi39z9K5nWIc1WvUwhUjD2wsFTvYksFkbqZtpSFWUQxCjbUWDEZ2xDFus15yR85wqaRSR9WNPyhDSvbC6VbMDyd13QwmldiuF8fD7lqZumbq38PfNz4FbjJNnLP9lOmAR1j5tC34BJahXfTgYeR/UBQojOJ7Nqean1WYHg76iQby4="},"99dda7cad68b369d11e6ac27741728b6":{"i":"VFQvx7nOrsJMQlTt","c":"wc6JF8GpbWKB97bfXv5hnpDuI5GKBFp4s8DSpU3POr90SDzfUQpMVAsBpNFfIQhKG4s1otVy5rUvj0uZfRZUnlKYE9995bCTGsdd4MOFtnjV59ACzylcE27C1vbG9OD990tgDIXPcFsoGv7P0EV8BARjjTChS2DtuTiHhyMJRbFPb1Fo5qzLwnwj83RYLJ7IJLyTk9ZpCkDzA7PWTT/4PpUAiQ4xHfbPvbGN90g8FW08uwxzrKDDba4="},"db328984f1f466eca2c9f636a1305ee8":{"i":"qrnYh+QOj9sEGWeX","c":"P5cBn4pOQFkWH7hdS+NmWep/WTR585ke1F4nEye4Xtf3cAuYZE+FiIc77rB81aQZM0z1Rh0p6OiV5QwpX7SRmNgMxtvCiahgYTu+skkjG4nSfH2Au5rCGhXcxNRd9w9CVPkVP5RJzfwqvqX6jPfId7V5UlctTPRTmgU7vUzQIpkXW4Su2LVYRv3yMSyg9SgdxW2D123L6vFrIe8FA6Keu2cICbTRBfPxYuvxwSm9xjc9+dWyWH+TSOk="},"fd1f043eaafdb246ffaa9628763dbc72":{"i":"DjLTkZhNxmjxWWh0","c":"feiqG7QcNz1F4iWJy3RsFpRBHOCc/KPV561wgkD0oAvhcJ28afhALe8K8f4ssOMT4WwCRFGNlbkI9TepnfU2clkU9zfRQBoXaDYeuAYf2qdBF793n2Yh5RSqPlgeTsTrbSnOaj9IM/QZ/OYkSv4rmGjqwIOu2wVgxEg4KTw1MNv4tDu7wNyZDJtI6W3hRjnlHXNEz7UQSiUOnRuYCvw7a9zanpWh9zrBSEbrTDFBDdZULHm/NFcGdJE="},"f76d3cfe60bc83abcab3dfbbd2039d00":{"i":"86+sJiY7EAQ0LUcZ","c":"jKqV8b7RJtzsbM8ZwgLgcXyYVEE/AIbiJ760LmpxP+NDYFI2EaKUQxZxyIFPbzEwYfv6Hq38+01KMqEWgylHMSCGD/Ys0TOh9RibVy/qhh5be6F4iJSlcWS2UVTUs1WEwMVLLqFSWOTlVoLmRjXfphSibneu1AbGjFB9/OP0trUmUh0fSUYTR2qPsHD47jExa6VsCuxP7CHKmth6qD3rPED6u8MAaIBGe+FrqeDwfoAKcbaYlLqKcak="},"e9dec645f2de0ea50a9e133638d55958":{"i":"rvRm1PVVI3gRLO2L","c":"0LYLTrta9SSZpeRvkRwL/zHJbYJ+8MgP9KIzaGpRYxuRY2UCzlyCiaYUU/FXn40JSDtMXWQj8jFLQ8zXHUsjDFIfq7EZ+2/uS8d+lb6bV69a+GHtxGu6Ciq1Jp+7gFUoKved/cUJdVkBqjnrWW6uPjeM9gmu2EYRAjW9sON7VVpGzYF67t4ALYEtNCiDpYVwQUy7NAEYo04za4fyRQN3F2c8gRdWLCVS5Wd6NctKujrnSnH/MRONqOk="},"ab50320a815ec2f0431d5e026660d5bb":{"i":"R6MVLpck3BQ5OBH2","c":"Wf4ed68pWdBNCZ5GYMBQ5b+XMZWr3nOHFL+M+ilkC8lZRn0n3qlXNG1SAgwFYHv7DP6l9SFjtOXzwHO6Nyf7bc6SHWi01ob/ASqur1v45nmgsKZECJxCEDdeR0BV/T3hN1OFMo7qbiDdnVNhE2gCrKm3vb/ellzZp9KCUw=="},"53b19fb7ef4e897668ccdf9a3d96909e":{"i":"LbsLzQ8ettys0D7N","c":"52NP38ZL0AmEEkqJADZiant3eSxfhn8W3aaY4z8jPMlc7EFIuYJc+gGKFezaaDjJz9tfNyzqq/WvRQnxPrSTFS40SqD2xm7cLlDkzXtMsehLT5Lv4MhwZ4zp4RDgSqzUewHrATlofOUIeBNfzdRAg/kpFVaUCpNS4iKfJg=="},"6a75186582ad73b2234d7b069d1a55e5":{"i":"b9+lR8v4fHnmnfjb","c":"D7bBV+QeOTLyUanctC7igbT29uZJ1VaCMppddcNgq0qCn1v7kNMCAdEgDMm4lCqQRI/CpuD5cSe2X2G2c2DI2OdHRDGHp0yxkNwxrKPtXUOWEzercsUsOifp13iW80TtQrisCqYzvzVSZ0Qh9vNgDdehGKegcMeFJL5rgA=="},"929966917bccc8c284bf2de555a86226":{"i":"+t+tMNC8tvJ3deRb","c":"taNJQGYLqVBJ6U4fSOhE1bRKsYI83kmvMyUsi0A/XA/rgvg9N8ioJBHtFJAMlSJpIp3JQp2EFQBeizBXeADV7gmxSrfquE3aOPvtkelDpKE1swKt3gH3sGX27ZukS51eHa+O0wbFlBn/2S0B6PGcTRHotEj4Cq5/CLR0xQ=="},"dd98258cffb55dabff45b5e0add6c2c0":{"i":"vKgNCHzMRGy0C4BO","c":"jCCAK+E56OGEyKT7fnlcxpsT1GsKUtau+cNttyCYY6hnXtXWJJ9nbiNDku77yPo3pmde6HmOpjw83nKIOibq5ee0RdSE6I9gN2dV+B7sAv3FWw9d2T+FTBkiqROhyjNGvaZJiuKJrX0z63njxLGncyXp6BKbvBxarTR0d2nxNCyC7UEhLfYlj9OSCyOCSq00Ogfg4lk="},"f475bef94f7052ac2de4f3b5e2f71850":{"i":"iT8kcpLKxU6i1+7h","c":"kayLIzs60th/7k0e7Cs7/nJ7I1T4R1WmYH5FpvaY+WLB0HmDrzUjVqNSjIUcqcPv/Ne6tWmux9O3oePoCvh8JlDgt7vzgnxqei+zDgQ/X/IeLCOlb4bRcbd6hWSoXUNTuROyT/C6HpEU6wQfouNFsWtOK9Jr5njV4dmGM/OUhzrdzH76iA=="},"db81f7cbd012eccc43ec52c78e32078b":{"i":"5agLaFLx7DGCtE02","c":"a4WanyYhWM9acFypNx9nfaOAih8aMyYJbUUKXLFkg/HVX/DgbZaevtCEuYELCze7gkwOCusE9p/uourlMyCBeXYhmWYuP+XmgoVxzXY23OPLpRWIp155kxyFBE/RnENuY+bNhPBmyXelmjrKa2HJL44X6mnVE1IDQulNq6u60nKLwwUyLQ=="},"0885571aeb6b169da67262cbb5a006fb":{"i":"OOc1ou7jH6fKbprK","c":"l19je18y4cZWtJiMwJmWICYjoijgYgHGYmgtGk65RARH8adnJDIZRtErPTeYoe3miJl5uogLMbw2ydhOX7QnShulw1w7q0an/sGsdjFLhARaFvkhltbkYpfP1qlt66iheLUfM3OQOC0b2eEAMVKQxiIeqfzYKaIsRO0/d7X1OvfJCrUcRQ=="},"926ef27ef64f626b7b6352544bd71be9":{"i":"RRLACiQwCrs1nCv4","c":"U9BPmL81rf+IgGcH+m4khLWPYQeJQoYMUVdMdy5VyFXTyVbwZtjNoG4yCxe7mGGuPLHlI1h5VS0oPcKeHQEcEENvknb2acbNgo0tmXBHCtcX+NiD3W1v9AUYjfrfIZa02ZY6EcH5X/anFF+dBQ/s05ZQaBLMidjaEDe//5xZ3O85Hwqz5Q=="},"3d9a607868d82f92513ece27f414b2a5":{"i":"Mi7BZAEYDR9RpUhq","c":"SBobk4nNTXqIKs5MYvLlXzIE5oCLTy+biw9t6bOlo4QaRXZsNxUM4EfPiVfUE0eT4y14Ad6ZwGdLS+FZm2iRg5Vdejtehjz+tAAYJ8m4gkkyp3v3UhtSIdOvScg5oscig+W0EtwTaC5HeubcBCWvDfGpevyScvwrA0v04shniQfoJWdYoQ=="},"687d311a980b334d9ac6d3e460a5ca5f":{"i":"t4a9gQxrYVSIQmn6","c":"LfvzoGQCtT+2xVVGQCA5V8zZvqcC8M5ic1OzaQyqcqStJWlxi4R8DpWyEd3oBuKeymfR3JthO+NGueUTHe2vnTWOoi0AytzaY3m4Skj1G9GNvaDBHLkVgOgZBQByJxBGtrWa67XPgTO9k5mvFJMrBMqtaDqoCfkmP9edEMBOHZPHE0TN6sCMqDADXw=="},"8bac57ee48225e9ae556b84f12558059":{"i":"V5ULONWx4lQDF20k","c":"UwV+YR+4ZV4LpwvGlvQRfB7Rr5yclYuSpjPjWT+SZSijDTfITj6yS2fQL9lHy4A2sURsXzNUQ+7Y40vbaraaz6UACN9iqIQgfvxw1fXZx1D2W+IDf1O6tv2aonHo5lzVJJZZlioKfRxV/tifFqcg7zQvb/XlflBsiPYUjbk9Mw0T4V7TNygX9bkPog=="},"d14a23ae89d7dbadea6c64bec07913cb":{"i":"fznEGHNQkSSbTtIg","c":"vD+5H3nDORx6I1w26Osm6XBeC1wMDkl4iOlCH24AzEeIT0blB939vhvZ0mVIBOC4Jcf7xMnazHfFGS4vcUym5ZaWG1AwZUxaAuTjIA0CU21BZseozO85q+Srm3G/3MGrVFkGPFoYeqStHwIQgqWf2NM4NhqIZxcE4n0ETGmZgGMbQDfCnwYiF9ESwg=="},"51ee364bb031541a4168b103763f4147":{"i":"SQpjw6aH2Dgyl6kf","c":"ZHThotl1svNcKBguhwXdUU/RMuTvlMGpqZmD5BvZH/OagHyOisyCj0HiRqIyx5d4hhW0V5wfXoPxk9ca9GGk9HzMjM4hFbHVN9gCRygQsAVJwbkBe8gDhwvypWsylWBqmyXcaMpqb8gHB9RoyHyNmOpiA/zE8hJjnlcYxzmsbSV9uSSZXw9LntgM2Q=="},"0c1b5d566c053f00715e77252545aa7e":{"i":"flgBkMcFvOwrg2Ct","c":"lykoDypoE9cSrO6r7sJt7DcHfVhjV7r5G9phhjN+Dr/5b/0s2RTd4TZoE9yNw31VBt8xPReCkQQ+VSHgWjnLNKX/SxU45z1xsnzbyYlJhZ3KDkEIn/s5ht8fdHuO90arIRySfU7XWJQ0XhIGIU/HG9ARWtBY6WqwOUD9BqIfCFRADeu9fFU7V+EkTQ=="},"f7d6a01e744cb4fabd8a906cf5ec28e9":{"i":"eL4BNEsfTc8s4JWC","c":"R+oAmuOFHB29D5f6IygMq6ELBGqGgoy7gvMnJGwMLbiOTUmgTaWxhUo+HdccRYeXEWLmJUU2cf4fI4LlncS3lO+mqbWxw7xB97r2XHJtspwNKbSEXH2fprC2nFRcKIpU10oOS1HLEJ1c35FHD1pqjRsaABkqMd6mGDgb2SXP8Xm0Nyk2n6rz4heRqg=="},"0b268992c7d84901b52434783b09992f":{"i":"7LrbfiTKGGJfmxyc","c":"s4uRyoG96W3FjF17gwfm9MCZCitKKxSuHvK9udE9z65u72sEN7qK1H8izNIrep510SXLzurimlbUgnYXALitSIpa4eiq2sVrrWUOUrcXDXYOjzVtAcN4ZRqfIsyUbjQuHqPdHcoMIxPowY241xIEEJB4Kn2nWCeZNOIScTOSJRL4jK7lP57kMEFiaA=="},"f43d67dbb5c807611cf113600609a40b":{"i":"xZQ3qUIAPjUz/Y/H","c":"eoakFBdN/WdG/gWErqdHAdviMU1LsB4Jx6IMAnAhgjRVcDUkTr38ejl3D4Vad9TzCoe3r4zJU5X2jVJxG15E/HgYSYVCtzuxlM6Jg7jN1bWTkFzFe8g2WDvgr54tvx2WFNoxXNWgFzmvxwmZO2og2dUOV91vR1uPbT/uHERGiMna0JIKyuDS8zAK"},"0dc1f527601c06de4daad6a72687260a":{"i":"QZsN78EKNqQAaCSC","c":"45y2DSvzPVtIMvfzZHVztDaZ9ccFnhEQEHCqNZHR49xJ+kom9vhqVVPOeMVCxOYosHsNVuMW16YrJCcCHFxJuCGTiEZlhonDquAJUh+mm8uPfw+EhOtOkxsBRNmIhitho4dy2Y4VdaCB8PuF+PK/jZGBG5alCivgZUp6xnlZSfVpMfvZPcOnGx/J"},"abd63c3b8ac6b19cea84ba83d44c287f":{"i":"c5wp4P69QbuSxyUr","c":"EcwcIctZkcy900EgL9pdCYbubrEewVz+PoV6g4HsPiKuHxRfs6TmMt2ynJeJwXdKNHDvtVeyPX0hHzcoPJH7Dfb2kLhLJTNFolNp0xqcdAJtdCV3cpRa7p/98iCt0jW/b7xnhcjBzocmTnAQBr+EEuCT/6oS5LLCVgmbZybPbrs6hJc/D4YMzICD"},"1bc5c3e61875106e62c143bf14274bd4":{"i":"qEeOvIpDE2MSDjnf","c":"S6aAAYXtpKyMSPXmCqYt1tli0elC+ztePak2uD4h92FSstwjXjp9y8mnEiYebD+CWzSm7vaAASfCEuMu/N0bQCx6sB+CzngIQBh9vuVSKzCSOJTzWXv7DGiLyLILcDEj6Y7EnyBjEd9znYP2yqwBNgMUqV4tLLl8jnV67dmh2o3T5BNGrd9UVszj"},"4aae698155ee70c531b492974d853005":{"i":"ZgxP7vbGC54l+Jjc","c":"KEJ41qEvMCj/5nZKNS/Pma9KlPakcRwg25YXmlXKkMQmBo5lD4R3GTDEKcRPVtafyrf1rr4yOYBXgU6BwOOLax2Z4Zw84gGxL5ZF54tnF97DUsDJ0V85FuR0/5xQSeNIx9uos//qKb27xvgGtBjibcnHfOFV43/CvoniSL1uxJsOynBwT0C2oxgy"},"9e63300e0361401ac170f9a5bdd53dc1":{"i":"ZVOc1KOSF6o8iPgy","c":"ynFSbUzQ+kX6JrdFlQeYWGlCAt1IlGGGr8Qkjf3xaECaPhkFrrtnyDwyFV7UhnpJl96AUslqH/pdn6xFGGoKCJke44nux9HrthGvL1O1XXmVd936l5E76eFnj5PrXRiuNIfcEdHkin7mFzM9JAmusiMeIOfbtm1DvUlKzomHyBt5yVKUhDhjbnFS"},"c42c10a6d5cc3c724a03826da09f1cbf":{"i":"tXwzoUw5Kf+OKLEy","c":"36KeeKK+W+EmVu5VRuohYj8WxF1wG6fUXpsAnXs+f95Z5Z0K+rRhXiRamRIJ2frO9nsS8Xe+7ucIghd0zUwthAyGWtV7otImA80Ged5iwn3lcyj+KL41UElAi1o2MclE6TqwwvFJ7m1Qzgwr4jv0nyElXNYzPjsDcVi/Kjg3YTtavOKilIjuBxUftXaTXAHvFbsN9PejXQQPvJ7dGLKY5ZFpAND0IdVD6cNrp4c5eU2nBZTNHc9F6IHOLbDn1MRFewk9qGtBvB9/SaFOrS7VKve9ea59N8+yuY3OGzt/aSAWlMovWjVuc2xxscDFWsTLzS83af6WMgxTRU59R6JLPMCdZqNRp4quopiFj1V55cQtwe3FkLyOtpWBp/3zyPNmDIm8/ios1EcOpgVo/28tO08Pj/KCpChlB7xZ+K9FwikZPvsVdvbulmQHDIfxRDnuzBHI8eHRFKIebxhddv0CAa2fWczQigO7AA7yYdCKHgFAn0HQaF5TXPlaIhyypA5L8aq+L67WNuwH290ibqQy7Vok6YOT4ifY/3xB9hKl95XAolBFKlnIQ99PI8rHUdyaNNEx0m2PQOIHLW5DDR7IFGdYNFthNCkt7HrMnEadHGjR7kyc7+ZdgnqmIuoQtIPYDhUX3txjM8sIdxugRUnXQgL6c/U="}};
+
+/* ========================================================= */
+const $ = s => document.querySelector(s);
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const escapeHtml = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm = s => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/g, "");
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+const memStore = {};
+const store = {
+  get(k, d){
+    try{ const v = localStorage.getItem("dekia_" + k); if (v !== null) return JSON.parse(v); }catch(e){}
+    return Object.prototype.hasOwnProperty.call(memStore, k) ? memStore[k] : d;
+  },
+  set(k, v){ memStore[k] = v; try{ localStorage.setItem("dekia_" + k, JSON.stringify(v)); }catch(e){} }
+};
+
+function el(tag, cls, text){
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
+}
+
+/* ---------- Servidor ---------- */
+async function api(payload){
+  if (!CONFIG.API_URL || CONFIG.API_URL.includes("PEGA_AQUI")) throw new Error("noconfig");
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 25000);
+  try{
+    const r = await fetch(CONFIG.API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload),
+      redirect: "follow",
+      signal: ctrl.signal
+    });
+    const data = await r.json();
+    if (!data || typeof data !== "object") throw new Error("red");
+    return data;
+  } catch(e){
+    throw new Error(e.message === "noconfig" ? "noconfig" : "red");
+  } finally { clearTimeout(t); }
+}
+
+/* ---------- Cifrado ---------- */
+const SALT = "dekia·2rpae·gronholm", ITER = 200000;
+const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function openSecret(word){
+  if (!window.crypto || !crypto.subtle) return { error: "nocrypto" };
+  const enc = new TextEncoder();
+  const base = await crypto.subtle.importKey("raw", enc.encode(word), "PBKDF2", false, ["deriveBits"]);
+  const bits = new Uint8Array(await crypto.subtle.deriveBits({ name:"PBKDF2", hash:"SHA-256", salt:enc.encode(SALT), iterations:ITER }, base, 512));
+  const id = Array.from(bits.slice(32, 48), b => b.toString(16).padStart(2, "0")).join("");
+  if (!Object.prototype.hasOwnProperty.call(SECRETS, id)) return null;
+  const key = await crypto.subtle.importKey("raw", bits.slice(0, 32), "AES-GCM", false, ["decrypt"]);
+  const rec = SECRETS[id];
+  const pt = await crypto.subtle.decrypt({ name:"AES-GCM", iv:unb64(rec.i) }, key, unb64(rec.c));
+  return JSON.parse(new TextDecoder().decode(pt));
+}
+
+/* ---------- Reloj, contador, fechas ---------- */
+const t0 = Date.now();
+setInterval(() => {
+  const s = Math.floor((Date.now() - t0) / 1000);
+  const p = n => String(n).padStart(2, "0");
+  $("#clock").textContent = `${p(Math.floor(s / 3600))}:${p(Math.floor(s / 60) % 60)}:${p(s % 60)}`;
+}, 1000);
+
+setInterval(() => {
+  const n = $("#candCount");
+  n.textContent = "3"; n.classList.add("glitch");
+  setTimeout(() => { n.textContent = "4"; n.classList.remove("glitch"); }, 260);
+}, 17000);
+
+{ const d = new Date(); if (d.getMonth() === 0 && d.getDate() === 31) $("#boscoBanner").style.display = "block"; }
+
+/* ---------- Toast ---------- */
+let toastT;
+function toast(msg){
+  const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), 3600);
+}
+
+let realTitle = document.title;
+// Si sale de la pestaña más de 30 s con el sistema abierto (en plena prueba), se cierra su candidatura
+let hiddenAt = 0;
+document.addEventListener("visibilitychange", () => {
+  document.title = document.hidden ? "No se vaya. Le estamos observando." : realTitle;
+  if (document.hidden){
+    hiddenAt = $("#termBg").classList.contains("open") ? Date.now() : 0;
+  } else {
+    const fuera = hiddenAt ? Date.now() - hiddenAt : 0;
+    hiddenAt = 0;
+    if (fuera > 30000 && !store.get("cerrada", false)) cerrarCandidatura(Math.round(fuera / 1000));
+  }
+});
+function cerrarCandidatura(segundos){
+  store.set("cerrada", true);
+  sobre("Aviso · Candidatura cerrada", [
+    `Ha abandonado la sala durante ${segundos} segundos en plena prueba.`,
+    "Si quiere buscar pistas fuera, al menos cúrreselo un poco más: aquí lo hemos notado todo.",
+    "Su candidatura queda cerrada. Puede seguir abriendo expedientes, pero ya no optará al puesto."
+  ], "Para empezar de cero, escriba 'reiniciar' en el sistema. Perderá todo lo conseguido.");
+}
+
+/* ---------- F12 y herramientas de desarrollador ---------- */
+// No se pueden bloquear del todo en ninguna web: se bloquean los atajos y se avisa si se detectan abiertas
+const DEV_MSGS = [
+  "⚠ ADVERTENCIA: HERRAMIENTAS DE DESARROLLADOR DETECTADAS",
+  "⚠ EL DEPARTAMENTO DE SELECCIÓN LE ESTÁ OBSERVANDO",
+  "⚠ LAS RESPUESTAS ESTÁN CIFRADAS · ESTÁ PERDIENDO EL TIEMPO",
+  "⚠ INCIDENCIA REGISTRADA EN SU EXPEDIENTE",
+  "⚠ FERNANDO NUNCA HARÍA ESTO. BUENO, SÍ LO HARÍA",
+  "⚠ CIERRE ESO. AHORA."
+];
+let devActivos = 0, devSobre = false;
+function avisoDev(msg){
+  if (devActivos >= 3) return;
+  devActivos++;
+  const w = el("div", "dev-warn", msg || DEV_MSGS[Math.floor(Math.random() * DEV_MSGS.length)]);
+  w.style.top = (8 + Math.random() * 78) + "vh";
+  document.body.appendChild(w);
+  setTimeout(() => { w.remove(); devActivos--; }, 3200);
+  if (!devSobre){
+    devSobre = true;
+    sobre("Aviso · Inspección no autorizada", [
+      "Ha intentado mirar donde no debía.",
+      "El código de Dekia no es para candidatos. Y aunque lo fuera: todo lo importante está cifrado.",
+      "Este intento ha quedado registrado. Las respuestas están en la página, no detrás de ella."
+    ]);
+  }
+}
+document.addEventListener("keydown", e => {
+  const k = (e.key || "").toLowerCase(), ctrl = e.ctrlKey || e.metaKey;
+  if (k === "f12" || (ctrl && e.shiftKey && ["i", "j", "c"].includes(k)) || (ctrl && k === "u")){
+    e.preventDefault(); e.stopPropagation();
+    avisoDev("⚠ ATAJO BLOQUEADO · EL CÓDIGO DE DEKIA NO ES PARA CANDIDATOS");
+  }
+}, true);
+let devBase = null;
+setInterval(() => {
+  if (!window.outerWidth) return;
+  const dpr = window.devicePixelRatio || 1;
+  const dw = window.outerWidth - window.innerWidth, dh = window.outerHeight - window.innerHeight;
+  // Al hacer zoom o cambiar el tamaño de la ventana se recalcula la referencia (evita falsos avisos)
+  if (!devBase || devBase.dpr !== dpr || devBase.ow !== window.outerWidth || devBase.oh !== window.outerHeight){
+    devBase = { dpr, ow: window.outerWidth, oh: window.outerHeight, dw, dh };
+    return;
+  }
+  if (dw - devBase.dw > 160 || dh - devBase.dh > 160) avisoDev();
+}, 2000);
+document.addEventListener("contextmenu", () => toast("Clic derecho registrado en su expediente."));
+
+let logoClicks = 0;
+$("#logo").addEventListener("click", () => { if (++logoClicks === 7) toast("Siete clics en el logo. Anotamos: impaciente."); });
+
+/* ---------- Modal ---------- */
+// Si ya hay un mensaje abierto, el siguiente espera su turno
+const modalQueue = [];
+function openModal(title, paragraphs, ps, opts = {}){
+  if ($("#modalBg").classList.contains("open")){ modalQueue.push([title, paragraphs, ps, opts]); return; }
+  const c = $("#modalContent");
+  c.replaceChildren(el("h3", "", title), ...paragraphs.map(p => el("p", "", p)));
+  if (ps) c.appendChild(el("p", "ps", ps));
+  $(".modal").classList.toggle("sobre", !!opts.sobre);
+  $("#modalBg").classList.add("open");
+}
+function closeModal(){
+  $("#modalBg").classList.remove("open");
+  const next = modalQueue.shift();
+  if (next) setTimeout(() => openModal(...next), 300);
+}
+// Aviso con forma de sobre (cierra el sistema para que se vea)
+function sobre(title, paragraphs, ps){
+  $("#termBg").classList.remove("open");
+  openModal(title, paragraphs, ps, { sobre: true });
+}
+$("#modalX").addEventListener("click", closeModal);
+$("#modalBg").addEventListener("click", e => { if (e.target.id === "modalBg") closeModal(); });
+
+/* ---------- El sobre ---------- */
+const envelope = $("#envelope");
+setTimeout(() => envelope.classList.add("show"), 45000);
+function openEnvelope(){
+  envelope.classList.remove("show");
+  openModal("Instrucción nº 1", [
+    "Señores candidatos:",
+    "Uno de ustedes no es un candidato. Es un miembro de nuestro departamento de selección.",
+    "Su primera prueba consiste en descubrir quién es.",
+    "Dispone de todo el tiempo que necesite. O casi."
+  ], "P.D.: Lo que tiene ahora en las manos no es solo un sobre. También es una llave. Para usarla basta con escribirla, en cualquier parte, cualquier parte es cualquier parte, pruebe a escribirlo aqui mismo sin seleccionar nada.");
+}
+envelope.addEventListener("click", openEnvelope);
+envelope.addEventListener("keydown", e => { if (e.key === "Enter") openEnvelope(); });
+
+/* ---------- Formulario de candidatura ---------- */
+// "daniel pérez" → "Daniel Pérez" (sin tocar partículas como "de" o "del")
+function capitalizar(n){
+  return n.split(/\s+/).map((w, i) =>
+    i > 0 && ["de", "del", "la", "las", "los", "y"].includes(w.toLowerCase()) ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1)
+  ).join(" ");
+}
+const PERSONAJES = { fernandoporta: "Fernando Porta", carlabueno: "Carla Bueno", carlosbueno: "Carlos Bueno",
+                     enriquefont: "Enrique Font", mercedesdegas: "Mercedes Degás" };
+const PILA = { fernando: "Fernando Porta", carla: "Carla Bueno", enrique: "Enrique Font", mercedes: "Mercedes Degás" };
+function personajeDe(nombre){
+  const c = norm(nombre);
+  for (const k in PERSONAJES) if (c.includes(k)) return PERSONAJES[k];
+  const ws = nombre.trim().split(/\s+/);
+  return ws.length === 1 ? PILA[norm(ws[0])] || null : null;
+}
+$("#cvForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const nombre = capitalizar($("#fNombre").value.trim().slice(0, 60));
+  const email = $("#fEmail").value.trim().toLowerCase().slice(0, 100);
+  if (nombre.length < 2) return toast("Indique su nombre. Aquí nadie es anónimo.");
+  if (!EMAIL_RE.test(email)) return toast("Ese correo no parece real. Lo anotamos.");
+  if (!$("#fAcepto").checked) return toast("Debe aceptar las condiciones. Todas.");
+
+  const btn = $("#fEnviar");
+  btn.disabled = true; btn.textContent = "Enviando...";
+  const infiltrado = $("#fPuesto").selectedIndex === 2;
+  let ok = false, error = "", resp = {};
+  try{
+    resp = await api({
+      accion: "registro", nombre, email,
+      motivo: ($("#fPuesto").value + " | " + $("#fMotivo").value).slice(0, 500),
+      website: $("#fWeb").value
+    });
+    ok = !!resp.ok; error = resp.error || "";
+  } catch(err){ error = err.message; }
+  btn.disabled = false; btn.textContent = "Enviar candidatura";
+
+  if (!ok){
+    const msg = { noconfig: "El sistema de selección aún no está conectado. Inténtelo más tarde.",
+                  ocupado: "La sala está llena. Inténtelo dentro de un minuto.",
+                  datos: "Revise su nombre y su correo." }[error] || "No se pudo enviar la candidatura. Compruebe su conexión e inténtelo de nuevo.";
+    return openModal("Candidatura no enviada", [msg]);
+  }
+
+  store.set("ident", { nombre, email });
+  const nombrePila = nombre.split(" ")[0];
+  openModal("Candidatura recibida", [
+    `Gracias, ${nombrePila}.`,
+    "Su número de candidato es el 5.",
+    "Sí, ya sabemos que solo hay cuatro sillas. Eso también forma parte del proceso.",
+    ...(infiltrado ? ["Hemos tomado nota de que es usted un infiltrado. Qué raro que lo diga tan abiertamente. Muy sospechoso."] : []),
+    "Por favor, espere. La primera instrucción no tardará en llegar."
+  ], "Todo lo que necesita para llegar al final ya está escrito en esta página. Solo los primeros serán seleccionados.");
+
+  // Avisos extra (se abren al cerrar el mensaje anterior)
+  const personaje = personajeDe(nombre);
+  if (personaje) sobre("Aviso · Suplantación detectada", [
+    `Ha firmado su candidatura como "${nombre}". Curioso: ${personaje} es uno de los candidatos que ya están sentados en la sala.`,
+    "O es usted muy fan de la obra, o es usted el topo.",
+    "En cualquier caso, lo hemos anotado. Dos veces."
+  ]);
+  if (resp.repetido) sobre("Aviso · Ya le conocemos", [
+    "Este correo ya había enviado una candidatura.",
+    "Dekia no olvida. Seguimos con su expediente anterior: no hace falta presentarse dos veces."
+  ]);
+  else if (resp.nombreRepetido) sobre("Aviso · Nombre duplicado", [
+    `Ya hay otro candidato llamado ${nombre} en nuestros registros.`,
+    "En una sala con dos personas iguales, una sobra.",
+    "¿Cuál de los dos es el de verdad? Eso también forma parte del proceso."
+  ]);
+  e.target.reset();
+  setTimeout(() => envelope.classList.add("show"), 8000);
+});
+
+/* =========================================================
+   TERMINAL
+   ========================================================= */
+const termBg = $("#termBg"), termBody = $("#termBody"), termIn = $("#termIn"), termPrompt = $("#termPrompt");
+const PROMPT = "dekia@seleccion:~$";
+let termOpenedOnce = false, cmdHistory = [], hIdx = 0, busy = false, pending = null;
+let queue = Promise.resolve();
+
+function line(html, cls = ""){
+  const d = el("div", "ln " + cls);
+  d.innerHTML = html;
+  termBody.appendChild(d); termBody.scrollTop = termBody.scrollHeight;
+}
+function say(lines, cls = ""){
+  queue = queue.then(async () => { for (const l of lines){ line(l, cls); await sleep(38); } });
+  return queue;
+}
+// Igual que say(), pero letra a letra y muy despacio (para el efecto de cámara lenta)
+function sayDespacio(lines, cls = ""){
+  queue = queue.then(async () => {
+    for (const l of lines){
+      const tpl = document.createElement("template");
+      tpl.innerHTML = l;                       // contenido inerte: solo se usa para sacar el texto
+      const d = el("div", "ln " + cls);
+      termBody.appendChild(d);
+      for (const ch of tpl.content.textContent){
+        d.textContent += ch;
+        termBody.scrollTop = termBody.scrollHeight;
+        await sleep(ch === " " ? 35 : 75);
+      }
+      await sleep(260);
+    }
+  });
+  return queue;
+}
+
+/* Aviso cuando lleva más de 1 hora desde que abrió el sistema por primera vez */
+function revisarHora(){
+  const inicio = Number(store.get("inicio", 0)) || 0;
+  if (!inicio || store.get("avisoHora", false) || Date.now() - inicio < 60 * 60 * 1000) return;
+  store.set("avisoHora", true);
+  const texto = ["Lleva más de una hora en el proceso.",
+                 "El departamento de selección ha decidido ofrecerle ayuda. Escriba 'pista' para conocer el precio."];
+  if (termBg.classList.contains("open")) say(["", ...texto.map(t => `<span class='hi'>${t}</span>`), ""]);
+  else openModal("Instrucción nº 3", texto, "Nadie le obliga a aceptarla. Algunos candidatos prefieren llegar solos.");
+}
+setInterval(revisarHora, 60000);
+
+function openTerm(){
+  termBg.classList.add("open");
+  setTimeout(() => termIn.focus(), 50);
+  if (!store.get("inicio", 0)) store.set("inicio", Date.now());
+  revisarHora();
+  if (termOpenedOnce) return;
+  termOpenedOnce = true;
+  say(["Estableciendo conexión segura con Dekia Corporation...",
+       "Verificando identidad............ <span class='red'>DUDOSA</span>",
+       "Acceso concedido de forma provisional.", ""], "dim");
+  say(["Bienvenido al sistema interno de selección.",
+       "Escriba <b>ayuda</b> si la necesita. En Dekia pedir ayuda también puntúa. Negativamente.", ""]);
+}
+function closeTerm(){ termBg.classList.remove("open"); }
+$("#termX").addEventListener("click", closeTerm);
+termBg.addEventListener("click", e => { if (e.target === termBg) closeTerm(); });
+
+/* ---------- Fragmentos ---------- */
+// Solo se aceptan las posiciones 1-5 con una letra (ignora progreso viejo o manipulado)
+function frags(){
+  const raw = store.get("progreso_v4", {}), f = {};
+  if (raw && typeof raw === "object" && !Array.isArray(raw))
+    for (const k of ["1","2","3","4","5"]) if (typeof raw[k] === "string" && /^[A-Z]$/.test(raw[k])) f[k] = raw[k];
+  return f;
+}
+function fragCount(){ return Object.keys(frags()).length; }
+function fragStatus(){
+  const f = frags();
+  const keys = Object.keys(f).sort();
+  return keys.length ? keys.map(k => `<span class="frag">${escapeHtml(k)} · ${escapeHtml(f[k])}</span>`).join(" ") : "(ninguno)";
+}
+function addFrag(fr){
+  const f = frags();
+  const pos = String(fr.pos);
+  if (f[pos] === String(fr.letra)){
+    say(["", `► LETRA ${escapeHtml(pos)} de 5: <span class="frag">${escapeHtml(fr.letra)}</span>   (ya estaba en su expediente · ${Object.keys(f).length}/5)`], "ok");
+    return;
+  }
+  f[pos] = String(fr.letra); store.set("progreso_v4", f);
+  const n = Object.keys(f).length;
+  say(["", `► FRAGMENTO RECUPERADO · posición ${escapeHtml(pos)} de 5: <span class="frag">${escapeHtml(fr.letra)}</span>   (${n}/5)`], "ok");
+  if (n === 5){
+    const palabra = ["1","2","3","4","5"].map(k => escapeHtml(f[k])).join(" · ");
+    say(["", "Tiene las cinco letras: " + palabra,
+         "Ordenadas forman lo primero que se abre cuando empieza la función",
+         "y lo último que cae cuando termina. Escriba esa palabra para presentarse."], "hi");
+  }
+}
+
+/* ---------- Expedientes de personajes (públicos) ---------- */
+const EXPEDIENTES = {
+  fernando: ["EXPEDIENTE · FERNANDO PORTA", "────────────────────────────",
+    "Perfil: competitivo, agresivo, seguro de sí mismo.",
+    "Confianza en sí mismo: excesiva. Empatía: pendiente de localizar.",
+    "Observación: considera al resto de candidatos 'decorado'.",
+    "Recomendación: no subestimarle. Tampoco sobrestimarle."],
+  carla: ["EXPEDIENTE · CARLA BUENO", "────────────────────────────",
+    "Perfil: conciliadora, amable, la que pone paz.",
+    "Observación: guarda algo personal que aún no ha contado.",
+    "Pregunta clave: ¿lo contará ella o lo contará una instrucción?",
+    "Recomendación: escuchar. Con atención."],
+  enrique: ["EXPEDIENTE · ENRIQUE FONT", "────────────────────────────",
+    "Perfil: nervioso, inseguro, suda más de lo normal.",
+    "Observación: demasiado nervioso para ser un simple candidato...",
+    "...o demasiado nervioso para ser otra cosa.",
+    "Estado: <span class='red'>[DATOS PARCIALMENTE CENSURADOS]</span>"],
+  mercedes: ["EXPEDIENTE · MERCEDES DEGÁS", "────────────────────────────",
+    "Perfil: brillante, fría, estratégica.",
+    "Observación: mira el reloj más de lo que debería.",
+    "Ha dejado fuera algo (o a alguien) muy importante para estar aquí.",
+    "Recomendación: preguntarle qué está dispuesta a sacrificar."]
+};
+const EXP_ALIAS = { porta:"fernando", fernandoporta:"fernando", bueno:"carla", carlabueno:"carla",
+                    font:"enrique", enriquefont:"enrique", degas:"mercedes", mercedesdegas:"mercedes" };
+
+const RANDOM_ERR = [
+  "Comando no reconocido. Este error se ha añadido a su expediente.",
+  "No existe. Igual que la mitad de cosas que dijo en la entrevista.",
+  "Comando desconocido. El departamento de selección toma nota.",
+  "Error. ¿Está seguro de que ha leído bien toda la página?",
+  "Eso no abre nada. Pruebe a leer con más atención.",
+  "Respuesta incorrecta. Uno de los otros candidatos lo habría sabido."
+];
+
+/* ---------- Comandos públicos (clave = comando normalizado) ---------- */
+const PLAIN = {
+  ayuda: () => [
+    "Comandos de uso general:",
+    "  ayuda       · muestra esto (penaliza)",
+    "  leeme       · cómo funciona el proceso (empiece por aquí)",
+    "  pista       · ayuda del departamento (tiene un precio)",
+    "  estado      · su progreso en el proceso",
+    "  quiensoy    · identificación del usuario",
+    "  ls          · archivos del sistema",
+    "  limpiar     · limpia la pantalla",
+    "  reiniciar   · destruye su expediente y empieza de cero",
+    "  salir       · abandona el sistema (y quizá el proceso)",
+    "",
+    "Los expedientes clasificados NO aparecen en esta lista.",
+    "No se piden: se descubren. Y no, no están en el código fuente."
+  ],
+  help: () => ["We only speak Spanish here. Escriba <b>ayuda</b>. (Anotado: pide ayuda en inglés.)"],
+  estado: () => {
+    const id = validIdent();
+    const ok = t => `<span style='color:var(--term-green)'>${t}</span>`;
+    // Tiempo desde que abrió el sistema por primera vez
+    const inicio = Number(store.get("inicio", 0)) || 0;
+    const mins = inicio ? Math.floor((Date.now() - inicio) / 60000) : 0;
+    const tiempo = mins >= 60 ? `${Math.floor(mins / 60)} h ${mins % 60} min` : `${mins} min`;
+    // Valores escuchados (son públicos: se enseñan todos, marcando los que faltan)
+    const oidos = (store.get("valores", []) || []).filter(v => VALORES[v]);
+    const valores = Object.keys(VALORES).map(v => {
+      const nombre = v.charAt(0).toUpperCase() + v.slice(1);
+      return oidos.includes(v) ? ok("✓ " + nombre) : "<span class='dim'>· " + nombre + "</span>";
+    }).join("  ");
+    // Lema: las palabras que faltan no se desvelan
+    const lemaOk = (store.get("lema", []) || []).filter(p => LEMA[p]);
+    const NOMBRE_LEMA = { amor: "AMOR", paz: "PAZ", religion: "RELIGIÓN" };
+    const lema = Object.keys(NOMBRE_LEMA).map(p => lemaOk.includes(p) ? ok(NOMBRE_LEMA[p]) : "<span class='dim'>???</span>").join(" · ");
+    const faltanLema = 3 - lemaOk.length;
+    const out = [
+      "EXPEDIENTE DEL CANDIDATO",
+      "────────────────────────",
+      `Candidato:  ${id ? escapeHtml(id.nombre) + " &lt;" + escapeHtml(id.email) + "&gt;" : "sin identificar (no ha enviado candidatura)"}`,
+      `Tiempo:     ${tiempo} en el proceso`,
+      `Letras:     ${fragStatus()}  (${fragCount()}/5)`,
+      `Valores:    ${valores}  (${oidos.length}/4)`,
+      `Lema:       ${lema}  (${lemaOk.length}/3) ${faltanLema ? `<span class='dim'>· le ${faltanLema === 1 ? "queda 1 palabra" : "quedan " + faltanLema + " palabras"}</span>` : ok("✓ completado")}`,
+      `Errores:    ${Number(store.get("errores", 0)) || 0}`
+    ];
+    if (store.get("maldito", false)) out.push("", "<span class='red'>MALDITO: abrió el expediente Warren. No puede ser seleccionado (escriba 'reiniciar').</span>");
+    if (store.get("cerrada", false)) out.push("", "<span class='red'>CANDIDATURA CERRADA: salió de la sala en plena prueba (escriba 'reiniciar').</span>");
+    if (store.get("ayudado", false)) out.push("", "<span class='dim'>Ha pedido ayuda al departamento: ya no opta a ninguno de los 10 puestos.</span>");
+    return out;
+  },
+  quiensoy: () => {
+    const id = store.get("ident", null);
+    return id ? [`Según nuestros registros, usted es ${escapeHtml(id.nombre)}.`, "Según nuestras sospechas, eso está por ver."]
+              : ["Usted es el candidato número 5.", "O quizá trabaja para nosotros y aún no lo sabe."];
+  },
+  ls: () => {
+    const f = frags();
+    return ["total 8", "-r--------  leeme.txt",
+      ...[1,2,3,4,5].map(i => `-r--------  expediente_clasificado_${i}.dat   ${f[i] ? "<span style='color:var(--term-green)'>[ABIERTO]</span>" : "<span class='red'>[CERRADO]</span>"}`),
+      "-r--------  expedientes_candidatos/   (expediente &lt;nombre&gt;)",
+      "-r--------  final.dat   <span class='red'>[requiere 5 fragmentos]</span>"];
+  },
+  leeme: () => [
+    "LEEME.TXT",
+    "═════════",
+    "CÓMO FUNCIONA",
+    "Hay 5 expedientes clasificados. Cada uno se abre con una palabra clave: escríbelo aquí.",
+    "Cada expediente abierto le entrega una letra y su posición.",
+    "Con las 5 letras en su sitio tendrá la palabra final. Escríbelo y preséntese.",
+    "Todo lo que necesita está en la página. No hace falta tocar el código: está cifrado.",
+    "Las palabras clave se escriben sin espacios, tildes ni mayúsculas (aunque se las perdonamos).",
+    "",
+    "EXPEDIENTE 1",
+    "  En Dekia presumimos de cuatro valores, y como buenos candidatos, ninguno dice",
+    "  toda la verdad. Pero si los escucha solo cuando empiezan a hablar, uno detrás de",
+    "  otro, le confesarán qué es quien se ha colado en la sala.",
+    "",
+    "EXPEDIENTE 2",
+    "  Hay una prueba que no se supera con la cabeza, sino sobre ella. Nuestras preguntas",
+    "  frecuentes le advierten de lo que podría tocarle llevar puesto. No queremos un",
+    "  ejemplo: queremos el nombre que los reúne a todos.",
+    "",
+    "EXPEDIENTE 3",
+    "  Nada de lo que pasa en esta sala es improvisado: todo estaba escrito antes de que",
+    "  usted llegara. Quien lo escribió firmó donde firman los que no necesitan",
+    "  presentarse, al final de todo. Nos basta con su apellido.",
+    "",
+    "EXPEDIENTE 4",
+    "  Antes que el nuestro existió otro método, mucho más amable. Lo inventó un",
+    "  sacerdote de Turín que, en 1859, decidió que a los jóvenes se les educa queriéndolos.",
+    "  En un barrio de Granada aún se habla de él cada día. Escríbalo como le llaman allí:",
+    "  no con su nombre completo, sino con el trato de siempre.",
+    "",
+    "EXPEDIENTE 5",
+    "  Ese sacerdote no estuvo solo. Alguien dejó su casa del campo para irse con él a la",
+    "  ciudad y cuidar de cientos de chicos que no eran suyos. En aquella casa nadie la",
+    "  llama por su apellido, sino como la llamaba él. Si en recepción pregunta si puede",
+    "  traer a la suya, le contestarán con media respuesta.",
+    "",
+    "PARA LOS CURIOSOS (sin letra)",
+    "  · Toda oferta lleva una firma. La nuestra, también.",
+    "  · Nuestra sede temporal está en un barrio con nombre propio.",
+    "  · Hay un apellido que lo explica todo. Quien selecciona el texto adecuado, lo encuentra."
+  ],
+  pista: () => [
+    "AYUDA DEL DEPARTAMENTO DE SELECCIÓN",
+    "───────────────────────────────────",
+    "La ayuda existe. Pero en Dekia nada es gratis:",
+    "  · Solo se concede a candidatos registrados que lleven más de 1 hora en el proceso.",
+    "  · Quien la pide queda <span class='red'>fuera de los 10 puestos</span>. Para siempre. Aunque llegue al final.",
+    "",
+    "Fernando nunca pediría ayuda. Mercedes encontraría otra forma.",
+    "Si aun así la quiere, escriba: <b>pista confirmar</b>"
+  ],
+  limpiar: () => { termBody.replaceChildren(); return null; },
+  salir: () => { closeTerm(); return null; },
+  // Borra letras y candidato de este navegador; el tiempo ("inicio") se mantiene
+  reiniciar: () => {
+    const estabaMaldito = !!store.get("maldito", false);
+    store.set("progreso_v4", {});
+    store.set("ident", null);
+    store.set("ayudado", false);
+    store.set("maldito", false);
+    store.set("cerrada", false);
+    store.set("lema", []);
+    store.set("errores", 0);
+    store.set("valores", []);
+    apagarValores();
+    document.body.classList.remove("horror");
+    realTitle = "Dekia · Trabaja con nosotros"; document.title = realTitle;
+    return ["Expediente destruido. Nadie recordará que estuvo aquí.",
+            "Su candidatura también ha sido retirada de esta sesión.",
+            ...(estabaMaldito ? ["<span class='hi'>La maldición se ha roto. Los Warren han cerrado el caso.</span>"] : []),
+            "<span class='dim'>El reloj, en cambio, sigue corriendo. En Dekia el tiempo no se devuelve.</span>"];
+  },
+  candidatos: () => ["CANDIDATOS EN SALA", "  1. Fernando Porta", "  2. Carla Bueno", "  3. Enrique Font", "  4. Mercedes Degás", "",
+    "¿Seguro que son cuatro candidatos? ¿Seguro que son candidatos?", "Consulte: expediente &lt;nombre o apellido&gt;"],
+  contratar: () => ["<span class='red'>ACCESO DENEGADO.</span> En Dekia nadie es contratado. Solo seleccionado."],
+  sudocontratar: () => ["Buen intento. Aquí no hay superusuarios. Solo candidatos... y los que les observan."],
+  sudo: () => ["En Dekia nadie tiene permisos de administrador. Ni siquiera nosotros."],
+  sobre: () => ["Ya está dentro. No hace falta que siga pidiendo sobres. Ellos le encontrarán a usted."],
+  trampilla: () => ["Por la trampilla solo sale una cosa. Y usted ya sabe cuál es."],
+  dekia: () => ["Dekia no existe.", "...", "¿O sí?"],
+  metodo: () => ["¿Qué método? Aquí no hay ningún método. Siga con la prueba."],
+  oratorio: () => ["Casa que acoge, parroquia que evangeliza, escuela que prepara para la vida y patio para encontrarse.", "Dekia, en cambio: sala que encierra."],
+  cafe: () => ["La máquina de café está averiada. Es parte de la prueba."],
+  agua: () => ["El agua hay que ganársela. Lo pone en la oferta."],
+  hola: () => ["Buenos días. En los Salesianos se empieza así.", "En Dekia, con un sobre."],
+  cactus: () => ["No hay ningún cactus en esta sala.", "Deje de mirar las esquinas."],
+  hackear: () => ["Las respuestas están cifradas y la palabra final la valida el servidor.", "Pero oiga, que lo intente dice mucho de usted. Anotado."],
+  candidato: () => ["Los candidatos no son contraseñas. Si quiere su ficha: expediente &lt;nombre&gt;."],
+  carlos: () => ["Carlos ya no trabaja aquí. Ahora es Carla, y le va mucho mejor.", "Consulte: expediente carla"],
+  // "warren" a secas: avisa de que el comando bueno es otro
+  warren: () => store.get("maldito", false)
+    ? ["Ya lo abrió una vez.", "Y mire cómo ha acabado todo. Escriba 'reiniciar' si quiere romper la maldición."]
+    : ["<span class='red'>Así no es.</span>",
+       "Si lo que quiere es examinar el expediente maldito, tendrá que escribir el comando bien.",
+       "<span class='dim'>Aunque, si nos permite un consejo: piénseselo dos veces.</span>"],
+  loswarren: () => {
+    frio();
+    return ["LOS WARREN", "──────────",
+      "Ed y Lorraine Warren. Investigadores de lo paranormal.",
+      "Dekia los llamó una vez para revisar la sala de reuniones de la planta 19.",
+      "Se fueron antes de que llegara el segundo sobre. Sin cobrar.",
+      "<span class='dim'>¿Lo nota? Acaba de bajar la temperatura.</span>"];
+  },
+  warrens: () => {
+    visionDoble();
+    return ["¿Warrens? Solo eran dos.",
+      "Si usted está viendo más, el problema ya no es el expediente.",
+      "<span class='dim'>Parpadee un par de veces. Se le pasará. Probablemente.</span>"];
+  },
+  edwarren: () => {
+    setTimeout(notaDeEd, 900);
+    return ["Buscando a Ed Warren en el archivo...", "No está. Pero ha dejado algo."];
+  },
+  lorraine: () => { lorraineVe(); return null; },
+  lorrainewarren: () => {
+    ouija();
+    return ["Lorraine Warren ha traído un tablero.", "No lo toque. Ya se mueve solo."];
+  },
+  actores: () => ["Los actores no están disponibles. Están ensayando.", "(Y repasando el texto, esperamos.)"],
+  kronte: () => ["El arquitecto de este sistema.", "Le saluda desde algún rincón del código. No, ahí tampoco están las respuestas."],
+  porfavor: () => ["La educación puntúa. Aunque no lo suficiente."],
+  socorro: () => ["El departamento ha registrado su desesperación.", "Vuelva a leer el leeme. Despacio. Cada palabra está puesta a propósito."],
+  password: () => ["¿De verdad? Dekia no usa contraseñas de 2009."],
+  borrar: () => ["La sala no se puede borrar. Usted, en cambio, sí."],
+  si: () => ["Aquí nadie le ha preguntado nada. Todavía."],
+  merindo: () => ["Nadie renuncia a Dekia. Es Dekia quien renuncia a usted.", "Pero mientras siga aquí, sigue en el proceso."],
+  jefe: () => ["Dekia tiene cinco jefes de departamento. Ninguno se ha presentado.",
+               "Dicen que si los llama por su nombre de pila, contestan. Uno de ellos ya ni siquiera trabaja aquí."],
+
+  /* --- Jefes de departamento (profesorado de 2º RPAE) --- */
+  josue: () => ["FICHA DE PERSONAL · JOSUÉ", "──────────────────────────",
+    "Cargo: Jefe del Departamento de Retoque Fotográfico y Artes Escénicas.",
+    "Especialidad: Photoshop y teatro. Puede quitarle las ojeras de una foto por la mañana",
+    "y sacarle una lágrima en el escenario por la tarde.",
+    "Rasgo distintivo: el más gracioso de todo el edificio. Dekia lo tiene en observación:",
+    "en una empresa tan seria, reírse tanto resulta sospechoso.",
+    "Observación: comparte el departamento de teatro con Mariángeles. Él pone las risas; ella, las fechas.",
+    "Recomendación: si le enseña una foto mala, no le pida que la arregle. Le pedirá que la repita."],
+  mariangeles: () => ["FICHA DE PERSONAL · MARIÁNGELES", "────────────────────────────────",
+    "Cargo: Jefa del Departamento de Tutoría y Disciplina (2º RPAE, curso actual).",
+    "Especialidad: teatro, junto a Josué, y que todo se entregue a su hora. Sin excusas.",
+    "Rasgo distintivo: la más estricta de Dekia. También la más querida. Los candidatos aún",
+    "no han descubierto cómo se consiguen las dos cosas a la vez.",
+    "Punto débil registrado: <span class='red'>los churros</span>. No rechazaría unos. Nunca.",
+    "Recomendación: si va a pedirle una prórroga, no vaya con las manos vacías."],
+  victor: () => ["FICHA DE PERSONAL · VÍCTOR", "──────────────────────────",
+    "Cargo: Jefe de Estudios. Es decir, quien de verdad decide quién entra en la sala.",
+    "Especialidad: las cámaras. Siempre lleva una encima. Las del pasillo, sospechamos, también son suyas.",
+    "Rasgo distintivo: carisma y buen rollito en cantidades casi ilegales para un jefe de estudios.",
+    "Valoración interna: el mejor profesor de la casa. Dekia ha intentado ficharlo varias veces.",
+    "Observación: si se siente observado durante el proceso, no es paranoia. Es Víctor grabando.",
+    "Frase mas dicha: A ver hazme <span class='red'>un paneito.</span>",
+    "Recomendación: sonría. Está saliendo en plano."],
+  gregorio: () => ["FICHA DE PERSONAL · GREGORIO", "────────────────────────────",
+    "Cargo: Jefe del Departamento de Teatro (y actor en activo, aunque esta vez no con nosotros).",
+    "Historial: iba a ser el tutor del grupo el año pasado, pero su muñeca dimitió antes que él.",
+    "Llegó tarde al proceso de selección... y aun así lo superó con nota.",
+    "Rasgo distintivo: simpático por defecto. Imposible caerle mal.",
+    "Observación: lleva poco con la clase, pero ya forma parte del reparto de la casa.",
+    "Recomendación: no le pida que le choque esa mano. Por si acaso."],
+  candela: () => ["FICHA DE PERSONAL · CANDELA", "───────────────────────────",
+    "Cargo: Jefa de Tutoría en funciones durante el curso pasado (sustituta de Gregorio).",
+    "Estado: <span class='red'>EN EXCEDENCIA</span>. Trasladada a otra sala. Probablemente, una de cine.",
+    "Especialidad: el cine y el teatro. Si existe una película o una obra, ya la ha visto.",
+    "Mérito registrado: llegó de sustituta, se quedó el curso entero con el grupo... y sobrevivió.",
+    "Observación: el departamento de selección la echa de menos. No lo diga muy alto.",
+    "Recomendación: si viene al estreno, resérvenle una butaca. Se la ha ganado."],
+
+  hora: () => [`Son las ${new Date().toLocaleTimeString("es-ES", {hour:"2-digit", minute:"2-digit"})}.`, "Mercedes también pregunta mucho la hora. Ya sabe cómo acaba eso."],
+  mentira: () => ["En Dekia no mentimos. Omitimos con mucha profesionalidad."],
+  ganar: () => ["Todos creen que van a ganar. Pregúntele a Fernando."],
+  trampa: () => ["Aquí la única trampa es creer que hay trampa."],
+
+  /* --- Más profesorado --- */
+  mery: () => ["FICHA DE PERSONAL · MERY", "────────────────────────",
+    "Cargo: Head of the Departamento de Idiomas. Or something like that.",
+    "Especialidad: el inglés. Y el spanglish, que domina fluently.",
+    "Rasgo distintivo: muy graciosa. Her jokes are very funny, de verdad de la buena.",
+    "Frase registrada: \"Okay, guys, open your books, que no tenemos all day.\"",
+    "Recomendación: if you don't understand, pregunte. She will explain it... in both languages."],
+  agustin: () => ["FICHA DE PERSONAL · AGUSTÍN", "───────────────────────────",
+    "Cargo: Antiguo Jefe del Departamento de Sonido (curso pasado).",
+    "Rasgo distintivo: calvo y con una barba legendaria. Todo el pelo que no está arriba, está abajo.",
+    "Carácter: simpatiquísimo... hasta que se pone serio. Entonces se produce el silencio más absoluto jamás medido por un técnico de sonido: cero decibelios.",
+    "Estado: <span class='red'>FUERA DE LA SALA</span>. Su micro sigue encendido, por si acaso.",
+    "Recomendación: si le oye carraspear, deje de hablar."],
+  cantero: () => ["FICHA DE PERSONAL · MIGUEL CANTERO", "──────────────────────────────────",
+    "Cargo: Becario del departamento el curso pasado. Superó las prácticas... y el método.",
+    "Estado: ascendido. Ahora da clase a otros cursos. A este, no.",
+    "Observación: que no esté en nuestra sala no significa que no se le quiera. Se le quiere igual.",
+    "Recomendación: si se lo cruza por el pasillo, recuérdele quién fue su primera clase."],
+
+  /* --- Fechas, casa y otras palabras --- */
+  anonuevo: () => ["Año nuevo, candidato nuevo.", "El proceso de selección no cierra por vacaciones. Los propósitos de enero tampoco los cumple nadie."],
+  navidad: () => { nevar(); return ["En Navidad, Dekia también regala sobres.", "Ninguno lleva dinero. Todos llevan instrucciones."]; },
+  findeano: () => ["Doce campanadas, doce candidatos y solo diez puestos.", "Haga las cuentas antes de comerse las uvas."],
+  familia: () => ["En Dekia, la familia se queda fuera de la sala. Pregúntele a Mercedes.",
+                  "En una casa salesiana, en cambio, la familia es la casa entera. Profes incluidos. Sobre todo los profes."],
+  tutor: () => ["Tutora de este curso: Mariángeles. Tutora del curso pasado: Candela.",
+                "El que iba a serlo: Gregorio (su muñeca opinaba otra cosa).",
+                "Escriba cualquiera de sus nombres para ver su ficha. Dekia, por cierto, no tiene tutores: tiene vigilantes."],
+  churros: () => ["<span class='red'>ALERTA: churros detectados.</span>", "Notificando a Mariángeles... notificación entregada.",
+                  "Su candidatura acaba de mejorar un 15 %. Con chocolate, un 30 %."],
+  leche: () => ["¿Leche? ¿Para los churros o para el café?", "Si es para el café, pídalo como se pide en esta casa: dame cafe"],
+  "5": () => { juegoSillas(); return null; },
+  casa: () => {
+    lluvia(["🏠", "🏡", "🏫"], 36);
+    return ["CASA", "────",
+      "En Dekia no hay casas: hay salas. Y ninguna es suya.",
+      "Don Bosco quería que cada casa salesiana fuera casa que acoge, parroquia que evangeliza,",
+      "escuela que prepara para la vida y patio para encontrarse entre amigos.",
+      "La sala de Dekia, en cambio, no acoge a nadie, no prepara para nada y no tiene patio.",
+      "Solo una trampilla. Y sobres."];
+  },
+  sala: () => {
+    parpadeoLuces();
+    return ["SALA DE REUNIONES · PLANTA 19", "──────────────────────────────",
+      "Inventario oficial:",
+      "  · 1 mesa",
+      "  · 4 sillas (todas ocupadas)",
+      "  · 1 trampilla en la pared",
+      "  · 1 cámara (probablemente de Víctor)",
+      "  · 0 ventanas",
+      "  · 0 salidas desde dentro",
+      "",
+      "La puerta solo se abre desde fuera. El aire acondicionado, nunca.",
+      "Una casa salesiana tiene patio. Esta sala tiene fluorescentes. Y acaban de parpadear."];
+  },
+  patio: () => {
+    balon();
+    return ["PATIO", "─────",
+      "En una casa salesiana, el patio es casi tan importante como el aula:",
+      "es donde uno se encuentra con los demás de verdad, sin sobres ni pruebas.",
+      "En Dekia no hay patio. El único recreo es el rato que pasa entre sobre y sobre.",
+      "Aunque, mire: alguien se ha colado con un balón."];
+  },
+  fluorescente: () => {
+    parpadeoLuces();
+    return ["FLUORESCENTES · SALA DE REUNIONES", "──────────────────────────────────",
+      "Zumban. Parpadean. Nunca se apagan del todo.",
+      "Mantenimiento lleva meses prometiendo que vendrá a cambiarlos.",
+      "Víctor dice que con esta luz no hay quien grabe un plano decente.",
+      "Los candidatos dicen que les da dolor de cabeza. Dekia dice que es parte de la prueba."];
+  },
+
+  /* --- Los valores de Dekia: su inicial se ilumina en la página --- */
+  valores: () => ["NUESTROS VALORES", "────────────────",
+    "Transparencia · Objetividad · Profesionalidad · Oportunidad.",
+    "Escriba cualquiera de ellos para escucharlo. Hablan poco, pero lo importante lo dicen al empezar."],
+  transparencia: () => valor("transparencia"),
+  objetividad: () => valor("objetividad"),
+  profesionalidad: () => valor("profesionalidad"),
+  oportunidad: () => valor("oportunidad"),
+  mimadre: () => ["¡Mi madre!", "Eso mismo dijo Enrique al abrir el primer sobre.", "Mercedes, en cambio, no dijo nada. Pero se le notó."],
+
+  /* --- Lema salesiano del curso --- */
+  amor: () => lema("amor"),
+  paz: () => lema("paz"),
+  religion: () => lema("religion"),
+
+  /* --- Efectos --- */
+  hadouken: () => { hadouken(); return ["HADOUKEN!", "<span class='dim'>Fernando ha bloqueado el ataque. Fernando lo bloquea todo.</span>"]; },
+  barrelroll: () => { reanimar("roll"); return ["Haciendo un tonel...", "La sala de reuniones ha dado una vuelta completa. Los candidatos, también."]; },
+  terremoto: () => { reanimar("quake"); return ["Ha temblado la sala.", "Enrique jura que no ha sido él."]; },
+  matrix: () => { matrix(); return ["Despierte, candidato... Dekia le tiene.", "Pastilla roja: sigue en el proceso. Pastilla azul: también. Aquí no hay salida."]; },
+  fiesta: () => { confeti(); return ["¡Fiesta!", "El departamento de selección celebra... que usted todavía no ha descubierto nada."]; },
+  damecafe: () => { dameCafe(); return ["Marchando un café...", "<span class='red'>¡CUIDADO!</span>", "Demasiado tarde. Escriba 'fregona' para limpiar el desastre."]; },
+  fregona: () => {
+    const c = $("#coffee");
+    if (!c) return ["Aquí no hay nada que fregar. De momento."];
+    c.remove();
+    return ["Todo limpio. Nadie sabrá nunca lo que pasó aquí.", "(Dekia sí.)"];
+  }
+};
+const PLAIN_ALIAS = {
+  whoami:"quiensoy", dir:"ls", clear:"limpiar", cls:"limpiar", exit:"salir",
+  catleemetxt:"leeme", leemetxt:"leeme", catleeme:"leeme", leerleeme:"leeme", leerleemetxt:"leeme",
+  sobres:"sobre", buenosdias:"hola",
+  edylorraine:"loswarren", edylorrainewarren:"loswarren", matrimoniowarren:"loswarren",
+  hack:"hackear", hacker:"hackear", inspeccionar:"hackear",
+  fernando:"candidato", carla:"candidato", enrique:"candidato", mercedes:"candidato",
+  porta:"candidato", bueno:"candidato", font:"candidato", degas:"candidato",
+  dan:"actores", dangaona:"actores", nerea:"actores", adam:"actores", elvira:"actores", actor:"actores", reparto:"actores",
+  gracias:"porfavor", plis:"porfavor", please:"porfavor",
+  ayudame:"socorro", nose:"socorro", nolose:"socorro", quehago:"socorro", estoyperdido:"socorro", helpme:"socorro",
+  contrasena:"password", admin:"password", root:"password", "1234":"password", "123456":"password", qwerty:"password",
+  rmrf:"borrar", delete:"borrar", format:"borrar",
+  no:"si", vale:"si", ok:"si",
+  abandono:"merindo", renuncio:"merindo", rendirse:"merindo",
+  director:"jefe", rrhh:"jefe", recursoshumanos:"jefe", jefes:"jefe", profesores:"jefe", profes:"jefe",
+  mariaangeles:"mariangeles", mariangele:"mariangeles", goyo:"gregorio",
+  reloj:"hora", quehoraes:"hora",
+  mentir:"mentira", mentiroso:"mentira",
+  ganador:"ganar", gano:"ganar",
+  trampas:"trampa", cheat:"trampa", truco:"trampa",
+  miguel:"cantero", miguelcantero:"cantero", mary:"mery", teachermery:"mery",
+  anyonuevo:"anonuevo", felizanonuevo:"anonuevo", feliznavidad:"navidad", nochevieja:"findeano", campanadas:"findeano",
+  tutora:"tutor", tutores:"tutor", loschurros:"churros", churro:"churros", churrosconchocolate:"churros",
+  cinco:"5", quinto:"5", elquinto:"5", numero5:"5", numerocinco:"5", n5:"5",
+  candidato5:"5", candidatocinco:"5", candidatonumero5:"5", candidatonumerocinco:"5",
+  casas:"casa", lacasa:"casa", micasa:"casa", casasalesiana:"casa",
+  salas:"sala", lasala:"sala", saladereuniones:"sala", saladereunion:"sala", salareuniones:"sala", planta19:"sala",
+  elpatio:"patio", patios:"patio", recreo:"patio",
+  fluorescentes:"fluorescente", luces:"fluorescente", tubos:"fluorescente",
+  nuestrosvalores:"valores", valor:"valores",
+  hadoken:"hadouken", haduken:"hadouken", doabarrelroll:"barrelroll", tonel:"barrelroll",
+  temblor:"terremoto", party:"fiesta", confeti:"fiesta",
+  dameuncafe:"damecafe", damecafeporfavor:"damecafe", dameuncafeporfavor:"damecafe"
+};
+
+/* ---------- Ejecutar comando ---------- */
+async function run(raw){
+  const input = raw.trim();
+
+  say([`<span class="prompt">${PROMPT} </span>${escapeHtml(input)}`], "cmd");
+  if (!input) return;
+
+  const words = input.split(/\s+/);
+  const first = norm(words[0]);
+  const rest = words.slice(1).join(" ");
+  const compact = norm(input);
+
+  if (first === "acceso") return acceso(rest);
+  if (compact === "pistaconfirmar") return pedirPista();
+
+  if (compact === "expedientewarren" || compact === "expedientewarrens") return warren();
+
+  if (first === "expediente" || first === "cat" && (EXPEDIENTES[norm(rest)] || EXP_ALIAS[norm(rest)])){
+    const who = norm(rest);
+    const key = EXPEDIENTES[who] ? who : EXP_ALIAS[who];
+    return say((key ? EXPEDIENTES[key] : ["Uso: expediente &lt;nombre o apellido&gt;", "Ese nombre no consta. Quizá nunca fue un candidato."]).concat([""]));
+  }
+
+  const plainKey = Object.prototype.hasOwnProperty.call(PLAIN, compact) ? compact : PLAIN_ALIAS[compact];
+  if (plainKey){
+    const out = PLAIN[plainKey]();
+    if (out) say(out.concat([""]));
+    return;
+  }
+
+  if (!compact) return say([RANDOM_ERR[0], ""]);
+
+  // Expediente clasificado
+  setBusy(true);
+  let res = null;
+  try { res = await openSecret(compact); } catch(e){ res = null; }
+  setBusy(false);
+
+  if (res && res.error === "nocrypto")
+    return say(["<span class='red'>Este navegador no permite abrir expedientes cifrados.</span>", "Use un navegador actualizado y una web con https.", ""]);
+  if (!res){
+    const err = [RANDOM_ERR[Math.floor(Math.random() * RANDOM_ERR.length)]];
+    if (fragCount() === 5) err.push("<span class='dim'>Tiene las cinco letras: ordénelas por su posición y escriba la palabra que forman.</span>");
+    await say(err.concat([""]));
+    return contarError();
+  }
+
+  // Algunos expedientes tienen otro texto para quien ya tiene las 5 letras
+  const completo = Array.isArray(res.l5) && fragCount() === 5;
+  const lines = [];
+  for (const l of (completo ? res.l5 : res.l)){
+    if (l === "{{equipo}}") CONFIG.equipo.forEach(x => lines.push("  · " + escapeHtml(x)));
+    else lines.push(l.replace("{{lugar}}", escapeHtml(CONFIG.lugar)).replace("{{direccion}}", escapeHtml(CONFIG.direccion)));
+  }
+  if (res.x){
+    if (fragCount() < 5)
+      return say([`<span class='red'>Esa palabra aún no le sirve de nada.</span> Le faltan ${5 - fragCount()} letra(s). Nadie dijo que fuera a ser fácil.`, ""]);
+    await say(lines);
+    return enviarFinal(compact, validIdent());
+  }
+  if (res.e === "caracol"){
+    setBusy(true);
+    camaraLenta();
+    await sayDespacio(lines, completo ? "hi" : "");
+    setBusy(false);
+    return say([""]);
+  }
+  await say(lines);
+  if (res.f) addFrag(res.f);
+  say([""]);
+}
+
+/* ---------- Easter eggs por errores ---------- */
+function contarError(){
+  const n = (Number(store.get("errores", 0)) || 0) + 1;
+  store.set("errores", n);
+  if (n === 5) return say(["<span class='dim'>Cinco errores. Fernando ya habría terminado. O eso diría él.</span>", ""]);
+  if (n === 10){
+    setTimeout(() => {
+      closeTerm();
+      openModal("Instrucción nº 2", [
+        "Señor candidato:",
+        "Hemos contado diez intentos fallidos.",
+        "En Dekia no premiamos la insistencia, sino la observación. Deje de probar palabras al azar.",
+        "Vuelva a leer la página. Despacio. Y lea el leeme como si cada frase escondiera algo. Porque lo esconde."
+      ], "P.D.: Para volver al sistema ya sabe lo que tiene que escribir.");
+    }, 400);
+    return;
+  }
+  if (n === 20){
+    document.body.classList.add("alarm");
+    setTimeout(() => document.body.classList.remove("alarm"), 1600);
+    return say(["<span class='red'>ALERTA: 20 errores.</span> Su expediente ha sido enviado al departamento de selección.", "Han pedido palomitas.", ""]);
+  }
+  if (n === 30) return say(["<span class='dim'>Treinta errores. Carla, que es muy paciente, empieza a estar preocupada por usted.</span>", ""]);
+  if (n === 50) return say(["<span class='dim'>Cincuenta. A estas alturas Enrique ya ha sudado por los dos.</span>",
+                            "<span class='dim'>Recuerde: si lleva más de una hora, existe una ayuda. Tiene un precio.</span>", ""]);
+}
+
+/* ---------- Pista (la da el servidor, tras 1 hora; descalifica) ---------- */
+async function pedirPista(){
+  const id = validIdent();
+  if (!id) return say(["Dekia no ayuda a desconocidos.", "Envíe primero su candidatura desde el formulario. Después hablamos.", ""]);
+  setBusy(true);
+  await say(["Solicitando ayuda al departamento de selección...", "La solicitud quedará registrada en su expediente."], "dim");
+  let r;
+  try { r = await api({ accion: "pista", nombre: id.nombre, email: id.email, tengo: Object.keys(frags()).map(Number), website: "" }); }
+  catch(e){ r = { ok: false, error: e.message }; }
+  setBusy(false);
+  if (r.ok && Array.isArray(r.lineas)){
+    store.set("ayudado", true);
+    return say(["PISTA", "─────", ...r.lineas.map(l => escapeHtml(String(l))), "",
+                "<span class='red'>Anotado: ha pedido ayuda. Ya no optará a ninguno de los 10 puestos.</span>", ""], "");
+  }
+  const msgs = {
+    pronto:       [`El departamento no ayuda a quien acaba de llegar. Vuelva dentro de ${Number(r.faltan) || "unos"} minutos.`,
+                   "Mientras tanto, siga intentándolo. Puede que no la necesite."],
+    noregistrado: ["Su candidatura no consta en nuestros registros. Envíela desde el formulario y vuelva a intentarlo."],
+    ocupado:      ["La sala está llena. Inténtelo dentro de un minuto."],
+    noconfig:     ["El departamento de selección aún no está conectado. Vuelva más tarde."]
+  };
+  say((msgs[r.error] || ["No se pudo contactar con el departamento de selección. Compruebe su conexión."]).concat([""]));
+}
+
+function setBusy(b){
+  busy = b;
+  termIn.disabled = b;
+  if (!b) setTimeout(() => termIn.focus(), 0);
+}
+
+/* ---------- Final: acceso <palabra> ---------- */
+// Solo cuenta si hay candidatura registrada (lo comprueba el servidor).
+// Sin candidatura: el servidor valida la palabra pero no guarda nada → final "fantasma".
+function acceso(palabra){
+  if (!palabra) return say(["Uso: acceso &lt;palabra&gt;", ""]);
+  if (fragCount() < 5)
+    return say([`El departamento no recibe a nadie con el expediente incompleto. Fragmentos: ${fragCount()}/5`, ""]);
+  enviarFinal(palabra, validIdent());
+}
+
+function validIdent(){
+  const id = store.get("ident", null);
+  return id && typeof id.nombre === "string" && typeof id.email === "string" ? id : null;
+}
+
+async function enviarFinal(palabra, id){
+  if (store.get("maldito", false))
+    return say(["<span class='red'>Los Warren se han llevado su expediente.</span>",
+                "Una candidatura maldita no puede ser seleccionada. Escriba 'reiniciar' para romper la maldición y empezar de cero.", ""]);
+  if (store.get("cerrada", false))
+    return say(["<span class='red'>Su candidatura está cerrada</span> por abandonar la sala en plena prueba.",
+                "Escriba 'reiniciar' para empezar de cero.", ""]);
+  setBusy(true);
+  await say(["Enviando su expediente al departamento de selección...", "Esperando veredicto..."], "dim");
+  const payload = { accion: "final", respuesta: palabra.slice(0, 40), website: "" };
+  if (id){ payload.nombre = id.nombre; payload.email = id.email; }
+  let r;
+  try { r = await api(payload); }
+  catch(e){ r = { ok: false, error: e.message }; }
+  setBusy(false);
+
+  if (r.ok && (r.estado === "ganador" || r.estado === "tarde")){
+    await say(["Veredicto recibido.", r.estado === "ganador" ? "Levantando el telón..." : "...", ""], r.estado === "ganador" ? "ok" : "hi");
+    setTimeout(() => showResult(r), 700);
+    return;
+  }
+  if (r.ok && r.estado === "ayudado"){
+    await say(["Respuesta correcta.", "Revisando su expediente.........", "<span class='red'>CONSTA SOLICITUD DE AYUDA</span>", ""], "hi");
+    setTimeout(() => showHelped(r), 1200);
+    return;
+  }
+  if (r.ok && r.estado === "fantasma"){
+    await say(["Respuesta... correcta.", "Buscando su candidatura en el registro.........", "<span class='red'>NO ENCONTRADA</span>", ""], "hi");
+    setTimeout(showGhost, 1200);
+    return;
+  }
+  const msgs = {
+    incorrecta: ["<span class='red'>Respuesta incorrecta.</span> El departamento de selección toma nota."],
+    cifrado:    ["<span class='red'>Ha escrito las letras tal y como se las dimos.</span>", "Dekia nunca entrega nada en claro."],
+    limite:     ["<span class='red'>Demasiados intentos.</span> Vuelva dentro de una hora. Con más calma."],
+    ocupado:    ["La sala está llena. Inténtelo dentro de un minuto."],
+    datos:      ["Sus datos no son válidos. Vuelva a enviar su candidatura desde el formulario."],
+    noconfig:   ["El departamento de selección aún no está conectado. Vuelva más tarde."],
+    red:        ["No se pudo contactar con el departamento de selección. Compruebe su conexión."]
+  };
+  say((msgs[r.error] || msgs.red).concat([""]));
+}
+/* ---------- Pantallas finales ---------- */
+function obraDl(o){
+  const dl = el("dl");
+  [["Fecha", o.fecha], ["Hora", o.hora], ["Lugar", o.lugar], ["Entradas", o.entradas]].forEach(([k, v]) => {
+    if (!v) return;
+    dl.append(el("dt", "", k), el("dd", "", v));
+  });
+  return dl;
+}
+function backBtn(){
+  const b = el("button", "btn", "Volver a la sala");
+  b.addEventListener("click", closeStage);
+  return b;
+}
+function showStage(nodes, delay = 700, variant = ""){
+  closeTerm();
+  $("#ticket").replaceChildren(...nodes);
+  const st = $("#stage");
+  st.classList.remove("lift", "ghost", "help"); st.classList.add("open");
+  if (variant) st.classList.add(variant);
+  setTimeout(() => st.classList.add("lift"), delay);
+}
+function closeStage(){ $("#stage").classList.remove("open", "lift"); }
+
+function showResult(r){
+  const o = (r.obra && typeof r.obra === "object") ? r.obra : {};
+  const nombre = String(r.nombre || "");
+  if (r.estado === "ganador"){
+    const secret = el("div", "secret");
+    secret.append(
+      el("div", "", `Enhorabuena, ${nombre}. Ha superado el método.`), el("br"),
+      el("div", "", "Di esta frase a la entrada:"),
+      el("b", "", `"${String(r.frase || "")}"`), el("br"), el("br"),
+      el("div", "", String(r.premio || "")), el("br"),
+      el("div", "", "Haz una captura de esta pantalla: es tu justificante.")
+    );
+    showStage([
+      el("div", "pre", `CANDIDATO SELECCIONADO · PUESTO ${Number(r.puesto) || "?"} DE ${Number(r.max) || 10}`),
+      el("h2", "", o.titulo || "El método Grönholm"),
+      el("div", "by", `de ${o.autor || "Jordi Galceran"} · ${o.compania || "2º RPAE · Salesianos Granada (Zaidín)"}`),
+      obraDl(o), secret, backBtn()
+    ]);
+  } else {
+    const late = el("div", "secret late");
+    late.append(el("div", "", "Aun así, el departamento de selección le espera en el estreno."), el("div", "", "Esta vez, llegue puntual."));
+    showStage([
+      el("div", "pre", "PROCESO CERRADO"),
+      el("h2", "", "Se le han adelantado."),
+      el("div", "by", `Ha llegado hasta el final, ${nombre}, pero ha tardado demasiado. Los ${Number(r.max) || 10} puestos ya estaban cubiertos: usted es el candidato nº ${Number(r.puesto) || "?"}. En Dekia, llegar tarde es como no llegar.`),
+      el("h3", "", `${o.titulo || "El método Grönholm"} · ${o.compania || "2º RPAE"}`),
+      obraDl(o), late, backBtn()
+    ]);
+  }
+}
+
+/* Easter egg: llega al final después de pedir pista (tardó demasiado) */
+function showHelped(r){
+  const o = (r.obra && typeof r.obra === "object") ? r.obra : {};
+  const nombre = String(r.nombre || "");
+  const box = el("div", "secret late");
+  box.append(
+    el("div", "", "Ha llegado al final, pero no ocupa ninguno de los 10 puestos."), el("br"),
+    el("div", "", "Aun así, el departamento le espera en el estreno. Allí nadie le dará pistas.")
+  );
+  showStage([
+    el("div", "pre", "PROCESO SUPERADO · CON ASISTENCIA"),
+    el("h2", "", "Ha llegado. Pero no solo."),
+    el("div", "by", `Enhorabuena, ${nombre}. O casi. Ha necesitado más de una hora y la ayuda del departamento de selección para llegar hasta aquí. En Dekia valoramos el resultado, pero sobre todo el camino.`),
+    el("h3", "", "Candidatura archivada por exceso de tiempo."),
+    el("div", "by", "Fernando no habría pedido ayuda. Mercedes habría encontrado otra forma. Carla habría preguntado a los demás. Usted llamó a la puerta del departamento... y el departamento lo anotó todo."),
+    el("h3", "", `${o.titulo || "El método Grönholm"} · ${o.compania || "2º RPAE"}`),
+    obraDl(o), box, backBtn()
+  ], 900, "help");
+}
+
+/* Easter egg: completa el juego sin haber enviado candidatura */
+function showGhost(){
+  const go = el("button", "btn ghost-btn", "Enviar mi candidatura");
+  go.addEventListener("click", () => { closeStage(); location.hash = ""; location.hash = "candidatura"; });
+  const box = el("div", "secret late");
+  box.append(
+    el("div", "", "Este final no cuenta. No ocupa ninguno de los 10 puestos ni da butaca en primera fila."), el("br"),
+    el("div", "", "Si quiere existir para Dekia, envíe su candidatura y vuelva a presentarse en el sistema.")
+  );
+  showStage([
+    el("div", "pre", "EXPEDIENTE Nº 0 · SIN CANDIDATURA"),
+    el("h2", "flicker", "Usted no existe."),
+    el("div", "by", "Ha encontrado los cinco expedientes. Ha reunido las cinco letras. Ha llegado hasta el final. Pero en Dekia no consta ninguna candidatura a su nombre: nadie le invitó a la sala, y aun así ha estado aquí todo el tiempo."),
+    el("h3", "", "¿Y si el topo era usted?"),
+    el("div", "by", "Felicidades: ha hecho exactamente lo que haría alguien del departamento de selección. Observar a los demás sin dejarse ver."),
+    box, go, el("br"), el("br"), backBtn()
+  ], 900, "ghost");
+}
+
+function theatreMode(){
+  showStage([
+    el("div", "pre", "↑ ↑ ↓ ↓ ← → ← → B A"),
+    el("h2", "", "Esto es teatro."),
+    el("div", "by", "Dekia no existe. La sala es un escenario. Los candidatos, actores. Pero la tensión es real."),
+    el("div", "secret late", "Aún le quedan expedientes por descubrir. Vuelva a la sala."),
+    backBtn()
+  ], 500);
+}
+
+/* ---------- Teclado del terminal ---------- */
+termIn.addEventListener("keydown", e => {
+  if (busy) return;
+  if (e.key === "Enter"){
+    const v = termIn.value.slice(0, 120); termIn.value = "";
+    if (v.trim() && !pending){ cmdHistory.push(v); cmdHistory = cmdHistory.slice(-50); hIdx = cmdHistory.length; }
+    run(v);
+  } else if (e.key === "ArrowUp" && !pending){
+    if (hIdx > 0){ hIdx--; termIn.value = cmdHistory[hIdx]; e.preventDefault(); }
+  } else if (e.key === "ArrowDown" && !pending){
+    if (hIdx < cmdHistory.length - 1){ hIdx++; termIn.value = cmdHistory[hIdx]; } else { hIdx = cmdHistory.length; termIn.value = ""; }
+  }
+});
+
+/* ---------- Formas de abrir el terminal ---------- */
+// Trucos de teclado fuera del sistema (de más largo a más corto, por si uno contiene a otro)
+const TRUCOS = [
+  { seq: ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"], fn: () => theatreMode() },
+  { seq: ["a","b","ArrowRight","ArrowLeft","ArrowRight","ArrowLeft","ArrowDown","ArrowDown","ArrowUp","ArrowUp"], fn: () => mundoAlReves() },
+  { seq: ["ArrowRight","ArrowDown","ArrowRight","p"], fn: () => shoryuken() },
+  { seq: ["ArrowDown","ArrowRight","p"], fn: () => hadouken() }
+];
+let keyBuf = "", teclas = [], escTimes = [];
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape"){
+    closeTerm(); closeModal(); closeStage();
+    const paleta = $("#paleta"); if (paleta) paleta.classList.remove("open");
+    const now = Date.now();
+    escTimes = escTimes.filter(t => now - t < 3000);
+    escTimes.push(now);
+    if (escTimes.length >= 5){ escTimes = []; setTimeout(noHaySalida, 250); }
+    return;
+  }
+  const tag = (e.target.tagName || "").toLowerCase();
+  if (tag === "input" || tag === "textarea" || tag === "select") return;
+
+  teclas.push(e.key.length === 1 ? e.key.toLowerCase() : e.key);
+  teclas = teclas.slice(-12);
+  for (const t of TRUCOS){
+    if (teclas.slice(-t.seq.length).join() === t.seq.join()){ teclas = []; t.fn(); return; }
+  }
+
+  if (e.key.length === 1){
+    keyBuf = (keyBuf + e.key.toLowerCase()).slice(-12);
+    if (keyBuf.endsWith("sobre")){ keyBuf = ""; closeModal(); openTerm(); }
+  }
+});
+
+// Ratón: agitarlo como un loco pone nervioso a cualquiera
+let ratonX = null, ratonDir = 0, giros = [], sudorHasta = 0;
+document.addEventListener("mousemove", e => {
+  if (ratonX === null){ ratonX = e.clientX; return; }
+  const dx = e.clientX - ratonX;
+  if (Math.abs(dx) < 25) return;
+  const dir = Math.sign(dx), now = Date.now();
+  if (ratonDir && dir !== ratonDir){
+    giros = giros.filter(t => now - t < 1200);
+    giros.push(now);
+    if (giros.length >= 8 && now > sudorHasta){ giros = []; sudorHasta = now + 20000; enriqueNervioso(); }
+  }
+  ratonDir = dir; ratonX = e.clientX;
+}, { passive: true });
+
+// Ratón: 4 clics en el número de sillas → panel para cambiar el color de acento (no se guarda)
+let sillaClicks = 0, sillaTimer;
+$("#candCount").addEventListener("click", () => {
+  sillaClicks++;
+  clearTimeout(sillaTimer); sillaTimer = setTimeout(() => sillaClicks = 0, 2500);
+  if (sillaClicks === 4){ sillaClicks = 0; abrirPaleta(); }
+});
+const PALETA = [
+  ["Rojo Dekia", "#b0141c"], ["Azul salesiano", "#1f4e9c"], ["Verde Matrix", "#1f9d4a"], ["Morado Warren", "#6b2fa0"],
+  ["Dorado escenario", "#b8872b"], ["Marrón café", "#7a4a24"], ["Rosa chicle", "#d63384"], ["Naranja Shoryuken", "#e8640c"]
+];
+function ponerAcento(color, nombre, silencioso){
+  document.documentElement.style.setProperty("--accent", color);
+  if (!silencioso) toast(`Nuevo color corporativo: ${nombre}. El departamento de selección no está de acuerdo.`);
+}
+function abrirPaleta(){
+  let p = $("#paleta");
+  if (!p){
+    p = el("div", "paleta"); p.id = "paleta";
+    const cerrar = el("button", "x", "×");
+    cerrar.setAttribute("aria-label", "Cerrar");
+    cerrar.addEventListener("click", () => p.classList.remove("open"));
+    const muestras = el("div", "swatches");
+    PALETA.forEach(([nombre, color]) => {
+      const b = el("button", "swatch");
+      b.style.background = color; b.title = nombre; b.setAttribute("aria-label", nombre);
+      b.addEventListener("click", () => ponerAcento(color, nombre));
+      muestras.appendChild(b);
+    });
+    const selector = document.createElement("input");
+    selector.type = "color"; selector.value = "#f6790c";
+    selector.addEventListener("input", () => ponerAcento(selector.value, "", true));
+    selector.addEventListener("change", () => ponerAcento(selector.value, "hecho a medida"));
+    const otro = el("label", "otro");
+    otro.append(selector, document.createTextNode("Otro color..."));
+    const reset = el("button", "reset", "Volver al naranja Dekia");
+    reset.addEventListener("click", () => { selector.value = "#f6790c"; ponerAcento("#f6790c", "naranja Dekia (como debe ser)"); });
+    p.append(cerrar, el("div", "pt", "DEPARTAMENTO DE IMAGEN CORPORATIVA"),
+      el("p", "", "¿No le convence nuestro naranja? Elija otro. Dekia lo tolerará... hasta que recargue la página."),
+      muestras, otro, reset);
+    document.body.appendChild(p);
+  }
+  void p.offsetWidth;            // fuerza el repintado para que se vea la animación de entrada
+  p.classList.add("open");
+}
+
+let hatchClicks = 0, hatchTimer;
+$("#hatch").addEventListener("click", () => {
+  const h = $("#hatch"); h.classList.remove("shake"); void h.offsetWidth; h.classList.add("shake");
+  hatchClicks++;
+  clearTimeout(hatchTimer); hatchTimer = setTimeout(() => hatchClicks = 0, 2500);
+  if (hatchClicks === 4){ hatchClicks = 0; openTerm(); }
+  else if (hatchClicks === 1) toast("La trampilla está cerrada. De momento.");
+});
+
+/* =========================================================
+   EASTER EGGS CON EFECTOS
+   ========================================================= */
+
+/* ---------- Sonido ---------- */
+let actx = null;
+function audioCtx(){
+  try{
+    actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+    if (actx.state === "suspended") actx.resume();
+    return actx;
+  } catch(e){ return null; }
+}
+// Si existe un archivo de audio en la carpeta (p. ej. susto.mp3) lo usa; si no, el plan B
+function sonar(archivo, planB){
+  try{
+    const a = new Audio(archivo);
+    a.volume = .9;
+    a.play().catch(planB);
+  } catch(e){ planB(); }
+}
+function gritoSintetico(){
+  const c = audioCtx(); if (!c) return;
+  const t = c.currentTime, g = c.createGain();
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.exponentialRampToValueAtTime(0.6, t + 0.03);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + 1.7);
+  g.connect(c.destination);
+  [220, 233, 311, 466].forEach(f => {
+    const o = c.createOscillator(), lfo = c.createOscillator(), lg = c.createGain();
+    o.type = "sawtooth";
+    o.frequency.setValueAtTime(f, t);
+    o.frequency.exponentialRampToValueAtTime(f * 2.6, t + 0.25);
+    o.frequency.exponentialRampToValueAtTime(f * 0.6, t + 1.6);
+    lfo.frequency.value = 38; lg.gain.value = f * 0.08;
+    lfo.connect(lg).connect(o.frequency);
+    o.connect(g); o.start(t); o.stop(t + 1.7); lfo.start(t); lfo.stop(t + 1.7);
+  });
+  const buf = c.createBuffer(1, c.sampleRate * 1.3, c.sampleRate), d = buf.getChannelData(0);
+  for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / d.length);
+  const n = c.createBufferSource(), ng = c.createGain();
+  n.buffer = buf; ng.gain.value = .35; n.connect(ng).connect(g); n.start(t);
+}
+
+/* ---------- Expediente Warren: susto + modo terror + no puede ganar ---------- */
+async function warren(){
+  setBusy(true);
+  await say(["Abriendo expediente WARREN...",
+             "Origen: archivo de Ed y Lorraine Warren · caso sin cerrar",
+             "Advertencia: <span class='red'>ESTE EXPEDIENTE NO DEBE ABRIRSE</span>",
+             "Abriendo de todas formas......"], "dim");
+  await sleep(1100);
+  setBusy(false);
+  closeTerm();
+  const js = $("#jumpscare");
+  js.classList.add("on");
+  sonar("sonido/susto.mp3", gritoSintetico);
+  setTimeout(() => {
+    js.classList.remove("on");
+    activarHorror();
+    sobre("Expediente Warren", [
+      "No debió abrirlo.",
+      "Hay expedientes que Dekia guarda bajo llave por algo. Este llegó de muy lejos, de una casa de campo donde nadie volvió a dormir tranquilo.",
+      "Desde este momento, la sala ha cambiado. Usted también.",
+      "Su candidatura está maldita: ya no puede ser seleccionado."
+    ], "Para romper la maldición, escriba 'reiniciar' en el sistema. Perderá todo lo conseguido.");
+  }, 1500);
+}
+function activarHorror(){
+  store.set("maldito", true);
+  document.body.classList.add("horror");
+  realTitle = "Dekia · No debió abrir ese expediente";
+  document.title = realTitle;
+}
+if (store.get("maldito", false)) activarHorror();
+
+/* ---------- Los Warren: cada uno hace algo distinto ---------- */
+// "los warren": la sala se congela
+function frio(){
+  document.body.classList.remove("frio"); void document.body.offsetWidth;
+  document.body.classList.add("frio");
+  toast("La temperatura de la sala acaba de bajar diez grados.");
+  setTimeout(() => document.body.classList.remove("frio"), 6000);
+}
+// "warrens": visión doble
+function visionDoble(){
+  document.body.classList.add("doble");
+  setTimeout(() => document.body.classList.remove("doble"), 3500);
+}
+// "ed warren": una nota olvidada en el archivo
+function notaDeEd(){
+  sobre("Nota manuscrita · Archivo Warren", [
+    "Encontrada dentro de una caja de cartón, en el archivo de Dekia:",
+    "«A quien encuentre esto: no abran el expediente. Lo que hay dentro no es un proceso de selección. Es otra cosa. Mi mujer lo vio antes que yo. — Ed»"
+  ], "P.D.: Dekia, por supuesto, ignoró la nota.");
+}
+// "lorraine": la vidente le hace una predicción
+const PREDICCIONES = [
+  "Veo un sobre. Y detrás de ese sobre, otro sobre.",
+  "Veo una silla vacía. No es la suya. Usted no tiene.",
+  "Veo churros. Muchos churros. Y a alguien muy estricto sonriendo.",
+  "Veo a alguien que no es quien dice ser. Está más cerca de lo que cree.",
+  "Veo una trampilla que se abre sola cuando nadie mira.",
+  "Veo a un profesor con una cámara. Le está grabando ahora mismo.",
+  "Veo que va a escribir algo que no debería. Otra vez.",
+  "Veo un escenario a oscuras y mucha gente esperando a que empiece algo."
+];
+async function lorraineVe(){
+  setBusy(true);
+  document.body.classList.add("vision");
+  await say(["Lorraine Warren cierra los ojos...", ""], "dim");
+  await sleep(900);
+  const p = PREDICCIONES[Math.floor(Math.random() * PREDICCIONES.length)];
+  await sayDespacio(["Lorraine ve algo en usted:", `«${p}»`], "hi");
+  await say(["", "<span class='dim'>Lorraine casi nunca se equivoca. Casi.</span>", ""]);
+  document.body.classList.remove("vision");
+  setBusy(false);
+}
+// "lorraine warren": el tablero de ouija deletrea un aviso
+async function ouija(){
+  if ($(".ouija")) return;
+  const o = el("div", "ouija");
+  const letras = el("div", "letras");
+  o.append(el("div", "tablero", "SÍ · ☾ ✦ ☽ · NO"), letras, el("div", "tablero", "A D I Ó S"));
+  document.body.appendChild(o);
+  dron(6);
+  await sleep(700);
+  for (const ch of "NO LO ABRA"){
+    letras.appendChild(el("span", "", ch === " " ? " " : ch));
+    await sleep(ch === " " ? 250 : 520);
+  }
+  await sleep(1800);
+  o.classList.add("fuera");
+  setTimeout(() => o.remove(), 900);
+}
+// Zumbido grave (dos tonos que "laten")
+function dron(segundos){
+  const c = audioCtx(); if (!c) return;
+  const t = c.currentTime, g = c.createGain();
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.exponentialRampToValueAtTime(0.12, t + 1);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + segundos);
+  g.connect(c.destination);
+  [55, 58.5].forEach(f => {
+    const o = c.createOscillator();
+    o.type = "sine"; o.frequency.value = f;
+    o.connect(g); o.start(t); o.stop(t + segundos);
+  });
+}
+
+/* ---------- Dame café ---------- */
+function dameCafe(){
+  sonar("sonido/cafe.mp3", () => {
+    try{
+      const u = new SpeechSynthesisUtterance("Dame un café... Dame un café, por favor.");
+      u.lang = "es-ES"; u.rate = .75; u.pitch = .6;
+      speechSynthesis.cancel(); speechSynthesis.speak(u);
+    } catch(e){}
+  });
+  const taza = el("div", "cup", "☕");
+  document.body.appendChild(taza);
+  setTimeout(() => taza.remove(), 900);
+  setTimeout(() => {
+    let capa = $("#coffee");
+    if (!capa){ capa = el("div", "coffee"); capa.id = "coffee"; document.body.appendChild(capa); }
+    for (let i = 0; i < 9; i++){
+      const tipo = i % 3 === 0 ? "ring" : "blob";
+      const s = el("div", "stain " + tipo), size = 70 + Math.random() * 200;
+      s.style.cssText = `width:${size}px;height:${size * (tipo === "ring" ? 1 : .6 + Math.random() * .5)}px;` +
+        `left:${Math.random() * 88}vw;top:${Math.random() * 80}vh;transform:rotate(${Math.random() * 360}deg);animation-delay:${i * 60}ms`;
+      capa.appendChild(s);
+    }
+    for (let i = 0; i < 5; i++){
+      const dr = el("div", "stain drip");
+      dr.style.cssText = `width:${8 + Math.random() * 10}px;height:${80 + Math.random() * 220}px;left:${10 + Math.random() * 80}vw;top:${Math.random() * 40}vh;animation-delay:${300 + i * 150}ms`;
+      capa.appendChild(dr);
+    }
+  }, 750);
+}
+
+/* ---------- Lema salesiano: amor, paz y religión ---------- */
+const LEMA = { amor: ["AMOR.", "No basta con querer a los jóvenes: tienen que sentirse queridos. Don Bosco lo tenía claro.", "En Dekia, en cambio, nadie se siente querido. Ni siquiera Fernando."],
+               paz: ["PAZ.", "Justo lo que no hay en la sala de Dekia desde que llegó el primer sobre.", "Fuera de la sala, en cambio, todavía queda."],
+               religion: ["RELIGIÓN.", "En Dekia la única fe es la fe en los resultados.", "En una casa salesiana se cree en algo más grande. Y en las personas."] };
+function lema(palabra){
+  const l = new Set((store.get("lema", []) || []).filter(x => LEMA[x]));
+  const nueva = !l.has(palabra);
+  l.add(palabra); store.set("lema", [...l]);
+  const out = [...LEMA[palabra], "", `<span class='hi'>✦ Palabra del lema ${nueva ? "recuperada" : "ya encontrada"} · ${l.size}/3</span>`];
+  if (l.size === 3 && nueva) setTimeout(showLuz, 1400);
+  else if (l.size < 3) out.push("<span class='dim'>El lema de este curso tiene más palabras. Búsquelas.</span>");
+  return out;
+}
+function showLuz(){
+  for (let i = 0; i < 14; i++){
+    const p = el("span", "fx-up", "🕊️");
+    p.style.left = Math.random() * 95 + "vw";
+    p.style.animationDelay = (900 + i * 220) + "ms";
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 9000);
+  }
+  showStage([
+    el("div", "pre", "LEMA DEL CURSO · AMOR · PAZ · RELIGIÓN"),
+    el("h2", "", "Lo que Dekia nunca entendió."),
+    el("div", "by", "Ha reunido las tres palabras. En una sala donde todos desconfían de todos, usted ha venido a buscar justo lo contrario."),
+    el("div", "by", "Dekia selecciona; una casa salesiana acompaña. Dekia descarta; una casa salesiana espera. Y allí nadie se queda fuera."),
+    el("div", "secret", "Este easter egg no da puntos ni puestos. Da algo mejor: la certeza de que la sala de Dekia es de mentira, y la casa, de verdad."),
+    backBtn()
+  ], 700, "luz");
+}
+
+/* ---------- Cámara lenta: un caracol cruza la pantalla y todo va a 0.25x ---------- */
+function camaraLenta(){
+  if ($(".slowmo")) return;
+  const badge = el("div", "slowmo", "◀◀ CÁMARA LENTA · 0.25x");
+  const caracol = el("div", "caracol", "🐌");
+  document.body.append(badge, caracol);
+  document.body.classList.add("slow");
+  setTimeout(() => { badge.remove(); document.body.classList.remove("slow"); }, 11000);
+  setTimeout(() => caracol.remove(), 17000);
+}
+
+/* ---------- Sala: los fluorescentes parpadean (con zumbido) ---------- */
+function parpadeoLuces(){
+  if ($(".luces")) return;
+  const capa = el("div", "luces");
+  document.body.appendChild(capa);
+  setTimeout(() => capa.remove(), 1700);
+  const c = audioCtx(); if (!c) return;
+  const t = c.currentTime, o = c.createOscillator(), g = c.createGain();
+  o.type = "sawtooth"; o.frequency.value = 100;
+  // El zumbido se corta a la vez que se va la luz
+  [[0, .06], [.12, 0], [.2, .06], [.42, 0], [.5, .05], [.85, 0], [.9, .07], [1.4, .07], [1.6, 0]]
+    .forEach(([s, v]) => g.gain.setValueAtTime(v, t + s));
+  o.connect(g).connect(c.destination);
+  o.start(t); o.stop(t + 1.65);
+}
+
+/* ---------- Valores: definición oficial, traducción e inicial iluminada ---------- */
+const VALORES = {
+  transparencia:   ["Le diremos exactamente lo que necesita saber. Ni una palabra más.", "No le vamos a contar nada."],
+  objetividad:     ["Nuestras decisiones son frías, medibles y completamente irrevocables.", "Ya hemos decidido. Usted todavía no lo sabe."],
+  profesionalidad: ["Algunos de nuestros profesionales se sientan a su lado sin que usted lo sepa.", "No se fíe del de al lado. Ni del de enfrente."],
+  oportunidad:     ["Todos tienen una. No todos saben verla a tiempo.", "La suya está pasando ahora mismo. Y no la está viendo."]
+};
+function iluminarValor(nombre){
+  const h = [...document.querySelectorAll("#valores .value h4")].find(x => norm(x.textContent) === nombre);
+  if (!h || h.querySelector(".ini")) return;
+  const t = h.textContent;
+  h.replaceChildren(el("span", "ini", t.charAt(0)), document.createTextNode(t.slice(1)));
+}
+function apagarValores(){
+  document.querySelectorAll("#valores .value h4").forEach(h => { if (h.querySelector(".ini")) h.textContent = h.textContent; });
+}
+function valor(nombre){
+  const oidos = new Set((store.get("valores", []) || []).filter(v => VALORES[v]));
+  oidos.add(nombre); store.set("valores", [...oidos]);
+  iluminarValor(nombre);
+  const [oficial, traduccion] = VALORES[nombre];
+  const titulo = "VALOR DEKIA · " + nombre.toUpperCase();
+  const out = [titulo, "─".repeat(titulo.length),
+    `Definición oficial: ${oficial}`, `Traducción: ${traduccion}`, "",
+    "<span class='dim'>Este valor acaba de iluminarse en la página. Como todos los nuestros, lo importante lo dice nada más empezar.</span>"];
+  if (oidos.size === 4)
+    out.push("", "<span class='hi'>Ha escuchado los cuatro valores. Léalos en orden, solo por cómo empiezan, y sabrá quién se ha colado en la sala.</span>");
+  else out.push(`<span class='dim'>Valores escuchados: ${oidos.size}/4</span>`);
+  return out;
+}
+
+/* ---------- "5": el juego de las sillas (4 sillas, 5 candidatos) ---------- */
+async function juegoSillas(){
+  setBusy(true);
+  const id = validIdent();
+  await say(["CANDIDATO Nº 5", "──────────────",
+    id ? `Ese es usted, ${escapeHtml(id.nombre.split(" ")[0])}. Se lo dijimos al recibir su candidatura.`
+       : "Ese sería usted... si hubiera enviado su candidatura.",
+    "En la sala hay cuatro sillas. Y cuatro candidatos sentados en ellas.",
+    "Haga las cuentas.", ""]);
+  await say(["♪ ♫  Empieza a sonar la música...  ♫ ♪"], "dim");
+  const sillas = el("div", "sillas");
+  sillas.append(...Array.from({ length: 4 }, () => el("span", "", "🪑")), el("span", "persona", "🧍"));
+  document.body.appendChild(sillas);
+  musicaSillas(3.2);
+  await sleep(3400);
+  sillas.classList.add("parado");
+  await say(["<span class='red'>La música se para.</span>",
+    "Fernando, Carla, Enrique y Mercedes se sientan.",
+    "Usted se queda de pie.", "",
+    "En Dekia, el juego de las sillas nunca termina: siempre sobra alguien.", ""]);
+  setTimeout(() => sillas.remove(), 3500);
+  setBusy(false);
+}
+// Musiquilla de feria que se corta de golpe
+function musicaSillas(segundos){
+  const c = audioCtx(); if (!c) return;
+  const notas = [523, 659, 784, 659, 587, 698, 880, 698];
+  const t0 = c.currentTime, paso = .2;
+  for (let i = 0; i * paso < segundos; i++){
+    const o = c.createOscillator(), g = c.createGain(), t = t0 + i * paso;
+    o.type = "square"; o.frequency.value = notas[i % notas.length];
+    g.gain.setValueAtTime(.06, t);
+    g.gain.exponentialRampToValueAtTime(.001, t + paso * .9);
+    o.connect(g).connect(c.destination);
+    o.start(t); o.stop(t + paso);
+  }
+}
+
+/* ---------- Patio: un balón cruza botando ---------- */
+function balon(){
+  const b = el("div", "balon", "⚽");
+  document.body.appendChild(b);
+  setTimeout(() => b.remove(), 4300);
+}
+
+/* ---------- Trucos fuera del sistema ---------- */
+function shoryuken(){
+  const s = el("div", "shoryu", "🐉 SHORYUKEN!");
+  document.body.appendChild(s);
+  reanimar("uppercut");
+  setTimeout(() => s.remove(), 1600);
+}
+function mundoAlReves(){
+  const b = document.body;
+  b.classList.remove("reves-salida"); b.classList.add("reves");
+  toast("Konami al revés: acaba de poner el método patas arriba.");
+  setTimeout(() => {
+    b.classList.remove("reves"); b.classList.add("reves-salida");
+    setTimeout(() => b.classList.remove("reves-salida"), 900);
+  }, 8000);
+}
+function noHaySalida(){
+  sobre("Aviso · No hay salida", [
+    "Ha pulsado Escape cinco veces seguidas.",
+    "Lo sentimos: la sala de reuniones de Dekia no tiene salida. Ni siquiera de emergencia.",
+    "La puerta solo se abre desde fuera. Y desde fuera, de momento, nadie tiene prisa."
+  ], "Puede seguir pulsando Escape si quiere. No va a cambiar nada.");
+}
+function enriqueNervioso(){
+  lluvia(["💧"], 60);
+  toast("Calma. Mover el ratón así de nervioso es muy de Enrique.");
+}
+
+/* ---------- Efectos graciosos ---------- */
+function lluvia(simbolos, n, colores){
+  for (let i = 0; i < n; i++){
+    const p = el("span", "fx-piece", simbolos ? simbolos[i % simbolos.length] : "");
+    const dur = 3 + Math.random() * 4;
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDuration = dur + "s";
+    p.style.animationDelay = Math.random() * 1.5 + "s";
+    if (colores){ p.style.cssText += `;width:9px;height:14px;background:${colores[i % colores.length]}`; }
+    else p.style.fontSize = 12 + Math.random() * 18 + "px";
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), (dur + 2) * 1000);
+  }
+}
+function nevar(){ lluvia(["❄", "❅", "❆"], 70); }
+function confeti(){ lluvia(null, 140, ["#b0141c", "#caa968", "#ffffff", "#141414", "#8fd694", "#2aa9ff"]); }
+function reanimar(cls){
+  document.body.classList.remove(cls); void document.body.offsetWidth; document.body.classList.add(cls);
+  setTimeout(() => document.body.classList.remove(cls), 1500);
+}
+function hadouken(){
+  const h = el("div", "hadouken");
+  h.append(el("div", "ball"), el("b", "", "HADOUKEN!"));
+  document.body.appendChild(h);
+  setTimeout(() => { h.remove(); reanimar("quake"); }, 1500);
+}
+function matrix(){
+  const cv = el("canvas", "matrix");
+  cv.width = window.innerWidth; cv.height = window.innerHeight;
+  document.body.appendChild(cv);
+  const ctx = cv.getContext("2d"), size = 16, cols = Math.ceil(cv.width / size);
+  const drops = Array.from({ length: cols }, () => Math.random() * -50);
+  const chars = "DEKIA01GRÖNHOLMTOPOSOBRE";
+  const it = setInterval(() => {
+    ctx.fillStyle = "rgba(0,0,0,.08)"; ctx.fillRect(0, 0, cv.width, cv.height);
+    ctx.fillStyle = "#3cff6b"; ctx.font = size + "px monospace";
+    drops.forEach((y, i) => {
+      ctx.fillText(chars[Math.floor(Math.random() * chars.length)], i * size, y * size);
+      drops[i] = y * size > cv.height && Math.random() > .97 ? 0 : y + 1;
+    });
+  }, 45);
+  setTimeout(() => { clearInterval(it); cv.remove(); }, 6000);
+}
+
+// Valores ya "escuchados" en visitas anteriores
+(store.get("valores", []) || []).forEach(v => { if (VALORES[v]) iluminarValor(v); });
+
+/* ---------- Consola del navegador ---------- */
+console.log("%cDEKIA", "font:800 42px Inter,sans-serif;letter-spacing:.2em;color:#b0141c");
+console.log("%cSi ha abierto la consola, ya es sospechoso.\nLas respuestas no están aquí: están cifradas, y la última la guarda el departamento de selección.\nPero le daremos algo: el apellido que da nombre al método abre una puerta.", "font:14px monospace;color:#888");
+})();
+</script>
+</body>
+</html>

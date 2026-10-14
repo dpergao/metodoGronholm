@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Dekia · Aviso de datos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f3f2ee;
+    --paper:#ffffff;
+    --ink:#141414;
+    --muted:#6b6b6b;
+    --line:#dcdad3;
+    --accent:#b0141c;
+    --radius:4px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:var(--accent);color:#fff}
+  .wrap{max-width:860px;margin:0 auto;padding:0 16px}
+  @media(min-width:720px){.wrap{padding:0 32px}}
+
+  .topbar{background:var(--ink);color:#bdbdbd;font-size:12px;letter-spacing:.04em}
+  .topbar .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}
+  .topbar b{color:#fff;font-weight:600}
+  header{background:var(--paper);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.22em;font-size:18px;text-decoration:none;color:inherit}
+  .logo-mark{width:28px;height:28px;border:2.5px solid var(--ink);position:relative}
+  .logo-mark::after{content:"";position:absolute;inset:6px;background:var(--accent)}
+  .back{font-size:14px;color:var(--muted);text-decoration:none}
+  .back:hover{color:var(--ink)}
+
+  main{padding:56px 0 72px}
+  .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:16px}
+  h1{font-size:clamp(30px,5vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:800;margin-bottom:18px}
+  .lead{font-size:18px;color:#3c3c3c;margin-bottom:40px;max-width:640px}
+
+  .memo{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:40px 36px;position:relative;box-shadow:0 20px 40px -30px rgba(0,0,0,.35)}
+  @media(max-width:560px){.memo{padding:28px 20px}}
+  .memo-head{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted);border-bottom:1px dashed var(--line);padding-bottom:16px;margin-bottom:28px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px}
+  .memo-head span:nth-child(odd){color:var(--ink);font-weight:600}
+  .stamp{position:absolute;top:30px;right:28px;border:2px solid var(--accent);color:var(--accent);font:700 12px "JetBrains Mono",monospace;letter-spacing:.18em;padding:6px 10px;transform:rotate(-6deg);opacity:.85}
+  @media(max-width:560px){.stamp{position:static;display:inline-block;margin-bottom:20px}}
+
+  .block{margin-bottom:30px}
+  .block h2{font-size:19px;letter-spacing:-.01em;margin-bottom:10px;display:flex;gap:12px;align-items:baseline}
+  .block h2 .n{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent);font-weight:600}
+  .block p{color:#333;margin-bottom:10px}
+  .block ul{list-style:none;margin:6px 0 10px}
+  .block li{padding:8px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;color:#333}
+  .block li::before{content:"—";color:var(--accent);font-weight:700}
+
+  .highlight{background:var(--ink);color:#eee;padding:26px 28px;border-radius:var(--radius);border-left:4px solid var(--accent);margin:8px 0 30px}
+  .highlight .pre{font:600 11px "JetBrains Mono",monospace;letter-spacing:.24em;color:#caa968;margin-bottom:10px}
+  .highlight p{font-size:17px;line-height:1.55}
+  .highlight b{color:#fff}
+
+  .sign{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:18px;margin-top:10px}
+
+  footer{background:var(--ink);color:#9a9a9a;padding:30px 0;font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{color:#fff}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div>Departamento de selección · <b>Documento interno</b></div>
+    <div>Granada (Zaidín)</div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="logo-mark"></span>DEKIA</a>
+    <a class="back" href="index.html">← Volver a la oferta</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">Aviso de responsabilidad de datos</p>
+    <h1>Dekia no existe.<br>Sus datos, por tanto, no le interesan a nadie.</h1>
+    <p class="lead">Esta web forma parte de la promoción de una obra de teatro escolar. Todo lo que ve (la empresa, la oferta, los sobres y el sistema interno) es atrezo. Este aviso, no: este va en serio.</p>
+
+    <article class="memo">
+      <div class="stamp">SIN EFECTO</div>
+      <div class="memo-head">
+        <span>DE:</span><span>Alumnado de 2º RPAE · Salesianos Granada (Zaidín)</span>
+        <span>PARA:</span><span>Todos los candidatos</span>
+        <span>ASUNTO:</span><span>Qué hacemos con su nombre y su correo</span>
+      </div>
+
+      <section class="block">
+        <h2><span class="n">01</span>Para qué le pedimos datos</h2>
+        <p>Para que la experiencia parezca real. Una empresa de verdad le pediría su nombre y su correo antes de una entrevista, así que nosotros también lo hacemos. Es ambientación para la obra <i>El método Grönholm</i>, nada más.</p>
+      </section>
+
+      <section class="block">
+        <h2><span class="n">02</span>Qué NO vamos a hacer</h2>
+        <ul>
+          <li>No vamos a usar su nombre ni su correo para nada.</li>
+          <li>No le vamos a enviar correos, publicidad ni mensajes.</li>
+          <li>No vamos a publicar, vender ni compartir sus datos con nadie.</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <h2><span class="n">03</span>Ponerlos es opcional</h2>
+        <p>Si quiere rellenar el formulario, rellénelo. Si no, no pasa nada: puede recorrer toda la web y jugar igual. Los datos no sirven para nada, <b>salvo en un caso</b>:</p>
+      </section>
+
+      <div class="highlight">
+        <div class="pre">LA ÚNICA EXCEPCIÓN</div>
+        <p>Si es usted una de las <b>10 primeras personas en descubrirlo todo</b> y llegar al final del sistema, nos llegará su nombre para <b>guardarle una butaca en la primera fila</b> el día del estreno. Para eso, el nombre tiene que ser el suyo de verdad.</p>
+      </div>
+
+      <section class="block">
+        <h2><span class="n">04</span>Dónde quedan y cuánto tiempo</h2>
+        <p>Cuando alguien envía el formulario o llega al final, su nombre y su correo llegan al equipo de la obra y se guardan en una hoja de cálculo privada a la que solo accede ese equipo. Se borrarán cuando termine la última función.</p>
+        <p>Además, la web guarda en su propio navegador cuántos expedientes ha desbloqueado. Eso se queda en su dispositivo y nosotros no lo vemos.</p>
+      </section>
+
+      <section class="block">
+        <h2><span class="n">05</span>Si cambia de opinión</h2>
+        <p>Si quiere que borremos sus datos antes, pídaselo a cualquier alumno o alumna de 2º RPAE y lo haremos. Si tiene menos de 16 años, pida permiso a su familia antes de poner sus datos reales.</p>
+      </section>
+
+      <p class="sign">Firmado: el departamento de selección.<br>(Que, como todo lo demás en esta web, también es de mentira.)</p>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Dekia Corporation. Dekia no existe. El método, sí.</span>
+    <span>Una producción de 2º RPAE · Salesianos Granada (Zaidín) · <a href="index.html">Volver</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
